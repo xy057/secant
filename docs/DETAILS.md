@@ -1,4 +1,4 @@
-# Secant
+# Secant: details
 
 Hosts a VST3 instrument (built for SINE Player / Orchestral Tools Berlin series) and measures the
 **transient point** (the negative delay you need) of every articulation × note × dynamic layer ×
@@ -255,7 +255,8 @@ Secant works with any VST3 instrument. When the loaded plugin is not SINE Player
 |---|---|
 | **New** | Starts an empty preset |
 | **Load…** | Loads a preset |
-| **Save…** | Writes `secant.preset` JSON |
+| **Save…** › *Save preset…* | Writes `secant.preset` JSON with your edits, Dyn src included. Fields Secant doesn't use (`legatoTypes`, …) are kept |
+| **Save…** › *Save with SINE's configuration…* | First writes the loaded SINE instrument's keyswitches, layers, dyn src, RR counts, legato flags and playable ranges into the selected instrument (each change is logged), then saves |
 | Instrument **+ / −** | Adds or removes an instrument |
 | Typing in the instrument box | Renames the selected instrument |
 | Table **+ / −** | Adds an articulation after the selected row, or removes the selected rows (Cmd/Shift-click for several) |
@@ -266,6 +267,9 @@ Removing a row leaves the other rows' # (keyswitch slot) unchanged. An edited pr
 it is saved.
 
 ## Presets
+
+To write a preset for another library, see [PRESET.md](../PRESET.md) (the format, note convention,
+categories and a checklist, written so an AI agent can follow it).
 
 `presets/berlin/*.json` are generated from the Orchestral Tools help pages:
 
