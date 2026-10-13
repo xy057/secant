@@ -77,7 +77,7 @@ jobs:
           else VERSION="$(git rev-parse --short HEAD)"; fi
           STAGE="Secant-$VERSION-${{ matrix.name }}"
           mkdir -p "dist/$STAGE"
-          cp -R presets README.md PRESET.md "dist/$STAGE/"
+          cp -R presets README.md PRESET.md LICENSE "dist/$STAGE/"
           if [ "$RUNNER_OS" = "Windows" ]; then
             cp build/Secant_artefacts/Release/Secant.exe "dist/$STAGE/"
             (cd dist && 7z a -tzip "$STAGE.zip" "$STAGE" > /dev/null)

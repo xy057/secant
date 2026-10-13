@@ -158,6 +158,8 @@ cmake-build-*/
 # ============================================================
 # Python (tools/ot_docs parser)
 # ============================================================
+# Saved Orchestral Tools help pages (third-party content) - keep local only
+tools/ot_docs/source/
 __pycache__/
 *.py[cod]
 *$py.class
