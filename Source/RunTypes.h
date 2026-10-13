@@ -172,8 +172,19 @@ struct ArticulationPlan
     // than the player's own round-robin reset time (SINE: resetAfterMS, e.g. 4000 ms for Berlin runs)
     double resetPauseMs (double configured) const { return hasSine ? juce::jmax (configured, sine.rrResetMs + 250.0) : configured; }
 
+    // a layer named by a number (0..127, e.g. "20") is that velocity / CC1 value itself; -1 = a name
+    int explicitLevel (int layer) const
+    {
+        const auto t = art.dynamics[layer].trim();
+        if (t.isEmpty() || t.length() > 3 || ! t.containsOnly ("0123456789"))
+            return -1;
+        const int v = t.getIntValue();
+        return v <= 127 ? v : -1;
+    }
     int velocityFor (int layer) const
     {
+        if (const int v = explicitLevel (layer); v >= 0)
+            return juce::jmax (1, v); // velocity 0 would be a note-off
         const int n = art.dynamics.size();
         return juce::jlimit (1, 127, (int) std::round ((layer + 0.5) * 127.0 / n));
     }
@@ -183,6 +194,8 @@ struct ArticulationPlan
         const int n = art.dynamics.size();
         if (dynSource == DynamicsSource::velocity)
             return 100;
+        if (const int v = explicitLevel (layer); v >= 0)
+            return v;
         if (n == 1)
             return 100;
         return juce::jlimit (0, 127, (int) std::round (layer * 127.0 / (n - 1)));

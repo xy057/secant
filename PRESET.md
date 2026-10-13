@@ -99,7 +99,7 @@ Save as `presets/<vendor>/<vendor>_<collection>.json`, lower case, words joined 
 | `category` | **yes** | `short`, `long`, `dynamic` or `phrase` (see below). An unknown value reads as `short` |
 | `legato` | yes | `true` if playing overlapping notes makes a legato transition |
 | `ranges` | **yes** | list of `{ "lo", "hi" }` MIDI note numbers, inclusive. `from`/`to` are optional note names for readers; **the loader only reads `lo`/`hi`**. `[]` = unplayable: the row starts unselected |
-| `dynamics` | **yes** | layer names from soft to loud, e.g. `["pp","mf","ff"]`. One entry per recorded layer. Missing = `["mf"]` |
+| `dynamics` | **yes** | layer names from soft to loud, e.g. `["pp","mf","ff"]`. One entry per recorded layer. Missing = `["mf"]`. A number 0–127 (e.g. `["20","80","127"]`) is sent as that velocity / CC1 value instead of an evenly spread one (velocity 0 is sent as 1) |
 | `roundRobins` | yes | RR samples per note and layer. Minimum 1 |
 | `keyswitch` | no | explicit keyswitch as a note name (`"C-1"`) or MIDI number. Use it when keyswitches are not a contiguous grid. Overrides `keyswitchBase + index − 1` |
 | `dynamicsSource` | no | `"velocity"` or `"cc1"`: what switches the layers. Leave it out to auto-detect at run time (recommended unless the docs say so) |

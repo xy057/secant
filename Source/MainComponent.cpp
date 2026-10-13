@@ -233,7 +233,7 @@ public:
         refresh();
         setEnabled (! owner.running);
         setTooltip (col == colRange ? "Double-click to edit, e.g. C2-C6, D7 (C3 = 60)"
-                    : col == colDynamics ? "Double-click to edit, e.g. pp mf ff"
+                    : col == colDynamics ? "Double-click to edit, e.g. pp mf ff.\nNumbers (0-127, e.g. 20 80 127) are sent as that velocity / CC1 value."
                     : col == colRR ? "Double-click to edit round robins per note"
                                    : "Double-click to rename");
     }
