@@ -1,0 +1,91 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  JUCE_VERSION: 8.0.10
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-14
+            name: macOS
+            cmake_args: -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64"
+          - os: windows-latest
+            name: Windows
+            cmake_args: -G "Visual Studio 17 2022" -A x64
+    runs-on: ${{ matrix.os }}
+    name: Build (${{ matrix.name }})
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # JUCE is not tracked in this repo (see .gitignore); fetch the pinned version.
+      - name: Fetch JUCE
+        shell: bash
+        run: git clone --depth 1 --branch "$JUCE_VERSION" https://github.com/juce-framework/JUCE.git third_party/JUCE
+
+      - name: Configure
+        shell: bash
+        run: cmake -S . -B build ${{ matrix.cmake_args }}
+
+      - name: Build
+        shell: bash
+        run: cmake --build build --config Release --parallel --target Secant OnsetAnalyzerTest
+
+      - name: Test
+        shell: bash
+        run: |
+          if [ "$RUNNER_OS" = "Windows" ]; then
+            build/OnsetAnalyzerTest_artefacts/Release/OnsetAnalyzerTest.exe
+          else
+            build/OnsetAnalyzerTest_artefacts/Release/OnsetAnalyzerTest
+          fi
+
+      - name: Package
+        shell: bash
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          [ "$GITHUB_REF_TYPE" = "tag" ] || VERSION="$(git rev-parse --short HEAD)"
+          STAGE="Secant-$VERSION-${{ matrix.name }}"
+          mkdir -p "dist/$STAGE"
+          cp -R presets README.md PRESET.md "dist/$STAGE/"
+          if [ "$RUNNER_OS" = "Windows" ]; then
+            cp build/Secant_artefacts/Release/Secant.exe "dist/$STAGE/"
+            (cd dist && 7z a -tzip "$STAGE.zip" "$STAGE" > /dev/null)
+          else
+            # Unsigned build: ad-hoc sign so the universal binary launches on Apple Silicon.
+            cp -R build/Secant_artefacts/Release/Secant.app "dist/$STAGE/"
+            codesign --force --deep --sign - "dist/$STAGE/Secant.app"
+            (cd dist && ditto -c -k --keepParent "$STAGE" "$STAGE.zip")
+          fi
+          echo "ASSET=dist/$STAGE.zip" >> "$GITHUB_ENV"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Secant-${{ matrix.name }}
+          path: ${{ env.ASSET }}
+
+  release:
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.zip
+          generate_release_notes: true

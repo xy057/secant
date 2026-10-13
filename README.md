@@ -12,7 +12,13 @@ cmake --build build -j 16
 open build/Secant_artefacts/Release/Secant.app
 ```
 
-JUCE 8.0.10 is vendored in `third_party/JUCE`.
+JUCE 8.0.10 is not tracked in this repo; clone it into `third_party/JUCE` before configuring:
+
+```bash
+git clone --depth 1 --branch 8.0.10 https://github.com/juce-framework/JUCE.git third_party/JUCE
+```
+
+Tagging `v*` builds macOS (universal) and Windows releases via GitHub Actions.
 
 ## Use
 
