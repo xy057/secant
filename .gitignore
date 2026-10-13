@@ -1,0 +1,242 @@
+# ============================================================
+# Project-specific
+# ============================================================
+# Vendored JUCE (JUCE 8.0.10) - re-fetch into third_party/JUCE, not tracked here
+third_party/JUCE/
+
+# Measurement output (auto-saved to ~/Documents/Secant/Results by default)
+Results/
+*.results.json
+out.json
+/out*.json
+
+# Rendered audio and scratch captures from probes/tests
+*.wav
+*.aif
+*.aiff
+*.flac
+*.caf
+
+# ============================================================
+# Build output (CMake / Make / Ninja / Xcode)
+# ============================================================
+build/
+build-*/
+cmake-build-*/
+out/
+bin/
+Debug/
+Release/
+RelWithDebInfo/
+MinSizeRel/
+*_artefacts/
+JuceLibraryCode/
+Builds/
+
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+CMakeUserPresets.json
+cmake_install.cmake
+CTestTestfile.cmake
+install_manifest.txt
+compile_commands.json
+Testing/
+_deps/
+.cmake/
+*.cmake.user
+Makefile.cmake
+
+*.xcodeproj/
+*.xcworkspace/xcuserdata/
+xcuserdata/
+DerivedData/
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM/
+*.dSYM.zip
+
+# ============================================================
+# Compiled objects, libraries, binaries
+# ============================================================
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.out
+*.app/
+*.component/
+*.vst/
+*.vst3/
+*.aaxplugin/
+*.lv2/
+*.framework/
+*.gch
+*.pch
+*.pdb
+*.ilk
+*.exp
+*.lo
+*.la
+*.slo
+*.mod
+*.smod
+*.idb
+*.d
+*.dep
+
+# ============================================================
+# Debug / profiling / coverage
+# ============================================================
+*.log
+*.trace
+*.gcda
+*.gcno
+*.gcov
+*.profraw
+*.profdata
+*.prof
+*.core
+core
+core.*
+*.crash
+*.ips
+callgrind.out.*
+massif.out.*
+perf.data*
+vgcore.*
+.sanitizer/
+
+# ============================================================
+# Editors / IDEs
+# ============================================================
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+cmake-build-*/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+.#*
+\#*#
+*.kdev4
+.kdev4/
+.vs/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.suo
+*.user
+*.ncb
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.VC.opendb
+.clangd/
+.cache/
+.ccls-cache/
+.project
+.cproject
+.settings/
+*.code-workspace
+
+# ============================================================
+# Python (tools/ot_docs parser)
+# ============================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+ENV/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.python-version
+pip-log.txt
+
+# ============================================================
+# Node (in case of tooling)
+# ============================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ============================================================
+# OS files
+# ============================================================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+.directory
+.Trash-*
+.nfs*
+
+# ============================================================
+# Backups / temp / archives
+# ============================================================
+*.bak
+*.orig
+*.rej
+*.tmp
+*.temp
+*.old
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+*.dmg
+*.pkg
+
+# ============================================================
+# Secrets / local config
+# ============================================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.mobileprovision
+*.cer
+.claude/settings.local.json

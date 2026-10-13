@@ -1,0 +1,1201 @@
+{
+  "format": "secant.preset",
+  "version": 1,
+  "vendor": "Orchestral Tools",
+  "collection": "Berlin Brass | Additional Instruments",
+  "player": "SINE Player",
+  "noteConvention": "C3=60",
+  "source": "https://orchestraltools.helpscoutdocs.com/article/516-berlin-brass-additional-instruments",
+  "keyswitchBase": "C0",
+  "instruments": [
+    {
+      "name": "Piccolo Trumpet",
+      "group": "Piccolo Trumpet",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains + LEG",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "D3",
+              "to": "E5",
+              "lo": 62,
+              "hi": 88
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D3",
+              "to": "E5",
+              "lo": 62,
+              "hi": 88
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Sustains soft",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D3",
+              "to": "E5",
+              "lo": 62,
+              "hi": 88
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Marcato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D3",
+              "to": "E5",
+              "lo": 62,
+              "hi": 88
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Marcato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D3",
+              "to": "E5",
+              "lo": 62,
+              "hi": 88
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D3",
+              "to": "E5",
+              "lo": 62,
+              "hi": 88
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 6,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Staccatissimo",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D3",
+              "to": "E5",
+              "lo": 62,
+              "hi": 88
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 6,
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Fortepiano",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D3",
+              "to": "E5",
+              "lo": 62,
+              "hi": 88
+            }
+          ],
+          "dynamics": [
+            "ff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Crescendo Long",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D3",
+              "to": "E5",
+              "lo": 62,
+              "hi": 88
+            }
+          ],
+          "dynamics": [
+            "ff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Crescendo short",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D3",
+              "to": "E5",
+              "lo": 62,
+              "hi": 88
+            }
+          ],
+          "dynamics": [
+            "ff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "Repetitions 1/4",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D3",
+              "to": "E5",
+              "lo": 62,
+              "hi": 88
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 12,
+          "docNumber": 12,
+          "name": "Repetitions Triplets",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D3",
+              "to": "E5",
+              "lo": 62,
+              "hi": 88
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 13,
+          "docNumber": 13,
+          "name": "Trills",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D3",
+              "to": "Eb5",
+              "lo": 62,
+              "hi": 87
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 14,
+          "docNumber": null,
+          "name": "Runs + LEG",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "D3",
+              "to": "E5",
+              "lo": 62,
+              "hi": 88
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "mf"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 6,
+          "issues": [
+            "articulation is unnumbered in the docs"
+          ]
+        },
+        {
+          "index": 15,
+          "docNumber": null,
+          "name": "Runs",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D3",
+              "to": "E5",
+              "lo": 62,
+              "hi": 88
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "mf"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 6,
+          "issues": [
+            "articulation is unnumbered in the docs"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bass Trumpet",
+      "group": "Bass Trumpet",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains + LEG",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "F1",
+              "to": "C4",
+              "lo": 41,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F1",
+              "to": "C4",
+              "lo": 41,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Sustains soft",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F1",
+              "to": "C4",
+              "lo": 41,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Marcato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F1",
+              "to": "C4",
+              "lo": 41,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Marcato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F1",
+              "to": "C4",
+              "lo": 41,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F1",
+              "to": "C4",
+              "lo": 41,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Staccatissimo",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F1",
+              "to": "C4",
+              "lo": 41,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 6,
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Fortepiano",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F1",
+              "to": "C4",
+              "lo": 41,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "ff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Crescendo Long",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F1",
+              "to": "C4",
+              "lo": 41,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "ff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Crescendo short",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F1",
+              "to": "C4",
+              "lo": 41,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "ff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "Repetitions 1/16",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F1",
+              "to": "C4",
+              "lo": 41,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 12,
+          "docNumber": 12,
+          "name": "Repetitions Triplets",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F1",
+              "to": "C4",
+              "lo": 41,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 13,
+          "docNumber": 13,
+          "name": "Trills",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F1",
+              "to": "B3",
+              "lo": 41,
+              "hi": 71
+            }
+          ],
+          "dynamics": [
+            "ff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Euphonium",
+      "group": "Euphonium",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains + LEG",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "D1",
+              "to": "B3",
+              "lo": 38,
+              "hi": 71
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D1",
+              "to": "B3",
+              "lo": 38,
+              "hi": 71
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Sustains soft",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D1",
+              "to": "B3",
+              "lo": 38,
+              "hi": 71
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Marcato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D1",
+              "to": "B3",
+              "lo": 38,
+              "hi": 71
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Marcato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D1",
+              "to": "B3",
+              "lo": 38,
+              "hi": 71
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D1",
+              "to": "B3",
+              "lo": 38,
+              "hi": 71
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 6,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Fortepiano",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D1",
+              "to": "B3",
+              "lo": 38,
+              "hi": 71
+            }
+          ],
+          "dynamics": [
+            "ff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Crescendo Long",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D1",
+              "to": "B3",
+              "lo": 38,
+              "hi": 71
+            }
+          ],
+          "dynamics": [
+            "ff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Crescendo short",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D1",
+              "to": "B3",
+              "lo": 38,
+              "hi": 71
+            }
+          ],
+          "dynamics": [
+            "ff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Swells Long",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D1",
+              "to": "B3",
+              "lo": 38,
+              "hi": 71
+            }
+          ],
+          "dynamics": [
+            "ff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "Swells Short",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D1",
+              "to": "B3",
+              "lo": 38,
+              "hi": 71
+            }
+          ],
+          "dynamics": [
+            "ff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 12,
+          "docNumber": 12,
+          "name": "Repetitions 1/16",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D1",
+              "to": "B3",
+              "lo": 38,
+              "hi": 71
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 13,
+          "docNumber": 13,
+          "name": "Repetitions Triplets",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D1",
+              "to": "B3",
+              "lo": 38,
+              "hi": 71
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 14,
+          "docNumber": 14,
+          "name": "Trills",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D1",
+              "to": "B3",
+              "lo": 38,
+              "hi": 71
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Contrabass Trombone",
+      "group": "Contrabass Trombone",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb-1",
+              "to": "B2",
+              "lo": 22,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains soft",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb-1",
+              "to": "B2",
+              "lo": 22,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Marcato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb-1",
+              "to": "B2",
+              "lo": 22,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Marcato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb-1",
+              "to": "B2",
+              "lo": 22,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb-1",
+              "to": "B2",
+              "lo": 22,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Staccatissimo",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb-1",
+              "to": "B2",
+              "lo": 22,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 6,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Fortepiano",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb-1",
+              "to": "B2",
+              "lo": 22,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "ff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Crescendo Long",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb-1",
+              "to": "B2",
+              "lo": 22,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "ff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Crescendo short",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb-1",
+              "to": "B2",
+              "lo": 22,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "fff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Swells Long",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb-1",
+              "to": "B2",
+              "lo": 22,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "fff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "Swells Short",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb-1",
+              "to": "B2",
+              "lo": 22,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "fff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    }
+  ]
+}

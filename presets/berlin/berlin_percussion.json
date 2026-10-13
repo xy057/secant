@@ -1,0 +1,7984 @@
+{
+  "format": "secant.preset",
+  "version": 1,
+  "vendor": "Orchestral Tools",
+  "collection": "Berlin Percussion",
+  "player": "SINE Player",
+  "noteConvention": "C3=60",
+  "source": "https://orchestraltools.helpscoutdocs.com/article/413-berlin-percussion-notes",
+  "keyswitchBase": "C0",
+  "instruments": [
+    {
+      "name": "Timpani Normal Mallets",
+      "group": "Timpani",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C6",
+              "lo": 48,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Fortepiano",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C4",
+              "lo": 48,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Rolls Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C4",
+              "lo": 48,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Rolls Short",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C4",
+              "lo": 48,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Crescendo Very Long",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C4",
+              "lo": 48,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Crescendo Long",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C4",
+              "lo": 48,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Crescendo Medium",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C4",
+              "lo": 48,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Crescendo Short",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C4",
+              "lo": 48,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Crescendo Very Short",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C4",
+              "lo": 48,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Decrescendo",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C4",
+              "lo": 48,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "Diminuendo Long",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C4",
+              "lo": 48,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 12,
+          "docNumber": 12,
+          "name": "Diminuendo Short",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C4",
+              "lo": 48,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 13,
+          "docNumber": 13,
+          "name": "Glissandi",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C4",
+              "lo": 48,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 14,
+          "docNumber": 14,
+          "name": "Repetitions 1/4",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D#4",
+              "lo": 48,
+              "hi": 75
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 15,
+          "docNumber": 15,
+          "name": "Repetitions 1/8",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D4",
+              "lo": 48,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 16,
+          "docNumber": 16,
+          "name": "Repetitions 1/16",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D#4",
+              "lo": 48,
+              "hi": 75
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 17,
+          "docNumber": 17,
+          "name": "Repetitions 1/32",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D#4",
+              "lo": 48,
+              "hi": 75
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 18,
+          "docNumber": 18,
+          "name": "Weather Thunder SFX",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "G2",
+              "lo": 48,
+              "hi": 55
+            },
+            {
+              "from": "C3",
+              "to": "E3",
+              "lo": 60,
+              "hi": 64
+            },
+            {
+              "from": "C4",
+              "to": "A4",
+              "lo": 72,
+              "hi": 81
+            },
+            {
+              "from": "C5",
+              "to": "A5",
+              "lo": 84,
+              "hi": 93
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 5,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Timpani Soft Mallets",
+      "group": "Timpani",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C6",
+              "lo": 48,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D4",
+              "lo": 48,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Timpani Hard Mallets",
+      "group": "Timpani",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C6",
+              "lo": 48,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C4",
+              "lo": 48,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Timpani Impact",
+      "group": "Timpani",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C4",
+              "lo": 48,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 4,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Single Hits Muted",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C6",
+              "lo": 48,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "ff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 2,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Timpani Baroque Mallets",
+      "group": "Timpani",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "G3",
+              "lo": 48,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "G5",
+              "lo": 72,
+              "hi": 91
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C#3",
+              "lo": 48,
+              "hi": 61
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Bass Drum 28\"",
+      "group": "Bass Drums",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "D1",
+              "lo": 36,
+              "hi": 38
+            },
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            },
+            {
+              "from": "F2",
+              "to": "G2",
+              "lo": 53,
+              "hi": 55
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 8,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "D3",
+              "lo": 60,
+              "hi": 62
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 6,
+          "roundRobins": 8,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 6,
+          "roundRobins": 8,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Bass Drum 34\"",
+      "group": "Bass Drums",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "D1",
+              "lo": 36,
+              "hi": 38
+            },
+            {
+              "from": "C2",
+              "to": "C2",
+              "lo": 48,
+              "hi": 48
+            },
+            {
+              "from": "F2",
+              "to": "F2",
+              "lo": 53,
+              "hi": 53
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 6,
+          "roundRobins": 10,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "D3",
+              "lo": 60,
+              "hi": 62
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 6,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F5",
+              "lo": 88,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Bass Drum 36\"",
+      "group": "Bass Drums",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "D1",
+              "lo": 36,
+              "hi": 38
+            },
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            },
+            {
+              "from": "F2",
+              "to": "G2",
+              "lo": 53,
+              "hi": 55
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 10,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "D3",
+              "lo": 60,
+              "hi": 62
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 6,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F5",
+              "lo": 88,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Bass Drum 40\"",
+      "group": "Bass Drums",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "D1",
+              "lo": 36,
+              "hi": 38
+            },
+            {
+              "from": "C2",
+              "to": "C2",
+              "lo": 48,
+              "hi": 48
+            },
+            {
+              "from": "F2",
+              "to": "F2",
+              "lo": 53,
+              "hi": 53
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 10,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "D3",
+              "lo": 60,
+              "hi": 62
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F5",
+              "lo": 88,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Majestic Pro Snare 1 14\"",
+      "group": "Snare Drum",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            },
+            {
+              "from": "A2",
+              "to": "A2",
+              "lo": 57,
+              "hi": 57
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 9,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Single Hits Off",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "E2",
+              "lo": 48,
+              "hi": 52
+            },
+            {
+              "from": "A2",
+              "to": "A2",
+              "lo": 57,
+              "hi": 57
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 9,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F3",
+              "lo": 60,
+              "hi": 65
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Rolls Off",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F3",
+              "lo": 60,
+              "hi": 65
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Dynamics Off",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Majestic Pro Snare 2 14\"",
+      "group": "Snare Drum",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits On 1",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            },
+            {
+              "from": "A2",
+              "to": "A2",
+              "lo": 57,
+              "hi": 57
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 9,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Single Hits On 2",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "E2",
+              "lo": 48,
+              "hi": 52
+            },
+            {
+              "from": "A2",
+              "to": "A2",
+              "lo": 57,
+              "hi": 57
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 9,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Rolls on 1",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F3",
+              "lo": 60,
+              "hi": 65
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Rolls on 2",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F3",
+              "lo": 60,
+              "hi": 65
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Dynamics On 1",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Dynamics On 2",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Dresdner Snare 13\"",
+      "group": "Snare Drum",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits On",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            },
+            {
+              "from": "A2",
+              "to": "A2",
+              "lo": 57,
+              "hi": 57
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 16,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Single Hits Off",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            },
+            {
+              "from": "A2",
+              "to": "A2",
+              "lo": 57,
+              "hi": 57
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 16,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Rolls On",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F3",
+              "lo": 60,
+              "hi": 65
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Rolls Off",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F3",
+              "lo": 60,
+              "hi": 65
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Dynamics On",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Dynamics Off",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Piccolo Snare 13\"",
+      "group": "Snare Drum",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits On",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 9,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Single Hits Off",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 9,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Rolls On",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F3",
+              "lo": 60,
+              "hi": 65
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Rolls Off",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F3",
+              "lo": 60,
+              "hi": 65
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Dynamics On",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Dynamics Off",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Field Drum 14\"",
+      "group": "Snare Drum",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits On",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "E2",
+              "lo": 48,
+              "hi": 52
+            },
+            {
+              "from": "A2",
+              "to": "A2",
+              "lo": 57,
+              "hi": 57
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 9,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Single Hits Off",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "E2",
+              "lo": 48,
+              "hi": 52
+            },
+            {
+              "from": "A2",
+              "to": "A2",
+              "lo": 57,
+              "hi": 57
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 9,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Rolls On",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F3",
+              "lo": 60,
+              "hi": 65
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Rolls Off",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F3",
+              "lo": 60,
+              "hi": 65
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Dynamics On",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Dynamics Off",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Tenor Drum 16\"",
+      "group": "Snare Drum",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits On",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "F#2",
+              "lo": 48,
+              "hi": 54
+            },
+            {
+              "from": "A2",
+              "to": "A2",
+              "lo": 57,
+              "hi": 57
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 20,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Single Hits Off",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "F#2",
+              "lo": 48,
+              "hi": 54
+            },
+            {
+              "from": "A2",
+              "to": "A2",
+              "lo": 57,
+              "hi": 57
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 20,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Rolls On",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F3",
+              "lo": 60,
+              "hi": 65
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Rolls Off",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F3",
+              "lo": 60,
+              "hi": 65
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Dynamics On",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Dynamics Off",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Basler Drum 16\"",
+      "group": "Snare Drum",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            },
+            {
+              "from": "A2",
+              "to": "A2",
+              "lo": 57,
+              "hi": 57
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 9,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F3",
+              "lo": 60,
+              "hi": 65
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 9,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Firecracker Snare Drum 10\"",
+      "group": "Snare Drum",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits On",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "E2",
+              "lo": 48,
+              "hi": 52
+            },
+            {
+              "from": "A2",
+              "to": "A2",
+              "lo": 57,
+              "hi": 57
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 9,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Single Hits Off",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "E2",
+              "lo": 48,
+              "hi": 52
+            },
+            {
+              "from": "A2",
+              "to": "A2",
+              "lo": 57,
+              "hi": 57
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 9,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Rolls On",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F3",
+              "lo": 60,
+              "hi": 65
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Rolls Off",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F3",
+              "lo": 60,
+              "hi": 65
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Dynamics On",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Dynamics Off",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Tom 13\"",
+      "group": "Toms",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "F2",
+              "lo": 48,
+              "hi": 53
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 6,
+          "roundRobins": 16,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "E3",
+              "lo": 60,
+              "hi": 64
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 6,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Tom 14\"",
+      "group": "Toms",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "F2",
+              "lo": 48,
+              "hi": 53
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 6,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "E3",
+              "lo": 60,
+              "hi": 64
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 6,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Tom 15\"",
+      "group": "Toms",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "F2",
+              "lo": 48,
+              "hi": 53
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 6,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "E3",
+              "lo": 60,
+              "hi": 64
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 6,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Tom 16\"",
+      "group": "Toms",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "F2",
+              "lo": 48,
+              "hi": 53
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 6,
+          "roundRobins": 16,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "E3",
+              "lo": 60,
+              "hi": 64
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 6,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Roto Tom 6\"",
+      "group": "Roto Toms",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 9,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "D3",
+              "lo": 60,
+              "hi": 62
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Roto Tom 8\"",
+      "group": "Roto Toms",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F3",
+              "lo": 60,
+              "hi": 65
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Roto Tom 10\"",
+      "group": "Roto Toms",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 9,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F3",
+              "lo": 60,
+              "hi": 65
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Roto Tom 12\"",
+      "group": "Roto Toms",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "fff"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 10,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F3",
+              "lo": 60,
+              "hi": 65
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "fff"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "fff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Roto Tom 14\"",
+      "group": "Roto Toms",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 9,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F3",
+              "lo": 60,
+              "hi": 65
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Roto Tom 18\"",
+      "group": "Roto Toms",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 9,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F3",
+              "lo": 60,
+              "hi": 65
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Timbale 13\"",
+      "group": "Timbales",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "F2",
+              "lo": 48,
+              "hi": 53
+            },
+            {
+              "from": "A2",
+              "to": "A2",
+              "lo": 57,
+              "hi": 57
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 20,
+          "issues": [
+            "docs say 8 dynamic layers but list 6 (pp, p, mp, mf, f, ff)"
+          ]
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F3",
+              "lo": 60,
+              "hi": 65
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 1,
+          "issues": [
+            "docs say 8 dynamic layers but list 6 (pp, p, mp, mf, f, ff)"
+          ]
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Timbale 14\"",
+      "group": "Timbales",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "F2",
+              "lo": 48,
+              "hi": 53
+            },
+            {
+              "from": "A2",
+              "to": "A2",
+              "lo": 57,
+              "hi": 57
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 20,
+          "issues": [
+            "docs say 8 dynamic layers but list 6 (pp, p, mp, mf, f, ff)"
+          ]
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F3",
+              "lo": 60,
+              "hi": 65
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 1,
+          "issues": [
+            "docs say 8 dynamic layers but list 6 (pp, p, mp, mf, f, ff)"
+          ]
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Bongo Set 1",
+      "group": "Bongos",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "A#2",
+              "lo": 48,
+              "hi": 58
+            },
+            {
+              "from": "D3",
+              "to": "F#3",
+              "lo": 62,
+              "hi": 66
+            },
+            {
+              "from": "C4",
+              "to": "A#4",
+              "lo": 72,
+              "hi": 82
+            },
+            {
+              "from": "D5",
+              "to": "F#5",
+              "lo": 86,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 9,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G3",
+              "to": "A3",
+              "lo": 67,
+              "hi": 69
+            },
+            {
+              "from": "G5",
+              "to": "A5",
+              "lo": 91,
+              "hi": 93
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D#2",
+              "lo": 48,
+              "hi": 51
+            },
+            {
+              "from": "F2",
+              "to": "G2",
+              "lo": 53,
+              "hi": 55
+            },
+            {
+              "from": "C3",
+              "to": "D#3",
+              "lo": 60,
+              "hi": 63
+            },
+            {
+              "from": "C4",
+              "to": "D#4",
+              "lo": 72,
+              "hi": 75
+            },
+            {
+              "from": "F4",
+              "to": "G4",
+              "lo": 77,
+              "hi": 79
+            },
+            {
+              "from": "C5",
+              "to": "D#5",
+              "lo": 84,
+              "hi": 87
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Bongo Set 2",
+      "group": "Bongos",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "A2",
+              "lo": 48,
+              "hi": 57
+            },
+            {
+              "from": "E3",
+              "to": "F#3",
+              "lo": 64,
+              "hi": 66
+            },
+            {
+              "from": "C4",
+              "to": "A4",
+              "lo": 72,
+              "hi": 81
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 6,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G3",
+              "to": "A3",
+              "lo": 67,
+              "hi": 69
+            },
+            {
+              "from": "G5",
+              "to": "A5",
+              "lo": 91,
+              "hi": 93
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D#2",
+              "lo": 48,
+              "hi": 51
+            },
+            {
+              "from": "F2",
+              "to": "G2",
+              "lo": 53,
+              "hi": 55
+            },
+            {
+              "from": "C3",
+              "to": "D#3",
+              "lo": 60,
+              "hi": 63
+            },
+            {
+              "from": "C4",
+              "to": "D#4",
+              "lo": 72,
+              "hi": 75
+            },
+            {
+              "from": "F4",
+              "to": "G4",
+              "lo": 77,
+              "hi": 79
+            },
+            {
+              "from": "C5",
+              "to": "D#5",
+              "lo": 84,
+              "hi": 87
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Conga Set",
+      "group": "Congas",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "F#1",
+              "lo": 24,
+              "hi": 42
+            },
+            {
+              "from": "C2",
+              "to": "F#3",
+              "lo": 48,
+              "hi": 66
+            },
+            {
+              "from": "C4",
+              "to": "F#5",
+              "lo": 72,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 6,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G1",
+              "to": "A1",
+              "lo": 43,
+              "hi": 45
+            },
+            {
+              "from": "G3",
+              "to": "A3",
+              "lo": 67,
+              "hi": 69
+            },
+            {
+              "from": "G5",
+              "to": "A5",
+              "lo": 91,
+              "hi": 93
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "D#0",
+              "lo": 24,
+              "hi": 27
+            },
+            {
+              "from": "F0",
+              "to": "G0",
+              "lo": 29,
+              "hi": 31
+            },
+            {
+              "from": "C1",
+              "to": "D1",
+              "lo": 36,
+              "hi": 38
+            },
+            {
+              "from": "C2",
+              "to": "D#2",
+              "lo": 48,
+              "hi": 51
+            },
+            {
+              "from": "F2",
+              "to": "G2",
+              "lo": 53,
+              "hi": 55
+            },
+            {
+              "from": "C3",
+              "to": "D3",
+              "lo": 60,
+              "hi": 62
+            },
+            {
+              "from": "C4",
+              "to": "D#4",
+              "lo": 72,
+              "hi": 75
+            },
+            {
+              "from": "F4",
+              "to": "G4",
+              "lo": 77,
+              "hi": 79
+            },
+            {
+              "from": "C5",
+              "to": "D5",
+              "lo": 84,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Celesta",
+      "group": "Mallets & Keys",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C7",
+              "lo": 48,
+              "hi": 108
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C7",
+              "lo": 48,
+              "hi": 108
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Vibraphone",
+      "group": "Mallets & Keys",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains Normal Mallets",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F2",
+              "to": "F6",
+              "lo": 53,
+              "hi": 101
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains Soft Mallets",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F2",
+              "to": "F6",
+              "lo": 53,
+              "hi": 101
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Staccato Normal Mallets",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F2",
+              "to": "F6",
+              "lo": 53,
+              "hi": 101
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 4,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Staccato Soft Mallets",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F2",
+              "to": "F6",
+              "lo": 53,
+              "hi": 101
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 4,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Tremolo",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F2",
+              "to": "F6",
+              "lo": 53,
+              "hi": 101
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Glissando",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F1",
+              "to": "F2",
+              "lo": 41,
+              "hi": 53
+            },
+            {
+              "from": "F3",
+              "to": "D4",
+              "lo": 65,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "mp"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Marimba",
+      "group": "Mallets & Keys",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits Normal Mallets",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C6",
+              "lo": 36,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 7,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Single Hits Soft Mallets",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C6",
+              "lo": 36,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 7,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Single Hits Hard Mallets",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C6",
+              "lo": 36,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 7,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Tremolo",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C6",
+              "lo": 36,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mp",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Tremolo Soft",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C6",
+              "lo": 36,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Xylophone",
+      "group": "Mallets & Keys",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F3",
+              "to": "C8",
+              "lo": 65,
+              "hi": 120
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 10,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Glissando",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "D2",
+              "lo": 36,
+              "hi": 50
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Tremolo",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F3",
+              "to": "C8",
+              "lo": 65,
+              "hi": 120
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Crotales",
+      "group": "Mallets & Keys",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C5",
+              "to": "C7",
+              "lo": 84,
+              "hi": 108
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Stopped",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C5",
+              "to": "C7",
+              "lo": 84,
+              "hi": 108
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Muted",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C5",
+              "to": "C7",
+              "lo": 84,
+              "hi": 108
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Bowed",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C5",
+              "to": "C7",
+              "lo": 84,
+              "hi": 108
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 2,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Glockenspiel",
+      "group": "Mallets & Keys",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains Normal Mallets",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F3",
+              "to": "F6",
+              "lo": 65,
+              "hi": 101
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains Soft Mallets",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F3",
+              "to": "F6",
+              "lo": 65,
+              "hi": 101
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Sustains Hard Mallets",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F3",
+              "to": "F6",
+              "lo": 65,
+              "hi": 101
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F3",
+              "to": "F6",
+              "lo": 65,
+              "hi": 101
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Tremolo Short",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F3",
+              "to": "F6",
+              "lo": 65,
+              "hi": 101
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Tremolo Sforzando",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F3",
+              "to": "F6",
+              "lo": 65,
+              "hi": 101
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Glissando Normal Mallets",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            },
+            {
+              "from": "C5",
+              "to": "D5",
+              "lo": 84,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Glissando Soft Mallets",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C4",
+              "to": "F4",
+              "lo": 72,
+              "hi": 77
+            },
+            {
+              "from": "C5",
+              "to": "F5",
+              "lo": 84,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Tubular Bells",
+      "group": "Mallets & Keys",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains Soft Mallets",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F3",
+              "to": "F5",
+              "lo": 65,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains Hard Mallets",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F3",
+              "to": "F5",
+              "lo": 65,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Staccato Soft Mallets",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F3",
+              "to": "F5",
+              "lo": 65,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Staccato Hard Mallets",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F3",
+              "to": "F5",
+              "lo": 65,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Cow Bells",
+      "group": "Mallets & Keys",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits Soft Mallets",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C5",
+              "lo": 60,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Single Hits Hard Mallets",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C5",
+              "lo": 60,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Tremolo",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C5",
+              "lo": 60,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "mp"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Zildjian 14\"",
+      "group": "Cymbals",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "E1",
+              "to": "E1",
+              "lo": 40,
+              "hi": 40
+            },
+            {
+              "from": "A1",
+              "to": "A1",
+              "lo": 45,
+              "hi": 45
+            },
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            },
+            {
+              "from": "F2",
+              "to": "G2",
+              "lo": 53,
+              "hi": 55
+            },
+            {
+              "from": "B2",
+              "to": "B2",
+              "lo": 59,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 7,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C3",
+              "lo": 60,
+              "hi": 60
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Single Hits Brush",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            },
+            {
+              "from": "F2",
+              "to": "G2",
+              "lo": 53,
+              "hi": 55
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Rolls Brush",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C3",
+              "lo": 60,
+              "hi": 60
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Dynamics Brush",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Zildjian 16\"",
+      "group": "Cymbals",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "E1",
+              "to": "E1",
+              "lo": 40,
+              "hi": 40
+            },
+            {
+              "from": "A1",
+              "to": "A1",
+              "lo": 45,
+              "hi": 45
+            },
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            },
+            {
+              "from": "F2",
+              "to": "G2",
+              "lo": 53,
+              "hi": 55
+            },
+            {
+              "from": "B2",
+              "to": "B2",
+              "lo": 59,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 6,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C3",
+              "lo": 60,
+              "hi": 60
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Single Hits Brush",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            },
+            {
+              "from": "F2",
+              "to": "G2",
+              "lo": 53,
+              "hi": 55
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Rolls Brush",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C3",
+              "lo": 60,
+              "hi": 60
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Dynamics Brush",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Meinl 18\"",
+      "group": "Cymbals",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "E1",
+              "to": "E1",
+              "lo": 40,
+              "hi": 40
+            },
+            {
+              "from": "A1",
+              "to": "A1",
+              "lo": 45,
+              "hi": 45
+            },
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            },
+            {
+              "from": "F2",
+              "to": "G2",
+              "lo": 53,
+              "hi": 55
+            },
+            {
+              "from": "B2",
+              "to": "B2",
+              "lo": 59,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 7,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C3",
+              "lo": 60,
+              "hi": 60
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "D#4",
+              "lo": 75,
+              "hi": 77
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": [
+            "range 'F4-D#4' is reversed in the docs; using D#4-F4"
+          ]
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Single Hits Brush",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            },
+            {
+              "from": "F2",
+              "to": "G2",
+              "lo": 53,
+              "hi": 55
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Rolls Brush",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C3",
+              "lo": 60,
+              "hi": 60
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Dynamics Brush",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Sabian 20\"",
+      "group": "Cymbals",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "E1",
+              "to": "E1",
+              "lo": 40,
+              "hi": 40
+            },
+            {
+              "from": "A1",
+              "to": "A1",
+              "lo": 45,
+              "hi": 45
+            },
+            {
+              "from": "C3",
+              "to": "D#3",
+              "lo": 60,
+              "hi": 63
+            },
+            {
+              "from": "F3",
+              "to": "G3",
+              "lo": 65,
+              "hi": 67
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C3",
+              "lo": 60,
+              "hi": 60
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "D#4",
+              "lo": 75,
+              "hi": 77
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "issues": [
+            "range 'F4-D#4' is reversed in the docs; using D#4-F4"
+          ]
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Single Hits Brush",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            },
+            {
+              "from": "F2",
+              "to": "G2",
+              "lo": 53,
+              "hi": 55
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Rolls Brush",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C3",
+              "lo": 60,
+              "hi": 60
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Dynamics Brush",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Piatti 15\"",
+      "group": "Piatti",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C2",
+              "lo": 48,
+              "hi": 48
+            },
+            {
+              "from": "F2",
+              "to": "G2",
+              "lo": 53,
+              "hi": 55
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Scratches",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "E1",
+              "to": "F1",
+              "lo": 40,
+              "hi": 41
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 3,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Piatti 19\"",
+      "group": "Piatti",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C2",
+              "lo": 48,
+              "hi": 48
+            },
+            {
+              "from": "F2",
+              "to": "G2",
+              "lo": 53,
+              "hi": 55
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 3,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "PIatti 20\"",
+      "group": "Piatti",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C2",
+              "lo": 48,
+              "hi": 48
+            },
+            {
+              "from": "F2",
+              "to": "G2",
+              "lo": 53,
+              "hi": 55
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 3,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Tamtam 65cm",
+      "group": "Tamtams",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C2",
+              "lo": 48,
+              "hi": 48
+            },
+            {
+              "from": "F2",
+              "to": "F2",
+              "lo": 53,
+              "hi": 53
+            },
+            {
+              "from": "G4",
+              "to": "A4",
+              "lo": 79,
+              "hi": 81
+            },
+            {
+              "from": "C5",
+              "to": "D5",
+              "lo": 84,
+              "hi": 86
+            },
+            {
+              "from": "F5",
+              "to": "B5",
+              "lo": 89,
+              "hi": 95
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 6,
+          "roundRobins": 4,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "D3",
+              "lo": 60,
+              "hi": 62
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 6,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "B4",
+              "lo": 77,
+              "hi": 83
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Tamtam 85cm",
+      "group": "Tamtams",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C2",
+              "lo": 48,
+              "hi": 48
+            },
+            {
+              "from": "E2",
+              "to": "F#2",
+              "lo": 52,
+              "hi": 54
+            },
+            {
+              "from": "C5",
+              "to": "D5",
+              "lo": 84,
+              "hi": 86
+            },
+            {
+              "from": "F5",
+              "to": "B5",
+              "lo": 89,
+              "hi": 95
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "D3",
+              "lo": 60,
+              "hi": 62
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "C5",
+              "lo": 77,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Tamtam 105cm",
+      "group": "Tamtams",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C2",
+              "lo": 48,
+              "hi": 48
+            },
+            {
+              "from": "E2",
+              "to": "F#2",
+              "lo": 52,
+              "hi": 54
+            },
+            {
+              "from": "C5",
+              "to": "D5",
+              "lo": 84,
+              "hi": 86
+            },
+            {
+              "from": "F5",
+              "to": "B5",
+              "lo": 89,
+              "hi": 95
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "D3",
+              "lo": 60,
+              "hi": 62
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "B4",
+              "lo": 77,
+              "hi": 83
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Tamtam 130cm",
+      "group": "Tamtams",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits Normal",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C2",
+              "lo": 48,
+              "hi": 48
+            },
+            {
+              "from": "E2",
+              "to": "F#2",
+              "lo": 52,
+              "hi": 54
+            },
+            {
+              "from": "C5",
+              "to": "D5",
+              "lo": 84,
+              "hi": 86
+            },
+            {
+              "from": "F5",
+              "to": "B5",
+              "lo": 89,
+              "hi": 95
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Single Hits Timp Mallet",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C2",
+              "lo": 48,
+              "hi": 48
+            },
+            {
+              "from": "E2",
+              "to": "F2",
+              "lo": 52,
+              "hi": 53
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Single Hits Vibes Mallet",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C2",
+              "lo": 48,
+              "hi": 48
+            },
+            {
+              "from": "E2",
+              "to": "F2",
+              "lo": 52,
+              "hi": 53
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Rolls Normal",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "D3",
+              "lo": 60,
+              "hi": 62
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Rolls Timp Mallets",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C3",
+              "lo": 60,
+              "hi": 60
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Rolls Vibes Mallet",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C3",
+              "lo": 60,
+              "hi": 60
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Dynamics Normal",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "B4",
+              "lo": 77,
+              "hi": 83
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Dynamics Timp Mallet",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "B4",
+              "lo": 77,
+              "hi": 83
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Dynamics Vibe Mallet",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F4",
+              "to": "B4",
+              "lo": 77,
+              "hi": 83
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Thunder Sheet 1",
+      "group": "Thunder Sheets",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "F1",
+              "lo": 36,
+              "hi": 41
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C3",
+              "lo": 60,
+              "hi": 60
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 2,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Thunder Sheet 2",
+      "group": "Thunder Sheets",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C2",
+              "lo": 48,
+              "hi": 48
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C3",
+              "lo": 60,
+              "hi": 60
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 2,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Anvils and Breakdrums",
+      "group": "Small Metals",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "F3",
+              "lo": 48,
+              "hi": 65
+            },
+            {
+              "from": "C4",
+              "to": "B4",
+              "lo": 72,
+              "hi": 83
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 5,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Bell Tree",
+      "group": "Small Metals",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C6",
+              "lo": 24,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 4,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Glissando",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "E3",
+              "lo": 48,
+              "hi": 64
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 4,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Triangles",
+      "group": "Small Metals",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "E2",
+              "lo": 48,
+              "hi": 52
+            },
+            {
+              "from": "C3",
+              "to": "E3",
+              "lo": 60,
+              "hi": 64
+            },
+            {
+              "from": "E5",
+              "to": "E5",
+              "lo": 88,
+              "hi": 88
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C4",
+              "to": "E4",
+              "lo": 72,
+              "hi": 76
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C4",
+              "to": "E4",
+              "lo": 72,
+              "hi": 76
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 5,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Chimes",
+      "group": "Small Metals",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Metal 1",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "G5",
+              "lo": 36,
+              "hi": 91
+            },
+            {
+              "from": "C6",
+              "to": "C6",
+              "lo": 96,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Metal 2",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "G6",
+              "lo": 36,
+              "hi": 103
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Glass",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "G2",
+              "lo": 36,
+              "hi": 55
+            },
+            {
+              "from": "C3",
+              "to": "A3",
+              "lo": 60,
+              "hi": 69
+            },
+            {
+              "from": "C4",
+              "to": "C6",
+              "lo": 72,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Bamboo",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "A1",
+              "lo": 36,
+              "hi": 45
+            },
+            {
+              "from": "C2",
+              "to": "E3",
+              "lo": 48,
+              "hi": 64
+            },
+            {
+              "from": "G3",
+              "to": "D5",
+              "lo": 67,
+              "hi": 86
+            },
+            {
+              "from": "F5",
+              "to": "C#6",
+              "lo": 89,
+              "hi": 97
+            },
+            {
+              "from": "E6",
+              "to": "B6",
+              "lo": 100,
+              "hi": 107
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Seashell Tree Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "E1",
+              "lo": 36,
+              "hi": 40
+            },
+            {
+              "from": "A1",
+              "to": "C2",
+              "lo": 45,
+              "hi": 48
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 6,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Seashell Tree Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F1",
+              "to": "G1",
+              "lo": 41,
+              "hi": 43
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Glissandi",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "A#6",
+              "lo": 36,
+              "hi": 106
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Woodblocks",
+      "group": "Percussion",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Templeblocks 1",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "E3",
+              "lo": 48,
+              "hi": 64
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Templeblocks 2",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "E3",
+              "lo": 48,
+              "hi": 64
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Templeblocks 3",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "E3",
+              "lo": 48,
+              "hi": 64
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Templeblocks 4",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "E3",
+              "lo": 48,
+              "hi": 64
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Woodblocks",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "E3",
+              "lo": 48,
+              "hi": 64
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Tambourines",
+      "group": "Percussion",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Single Hits",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "A#0",
+              "to": "A#0",
+              "lo": 34,
+              "hi": 34
+            },
+            {
+              "from": "C1",
+              "to": "C1",
+              "lo": 36,
+              "hi": 36
+            },
+            {
+              "from": "G1",
+              "to": "G1",
+              "lo": 43,
+              "hi": 43
+            },
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            },
+            {
+              "from": "A#1",
+              "to": "A#1",
+              "lo": 46,
+              "hi": 46
+            },
+            {
+              "from": "C3",
+              "to": "C3",
+              "lo": 60,
+              "hi": 60
+            },
+            {
+              "from": "G3",
+              "to": "G3",
+              "lo": 67,
+              "hi": 67
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "p",
+            "mp",
+            "mf",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 6,
+          "roundRobins": 10,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Rolls",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "G2",
+              "lo": 48,
+              "hi": 55
+            },
+            {
+              "from": "C3",
+              "to": "D3",
+              "lo": 60,
+              "hi": 62
+            },
+            {
+              "from": "F3",
+              "to": "F3",
+              "lo": 65,
+              "hi": 65
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "p",
+            "mp",
+            "mf",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 6,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F2",
+              "to": "G#2",
+              "lo": 53,
+              "hi": 56
+            },
+            {
+              "from": "B2",
+              "to": "C#3",
+              "lo": 59,
+              "hi": 61
+            },
+            {
+              "from": "E3",
+              "to": "F#3",
+              "lo": 64,
+              "hi": 66
+            },
+            {
+              "from": "F4",
+              "to": "G#4",
+              "lo": 77,
+              "hi": 80
+            },
+            {
+              "from": "B4",
+              "to": "C#5",
+              "lo": 83,
+              "hi": 85
+            },
+            {
+              "from": "E5",
+              "to": "F#5",
+              "lo": 88,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Aux Percussion",
+      "group": "Percussion",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Body Percussion",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D4",
+              "lo": 48,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 16,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Shakers",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "E2",
+              "lo": 48,
+              "hi": 52
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 15,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Castanets",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            },
+            {
+              "from": "C3",
+              "to": "C3",
+              "lo": 60,
+              "hi": 60
+            },
+            {
+              "from": "C4",
+              "to": "D#4",
+              "lo": 72,
+              "hi": 75
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 8,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Claves",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "E2",
+              "lo": 48,
+              "hi": 52
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 15,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Guiro",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D2",
+              "lo": 48,
+              "hi": 50
+            },
+            {
+              "from": "A2",
+              "to": "D3",
+              "lo": 57,
+              "hi": 62
+            },
+            {
+              "from": "C4",
+              "to": "D4",
+              "lo": 72,
+              "hi": 74
+            },
+            {
+              "from": "G4",
+              "to": "D5",
+              "lo": 79,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "fff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 10,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Guiro Dynamics",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "E2",
+              "to": "F2",
+              "lo": 52,
+              "hi": 53
+            },
+            {
+              "from": "E4",
+              "to": "F4",
+              "lo": 76,
+              "hi": 77
+            }
+          ],
+          "dynamics": [
+            "fff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 4,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Toys",
+      "group": "Toys",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sleigh Bells",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "E2",
+              "lo": 48,
+              "hi": 52
+            },
+            {
+              "from": "G2",
+              "to": "A2",
+              "lo": 55,
+              "hi": 57
+            },
+            {
+              "from": "C3",
+              "to": "D3",
+              "lo": 60,
+              "hi": 62
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Railroad Bell",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "E2",
+              "lo": 48,
+              "hi": 52
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Ship Bells",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "F2",
+              "lo": 48,
+              "hi": 53
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Finger Cymbals",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "A#2",
+              "lo": 48,
+              "hi": 58
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Windmaker",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C2",
+              "lo": 48,
+              "hi": 48
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 7,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Cab Horns",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "A2",
+              "to": "D3",
+              "lo": 57,
+              "hi": 62
+            },
+            {
+              "from": "F3",
+              "to": "B3",
+              "lo": 65,
+              "hi": 71
+            }
+          ],
+          "dynamics": [
+            "fff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Drumsticks",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C2",
+              "lo": 48,
+              "hi": 48
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 8,
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Vibraslap",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "A2",
+              "lo": 48,
+              "hi": 57
+            }
+          ],
+          "dynamics": [
+            "ff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 8,
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Bird Call",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "A2",
+              "lo": 48,
+              "hi": 57
+            }
+          ],
+          "dynamics": [
+            "ff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 4,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Cuckoo",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D3",
+              "lo": 48,
+              "hi": 62
+            }
+          ],
+          "dynamics": [
+            "fff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 9,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "Duck Call",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "E2",
+              "lo": 48,
+              "hi": 52
+            },
+            {
+              "from": "G2",
+              "to": "A2",
+              "lo": 55,
+              "hi": 57
+            },
+            {
+              "from": "C3",
+              "to": "G3",
+              "lo": 60,
+              "hi": 67
+            }
+          ],
+          "dynamics": [
+            "fff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 9,
+          "issues": []
+        },
+        {
+          "index": 12,
+          "docNumber": 12,
+          "name": "Fog Horn",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "E2",
+              "lo": 48,
+              "hi": 52
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Grand Piano",
+      "group": "Grand Piano",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "A-1",
+              "to": "C7",
+              "lo": 21,
+              "hi": 108
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "p",
+            "mp",
+            "mf",
+            "f",
+            "ff",
+            "fff"
+          ],
+          "dynamicCountDocs": 8,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    }
+  ]
+}

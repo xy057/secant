@@ -1,0 +1,563 @@
+{
+  "format": "secant.preset",
+  "version": 1,
+  "vendor": "Orchestral Tools",
+  "collection": "Berlin Woodwinds | Additional Instruments",
+  "player": "SINE Player",
+  "noteConvention": "C3=60",
+  "source": "https://orchestraltools.helpscoutdocs.com/article/353-berlin-woodwinds-additional-instruments-notes",
+  "keyswitchBase": "C0",
+  "instruments": [
+    {
+      "name": "Eb Clarinet",
+      "group": "Eb Clarinet",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Eb Clarinet Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "C#6",
+              "lo": 55,
+              "hi": 97
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "transitions": "2nd-8th",
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Eb Clarinet Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "C#6",
+              "lo": 55,
+              "hi": 97
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Eb Clarinet Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "C#6",
+              "lo": 55,
+              "hi": 97
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 8,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Eb Clarinet Portato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "C#6",
+              "lo": 55,
+              "hi": 97
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Eb Clarinet TO Trills HT-WT",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "C#6",
+              "lo": 55,
+              "hi": 97
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "transitions": "WT",
+          "tempoMeasured": true,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Bass Clarinet",
+      "group": "Bass Clarinet",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Bass Clarinet Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "Bb0",
+              "to": "C#4",
+              "lo": 34,
+              "hi": 73
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "transitions": "2nd-8th",
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Bass Clarinet Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb0",
+              "to": "C#4",
+              "lo": 34,
+              "hi": 73
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Bass Clarinet Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb0",
+              "to": "C#4",
+              "lo": 34,
+              "hi": 73
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 8,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Bass Clarinet Staccato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb0",
+              "to": "C#4",
+              "lo": 34,
+              "hi": 73
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 8,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Bass Clarinet Portato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb0",
+              "to": "C#4",
+              "lo": 34,
+              "hi": 73
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Bass Clarinet Portato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb0",
+              "to": "C#4",
+              "lo": 34,
+              "hi": 73
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Bass Clarinet Sforzando",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb0",
+              "to": "C#4",
+              "lo": 34,
+              "hi": 73
+            }
+          ],
+          "roundRobins": 2,
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": null,
+          "issues": [
+            "no dynamic layer info in docs; assuming 1 layer"
+          ]
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Bass Clarinet Double Tongue",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb0",
+              "to": "C#4",
+              "lo": 34,
+              "hi": 73
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Bass Clarinet Triple Tongue",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb0",
+              "to": "C#4",
+              "lo": 34,
+              "hi": 73
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Bass Clarinet TO Trills HT-WT",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb0",
+              "to": "D4",
+              "lo": 34,
+              "hi": 74
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "transitions": "WT",
+          "tempoMeasured": true,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Contrabassoon",
+      "group": "Contrabassoon",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Contrabassoon Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "Bb-1",
+              "to": "B2",
+              "lo": 22,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "transitions": "2nd-8th",
+          "variations": [
+            "Without",
+            "Romantic"
+          ],
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Contrabassoon Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb-1",
+              "to": "B2",
+              "lo": 22,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "variations": [
+            "Without",
+            "Romantic"
+          ],
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Contrabassoon Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb-1",
+              "to": "B2",
+              "lo": 22,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 8,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Contrabassoon Portato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb-1",
+              "to": "B2",
+              "lo": 22,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Contrabassoon Portato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb-1",
+              "to": "B2",
+              "lo": 22,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Contrabassoon Sforzando",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb-1",
+              "to": "B2",
+              "lo": 22,
+              "hi": 59
+            }
+          ],
+          "roundRobins": 2,
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": null,
+          "issues": [
+            "no dynamic layer info in docs; assuming 1 layer"
+          ]
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Contrabassoon Double Tongue",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb-1",
+              "to": "B2",
+              "lo": 22,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Contrabassoon Triple Tongue",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "Bb-1",
+              "to": "B2",
+              "lo": 22,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 2,
+          "issues": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1312 @@
+{
+  "format": "secant.preset",
+  "version": 1,
+  "vendor": "Orchestral Tools",
+  "collection": "Berlin Strings | First Chairs",
+  "player": "SINE Player",
+  "noteConvention": "C3=60",
+  "source": "https://orchestraltools.helpscoutdocs.com/article/368-berlin-strings-first-chairs-notes",
+  "keyswitchBase": "C0",
+  "instruments": [
+    {
+      "name": "Violin I",
+      "group": "Violin I",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Violin I Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "transitions": "1st-8th",
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Violin I Sustains Imm",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Violin I Sustains Acc",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Violin I Sustains Soft",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Violin I Tremolo",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Violin I Spiccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 6,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Violin I Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Violin I Portato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Violin I Portato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Violin I Pizzicato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "Violin I TO Trills HT-WT",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Violin II",
+      "group": "Violin II",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Violin II Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "transitions": "1st-8th",
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Violin II Sustains Imm",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Violin II Sustains Acc",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Violin II Sustains Soft",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Violin II Tremolo",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Violin II Spiccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Violin II Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 6,
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Violin II Portato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Violin II Portato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Violin II Pizzicato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "Violin II TO Trills HT-WT",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Viola",
+      "group": "Viola",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Viola Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C5",
+              "lo": 48,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "transitions": "1st-8th",
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Viola Sustains Imm",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C5",
+              "lo": 48,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Viola Sustains Acc",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C5",
+              "lo": 48,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Viola Sustains Soft",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C5",
+              "lo": 48,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Viola Tremolo",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C5",
+              "lo": 48,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Viola Spiccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C5",
+              "lo": 48,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 6,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Viola Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C5",
+              "lo": 48,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Viola Portato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C5",
+              "lo": 48,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Viola Portato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C5",
+              "lo": 48,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Viola Pizzicato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C5",
+              "lo": 48,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "Viola TO Trills HT-WT",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C5",
+              "lo": 48,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Cello",
+      "group": "Cello",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Cello Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "transitions": "1st-8th",
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Cello Sustains Imm",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Cello Sustains Acc",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Cello Sustains Soft",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Cello Tremolo",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Cello Spiccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 6,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Cello Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Cello Portato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Cello Portato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Cello Pizzicato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "Cello TO Trills HT-WT",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Bass",
+      "group": "Bass",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Bass Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "G2",
+              "lo": 24,
+              "hi": 55
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "transitions": "1st-8th",
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Bass Sustains Imm",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "G2",
+              "lo": 24,
+              "hi": 55
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Bass Sustains Acc",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "G2",
+              "lo": 24,
+              "hi": 55
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Bass Sustains Soft",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "G2",
+              "lo": 24,
+              "hi": 55
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Bass Tremolo",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "G2",
+              "lo": 24,
+              "hi": 55
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Bass Spiccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "G2",
+              "lo": 24,
+              "hi": 55
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 6,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Bass Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "G2",
+              "lo": 24,
+              "hi": 55
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Bass Portato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "G2",
+              "lo": 24,
+              "hi": 55
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Bass Portato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "G2",
+              "lo": 24,
+              "hi": 55
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Bass Pizzicato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "G2",
+              "lo": 24,
+              "hi": 55
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "Bass Trills HT",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "G2",
+              "lo": 24,
+              "hi": 55
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    }
+  ]
+}

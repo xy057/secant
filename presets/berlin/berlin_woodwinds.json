@@ -1,0 +1,4465 @@
+{
+  "format": "secant.preset",
+  "version": 1,
+  "vendor": "Orchestral Tools",
+  "collection": "Berlin Woodwinds",
+  "player": "SINE Player",
+  "noteConvention": "C3=60",
+  "source": "https://orchestraltools.helpscoutdocs.com/article/410-berlin-woodwinds-notes",
+  "keyswitchBase": "C0",
+  "instruments": [
+    {
+      "name": "Piccolo Flute",
+      "group": "Flutes",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "D4",
+              "to": "C7",
+              "lo": 74,
+              "hi": 108
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D4",
+              "to": "C7",
+              "lo": 74,
+              "hi": 108
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Sustains Accented",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D4",
+              "to": "C7",
+              "lo": 74,
+              "hi": 108
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Marcato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D4",
+              "to": "C7",
+              "lo": 74,
+              "hi": 108
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Marcato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D4",
+              "to": "C7",
+              "lo": 74,
+              "hi": 108
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D4",
+              "to": "C7",
+              "lo": 74,
+              "hi": 108
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Staccato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D4",
+              "to": "C7",
+              "lo": 74,
+              "hi": 108
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 7,
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Repetitions 1/16",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D4",
+              "to": "C7",
+              "lo": 74,
+              "hi": 108
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Repetitions 1/8 Triplet",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D4",
+              "to": "C7",
+              "lo": 74,
+              "hi": 108
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Trills",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D4",
+              "to": "B6",
+              "lo": 74,
+              "hi": 107
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "Trills Single",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D4",
+              "to": "B6",
+              "lo": 74,
+              "hi": 107
+            }
+          ],
+          "dynamics": [
+            "ff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 12,
+          "docNumber": 12,
+          "name": "Trills Sforzando",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D4",
+              "to": "B6",
+              "lo": 74,
+              "hi": 107
+            }
+          ],
+          "dynamics": [
+            "ff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 13,
+          "docNumber": 13,
+          "name": "Playable Runs + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "D4",
+              "to": "C7",
+              "lo": 74,
+              "hi": 108
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 5,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 14,
+          "docNumber": 14,
+          "name": "Playable Runs",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D4",
+              "to": "C7",
+              "lo": 74,
+              "hi": 108
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 5,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Flute 1",
+      "group": "Flutes",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Portato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Portato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Sforzando",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 2,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 7,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Staccato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 7,
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Doubles",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Triples",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Trills",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "G5",
+              "lo": 60,
+              "hi": 91
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "Trills Measured",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "G5",
+              "lo": 60,
+              "hi": 91
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 12,
+          "docNumber": 12,
+          "name": "Trills Single",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 2,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 13,
+          "docNumber": 13,
+          "name": "Trills Sforzando",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "B5",
+              "lo": 60,
+              "hi": 95
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 2,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 14,
+          "docNumber": 14,
+          "name": "Playable Runs + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "B5",
+              "lo": 60,
+              "hi": 95
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 7,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 15,
+          "docNumber": 15,
+          "name": "Playable Runs",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "B5",
+              "lo": 60,
+              "hi": 95
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 7,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Flute 2",
+      "group": "Flutes",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Flute Sustains + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Sustains Soft",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Sustains Accented",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Marcato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Portato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Marcato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Portato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 6,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Staccato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 7,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "Repetitions 1/16",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 12,
+          "docNumber": 12,
+          "name": "Repetitions 1/8 Triplet",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 13,
+          "docNumber": 13,
+          "name": "Trills",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "A#5",
+              "lo": 60,
+              "hi": 94
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 14,
+          "docNumber": 14,
+          "name": "Trills Measured Down",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C#3",
+              "to": "C#6",
+              "lo": 61,
+              "hi": 97
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 15,
+          "docNumber": 15,
+          "name": "Trills Measured Up",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 16,
+          "docNumber": 16,
+          "name": "Trills Single",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "B5",
+              "lo": 60,
+              "hi": 95
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 17,
+          "docNumber": 17,
+          "name": "Trills Sforzando",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "B5",
+              "lo": 60,
+              "hi": 95
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 18,
+          "docNumber": 18,
+          "name": "Playable Runs + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 19,
+          "docNumber": 19,
+          "name": "Playable Runs",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Flute 3",
+      "group": "Flutes",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Sustains Soft",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Sustains Accented",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Marcato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 2,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Portato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Marcato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Portato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 6,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Staccato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 7,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 12,
+          "name": "Repetitions 1/16",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": [
+            "docs number this articulation 12 but it is #11 in the list"
+          ]
+        },
+        {
+          "index": 12,
+          "docNumber": 13,
+          "name": "Repetitions 1/8 Triplet",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": [
+            "docs number this articulation 13 but it is #12 in the list"
+          ]
+        },
+        {
+          "index": 13,
+          "docNumber": 14,
+          "name": "Trills",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": [
+            "docs number this articulation 14 but it is #13 in the list"
+          ]
+        },
+        {
+          "index": 14,
+          "docNumber": 15,
+          "name": "Trills Single",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": [
+            "docs number this articulation 15 but it is #14 in the list"
+          ]
+        },
+        {
+          "index": 15,
+          "docNumber": 16,
+          "name": "Trills Sforzando",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": [
+            "docs number this articulation 16 but it is #15 in the list"
+          ]
+        },
+        {
+          "index": 16,
+          "docNumber": 17,
+          "name": "Playable Runs + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 6,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": [
+            "docs number this articulation 17 but it is #16 in the list"
+          ]
+        },
+        {
+          "index": 17,
+          "docNumber": 18,
+          "name": "Playable Runs",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "C6",
+              "lo": 60,
+              "hi": 96
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 6,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": [
+            "docs number this articulation 18 but it is #17 in the list"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Alto Flute",
+      "group": "Flutes",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D5",
+              "lo": 55,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D5",
+              "lo": 55,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Sustains Soft",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D5",
+              "lo": 55,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Portato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D5",
+              "lo": 55,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Portato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D5",
+              "lo": 55,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Staccato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D5",
+              "lo": 55,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 7,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Playable Runs + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D5",
+              "lo": 55,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Playable Runs",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D5",
+              "lo": 55,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Oboe 1",
+      "group": "Oboes",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Sustains Soft",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Sustains Accented",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Marcato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 2,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Portato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 2,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Marcato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Portato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Staccato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 6,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "Repetitions 1/16",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 12,
+          "docNumber": 12,
+          "name": "Repetitions 1/8 Triplet",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 13,
+          "docNumber": 13,
+          "name": "Trills",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "E5",
+              "lo": 60,
+              "hi": 88
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 14,
+          "docNumber": 14,
+          "name": "Trills Measured Down",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C#3",
+              "to": "F#5",
+              "lo": 61,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 15,
+          "docNumber": 15,
+          "name": "Trills Measured Up",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "E5",
+              "lo": 60,
+              "hi": 88
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 16,
+          "docNumber": 16,
+          "name": "Trills Single",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F#5",
+              "lo": 60,
+              "hi": 90
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": [
+            "docs row is corrupted ('R: C3-F5 | L: 2 (p, f) | S: Legato, Runs 16. Trills Single'); header recovered, stale data ignored"
+          ]
+        },
+        {
+          "index": 17,
+          "docNumber": 17,
+          "name": "Trills Sforzando",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "E5",
+              "lo": 60,
+              "hi": 88
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 18,
+          "docNumber": 18,
+          "name": "Playable Runs + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 5,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 19,
+          "docNumber": 19,
+          "name": "Playable Runs",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 5,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Oboe 2",
+      "group": "Oboes",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Sustains Soft",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Sustains Accented",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Marcato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 2,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Portato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 2,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Marcato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Portato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Staccato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 7,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "Repetitions 1/16",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 12,
+          "docNumber": 12,
+          "name": "Repetitions 1/8 Triplet",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 13,
+          "docNumber": 13,
+          "name": "Trills",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "E5",
+              "lo": 60,
+              "hi": 88
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 14,
+          "docNumber": 14,
+          "name": "Trills Single",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "E5",
+              "lo": 60,
+              "hi": 88
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 15,
+          "docNumber": 15,
+          "name": "Trills Sforzando",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "E5",
+              "lo": 60,
+              "hi": 88
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 16,
+          "docNumber": 16,
+          "name": "Playable Runs + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 5,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 17,
+          "docNumber": 17,
+          "name": "Playable Runs",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C3",
+              "to": "F5",
+              "lo": 60,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 5,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "English Horn",
+      "group": "Oboes",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "F2",
+              "to": "B4",
+              "lo": 53,
+              "hi": 83
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F2",
+              "to": "B4",
+              "lo": 53,
+              "hi": 83
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Sustains Soft",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F2",
+              "to": "B4",
+              "lo": 53,
+              "hi": 83
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Sustains Accented",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F2",
+              "to": "B4",
+              "lo": 53,
+              "hi": 83
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Marcato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F2",
+              "to": "B4",
+              "lo": 53,
+              "hi": 83
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Portato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F2",
+              "to": "B4",
+              "lo": 53,
+              "hi": 83
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Marcato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F2",
+              "to": "B4",
+              "lo": 53,
+              "hi": 83
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Portato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F2",
+              "to": "B4",
+              "lo": 53,
+              "hi": 83
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F2",
+              "to": "B4",
+              "lo": 53,
+              "hi": 83
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Staccato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F2",
+              "to": "B4",
+              "lo": 53,
+              "hi": 83
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "Trills",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F2",
+              "to": "A#4",
+              "lo": 53,
+              "hi": 82
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 12,
+          "docNumber": 12,
+          "name": "Trills Measured",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F#2",
+              "to": "B4",
+              "lo": 54,
+              "hi": 83
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 13,
+          "docNumber": 13,
+          "name": "Trills Single",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F2",
+              "to": "A#4",
+              "lo": 53,
+              "hi": 82
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 14,
+          "docNumber": 14,
+          "name": "Trills Sforzando",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F2",
+              "to": "A#4",
+              "lo": 53,
+              "hi": 82
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 15,
+          "docNumber": 15,
+          "name": "Playable Runs + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "F2",
+              "to": "B4",
+              "lo": 53,
+              "hi": 83
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 5,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 16,
+          "docNumber": 16,
+          "name": "Playable Runs",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "F2",
+              "to": "B4",
+              "lo": 53,
+              "hi": 83
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 5,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Clarinet 1",
+      "group": "Clarinets",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "F5",
+              "lo": 50,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "F5",
+              "lo": 50,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Sustains Soft",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "F5",
+              "lo": 50,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Sustains Accented",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "F5",
+              "lo": 50,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Marcato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "F5",
+              "lo": 50,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 2,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Portato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "F5",
+              "lo": 50,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 2,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Marcato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "F5",
+              "lo": 50,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 2,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Portato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "F5",
+              "lo": 50,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 2,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "F5",
+              "lo": 50,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Staccato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "F5",
+              "lo": 50,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 7,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "Repetitions 1/16",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "F5",
+              "lo": 50,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 12,
+          "docNumber": 12,
+          "name": "Repetitions 1/8 Triplet",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "F5",
+              "lo": 50,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 13,
+          "docNumber": 13,
+          "name": "Trills",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "E5",
+              "lo": 50,
+              "hi": 88
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 14,
+          "docNumber": 14,
+          "name": "Trills Single",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "E5",
+              "lo": 50,
+              "hi": 88
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 15,
+          "docNumber": 15,
+          "name": "Trills Sforzando",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "E5",
+              "lo": 50,
+              "hi": 88
+            }
+          ],
+          "dynamics": [
+            "ff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 16,
+          "docNumber": 16,
+          "name": "Playable Runs + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "F5",
+              "lo": 50,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 5,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 17,
+          "docNumber": 17,
+          "name": "Playable Runs",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "F5",
+              "lo": 50,
+              "hi": 89
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 5,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Clarinet 2",
+      "group": "Clarinets",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "D5",
+              "lo": 50,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "D5",
+              "lo": 50,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Marcato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "D5",
+              "lo": 50,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 4,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Marcato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "D5",
+              "lo": 50,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "D#5",
+              "lo": 50,
+              "hi": 87
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 7,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Staccato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "D5",
+              "lo": 50,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 4,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Doubles",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "C#5",
+              "lo": 50,
+              "hi": 85
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 2,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Triples",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "C#5",
+              "lo": 50,
+              "hi": 85
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 2,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Trills",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "C#5",
+              "lo": 50,
+              "hi": 85
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Trills Measured",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "C#5",
+              "lo": 50,
+              "hi": 85
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "Trills Single",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "C#5",
+              "lo": 50,
+              "hi": 85
+            }
+          ],
+          "dynamics": [
+            "ff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 12,
+          "docNumber": 12,
+          "name": "Trills Sforzando",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "C#5",
+              "lo": 50,
+              "hi": 85
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 13,
+          "docNumber": 13,
+          "name": "Playable Runs + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "C#5",
+              "lo": 50,
+              "hi": 85
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 7,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 14,
+          "docNumber": 14,
+          "name": "Playable Runs",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D2",
+              "to": "C#5",
+              "lo": 50,
+              "hi": 85
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 7,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Bassoon 1",
+      "group": "Bassoons",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "A#0",
+              "to": "A3",
+              "lo": 34,
+              "hi": 69
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato"
+          ],
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "A#0",
+              "to": "A3",
+              "lo": 34,
+              "hi": 69
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato"
+          ],
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Portato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "A#0",
+              "to": "A3",
+              "lo": 34,
+              "hi": 69
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato"
+          ],
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Portato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "A#0",
+              "to": "A3",
+              "lo": 34,
+              "hi": 69
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato"
+          ],
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Sforzando",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "A#0",
+              "to": "A3",
+              "lo": 34,
+              "hi": 69
+            }
+          ],
+          "dynamics": [
+            "ff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Fortepiano",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "A#0",
+              "to": "A3",
+              "lo": 34,
+              "hi": 69
+            }
+          ],
+          "dynamics": [
+            "ff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "A#0",
+              "to": "A3",
+              "lo": 34,
+              "hi": 69
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 8,
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Staccato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "A#0",
+              "to": "A3",
+              "lo": 34,
+              "hi": 69
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 9,
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Doubles",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "A#0",
+              "to": "A3",
+              "lo": 34,
+              "hi": 69
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Triples",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "A#0",
+              "to": "A3",
+              "lo": 34,
+              "hi": 69
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": null,
+          "name": "Trills",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "A#0",
+              "to": "A3",
+              "lo": 34,
+              "hi": 69
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": [
+            "articulation is unnumbered in the docs"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bassoon 2",
+      "group": "Bassoons",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "A#0",
+              "to": "A3",
+              "lo": 34,
+              "hi": 69
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato"
+          ],
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "A#0",
+              "to": "A3",
+              "lo": 34,
+              "hi": 69
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato"
+          ],
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Portato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "A#0",
+              "to": "A3",
+              "lo": 34,
+              "hi": 69
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato"
+          ],
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Portato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "A#0",
+              "to": "A3",
+              "lo": 34,
+              "hi": 69
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato"
+          ],
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Sforzando",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "A#0",
+              "to": "A3",
+              "lo": 34,
+              "hi": 69
+            }
+          ],
+          "dynamics": [
+            "ff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "A#0",
+              "to": "A3",
+              "lo": 34,
+              "hi": 69
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 7,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Staccato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "A#0",
+              "to": "A3",
+              "lo": 34,
+              "hi": 69
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 7,
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Doubles",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "A#0",
+              "to": "A3",
+              "lo": 34,
+              "hi": 69
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Triples",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "A#0",
+              "to": "A3",
+              "lo": 34,
+              "hi": 69
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Trills",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "A#0",
+              "to": "A3",
+              "lo": 34,
+              "hi": 69
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5070 @@
+{
+  "format": "secant.preset",
+  "version": 1,
+  "vendor": "Orchestral Tools",
+  "collection": "Berlin Strings",
+  "player": "SINE Player",
+  "noteConvention": "C3=60",
+  "source": "https://orchestraltools.helpscoutdocs.com/article/411-berlin-strings-notes",
+  "keyswitchBase": "C0",
+  "instruments": [
+    {
+      "name": "Full Strings",
+      "group": "Full Strings",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "D6",
+              "lo": 24,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains Soft",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "D6",
+              "lo": 24,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Spiccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "D6",
+              "lo": 24,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 7,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Pizzicato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "D6",
+              "lo": 24,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 5,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Violins I Longs and Shorts",
+      "group": "Violins I",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Fingered",
+            "Portamento",
+            "Runs",
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Fingered",
+            "Portamento",
+            "Runs",
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Sustains Soft",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Fingered",
+            "Portamento",
+            "Runs",
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Sustains Accented",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Fingered",
+            "Portamento",
+            "Runs",
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Sustains Blurred",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Fingered",
+            "Portamento",
+            "Runs",
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Espressivo Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Fingered",
+            "Portamento",
+            "Runs",
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Espressivo Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Fingered",
+            "Portamento",
+            "Runs",
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Portato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "legatoTypes": [
+            "Fingered",
+            "Portamento",
+            "Runs",
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Portato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "legatoTypes": [
+            "Fingered",
+            "Portamento",
+            "Runs",
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Portato Blurred",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Fingered",
+            "Portamento",
+            "Runs",
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "Martele Bold",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "fff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Fingered",
+            "Portamento",
+            "Runs",
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 12,
+          "docNumber": 12,
+          "name": "Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 7,
+          "issues": []
+        },
+        {
+          "index": 13,
+          "docNumber": 13,
+          "name": "Staccato Blurred",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 14,
+          "docNumber": 14,
+          "name": "Spiccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 6,
+          "issues": []
+        },
+        {
+          "index": 15,
+          "docNumber": 15,
+          "name": "Spiccato Serial",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 24,
+          "issues": []
+        },
+        {
+          "index": 16,
+          "docNumber": 16,
+          "name": "Spiccato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "issues": []
+        },
+        {
+          "index": 17,
+          "docNumber": 17,
+          "name": "Spiccato Blurred",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 18,
+          "docNumber": 18,
+          "name": "Staccato Bold",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "fff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 19,
+          "docNumber": 19,
+          "name": "Pizzicato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 20,
+          "docNumber": 20,
+          "name": "Pizzicato Tremolo",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "ppp"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 21,
+          "docNumber": 21,
+          "name": "Pizzicato Serial",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 6,
+          "issues": []
+        },
+        {
+          "index": 22,
+          "docNumber": 22,
+          "name": "Doubles",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 23,
+          "docNumber": 23,
+          "name": "Triples",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 9,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Violins I Ornaments",
+      "group": "Violins I",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Tremolo",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Tremolo Accented",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Tremolo Short",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Tremolo Short Decorative",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Trills",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "ppp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Trills Accented",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Trills Short",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Trills Short Decorative",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Violins I Dynamics",
+      "group": "Violins I",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Crescendo Long",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "E6",
+              "lo": 55,
+              "hi": 100
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slured"
+          ],
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Crescendo Short",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "E6",
+              "lo": 55,
+              "hi": 100
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Decrescendo Long",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "E6",
+              "lo": 55,
+              "hi": 100
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Decrescendo Short",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "E6",
+              "lo": 55,
+              "hi": 100
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Swells Long",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "E6",
+              "lo": 55,
+              "hi": 100
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Swells Short",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "E6",
+              "lo": 55,
+              "hi": 100
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Swells Long Rebow",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "E6",
+              "lo": 55,
+              "hi": 100
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Swells Short Rebow",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "E6",
+              "lo": 55,
+              "hi": 100
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Violins I Repetitions",
+      "group": "Violins I",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Repetitions 16th",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Repetitions Triplets",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Violins I Octave Scale Runs",
+      "group": "Violins I",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "C maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "A4",
+              "lo": 55,
+              "hi": 81
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "C# maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": [
+            "could not parse range part 'G#2-A#'",
+            "no playable range"
+          ]
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "D maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "A4",
+              "lo": 55,
+              "hi": 81
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "D# maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G#2",
+              "to": "A#4",
+              "lo": 56,
+              "hi": 82
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "E maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G#2",
+              "to": "B4",
+              "lo": 56,
+              "hi": 83
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "F maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "A2",
+              "to": "C5",
+              "lo": 57,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "F# maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G#2",
+              "to": "D#5",
+              "lo": 56,
+              "hi": 87
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "G maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "A5",
+              "lo": 55,
+              "hi": 93
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "G# maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G#2",
+              "to": "A#4",
+              "lo": 56,
+              "hi": 82
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "A maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G#2",
+              "to": "A4",
+              "lo": 56,
+              "hi": 81
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "A# maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": [
+            "could not parse range part 'A2-A#'",
+            "no playable range"
+          ]
+        },
+        {
+          "index": 12,
+          "docNumber": 12,
+          "name": "B maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G#2",
+              "to": "G#4",
+              "lo": 56,
+              "hi": 80
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Violins II Longs and Shorts",
+      "group": "Violins II",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Sustains Soft",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Sustains Accented",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Espressivo Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Espressivo Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Portato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Portato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Martele bold",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "fff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 7,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "Staccato Bold",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "fff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 12,
+          "docNumber": 12,
+          "name": "Staccato Blurred",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 13,
+          "docNumber": 13,
+          "name": "Spiccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 6,
+          "issues": []
+        },
+        {
+          "index": 14,
+          "docNumber": 14,
+          "name": "Spiccato Serial",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 19,
+          "issues": []
+        },
+        {
+          "index": 15,
+          "docNumber": 15,
+          "name": "Pizzicato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 16,
+          "docNumber": 16,
+          "name": "Doubles",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 17,
+          "docNumber": 17,
+          "name": "Triplets",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 6,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Violins II Ornaments",
+      "group": "Violins II",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Tremolo",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "p",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Tremolo Accented",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Tremolo Short",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Tremolo Short Decorative",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 4,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Trills",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Trills Accented",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Trills Short",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Trills Short Decorative",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 4,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Violins II Dynamics",
+      "group": "Violins II",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Crescendo Long",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "E6",
+              "lo": 55,
+              "hi": 100
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Crescendo Short",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "E6",
+              "lo": 55,
+              "hi": 100
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Decrescendo Long",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "E6",
+              "lo": 55,
+              "hi": 100
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Decrescendo Short",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "E6",
+              "lo": 55,
+              "hi": 100
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Swells Long",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "E6",
+              "lo": 55,
+              "hi": 100
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Swells Short",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "E6",
+              "lo": 55,
+              "hi": 100
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Swells Long Rebow",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "E6",
+              "lo": 55,
+              "hi": 100
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Swell Short Rebow",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "E6",
+              "lo": 55,
+              "hi": 100
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Violins II Repetitions",
+      "group": "Violins II",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Repetitions 16th",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Repetitions Triplets",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "D6",
+              "lo": 55,
+              "hi": 98
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Violins II Octave Scale Runs",
+      "group": "Violins II",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "C maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "A4",
+              "lo": 55,
+              "hi": 81
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "C# maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": [
+            "could not parse range part 'G#2-A#'",
+            "no playable range"
+          ]
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "D maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "A4",
+              "lo": 55,
+              "hi": 81
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "D# maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G#2",
+              "to": "A#4",
+              "lo": 56,
+              "hi": 82
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "E maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G#2",
+              "to": "B4",
+              "lo": 56,
+              "hi": 83
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "F maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "A2",
+              "to": "C5",
+              "lo": 57,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "F# maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G#2",
+              "to": "D#5",
+              "lo": 56,
+              "hi": 87
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "G maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G2",
+              "to": "A5",
+              "lo": 55,
+              "hi": 93
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "G# maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G#2",
+              "to": "A#4",
+              "lo": 56,
+              "hi": 82
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "A maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G#2",
+              "to": "A4",
+              "lo": 56,
+              "hi": 81
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "A# maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": [
+            "could not parse range part 'A2-A#'",
+            "no playable range"
+          ]
+        },
+        {
+          "index": 12,
+          "docNumber": 12,
+          "name": "B maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "G#2",
+              "to": "G#4",
+              "lo": 56,
+              "hi": 80
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Violas Longs and Shorts",
+      "group": "Violas",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D5",
+              "lo": 48,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D5",
+              "lo": 48,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Sustains Soft",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D5",
+              "lo": 48,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Sustains Accented",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D5",
+              "lo": 48,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Espressivo Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D5",
+              "lo": 48,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Espressivo Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D5",
+              "lo": 48,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Portato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D5",
+              "lo": 48,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Portato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D5",
+              "lo": 48,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Martele Bold",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D5",
+              "lo": 48,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "fff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D5",
+              "lo": 48,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 7,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "Staccato Bold",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D5",
+              "lo": 48,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "fff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 12,
+          "docNumber": 12,
+          "name": "Staccato Blurred",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D5",
+              "lo": 48,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 13,
+          "docNumber": 13,
+          "name": "Spiccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D5",
+              "lo": 48,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 6,
+          "issues": []
+        },
+        {
+          "index": 14,
+          "docNumber": 14,
+          "name": "Spiccato Serial",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D5",
+              "lo": 48,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 19,
+          "issues": []
+        },
+        {
+          "index": 15,
+          "docNumber": 15,
+          "name": "Pizzicato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D5",
+              "lo": 48,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 16,
+          "docNumber": 16,
+          "name": "Pizzicato Serial",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D5",
+              "lo": 48,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 6,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Violas Ornaments",
+      "group": "Violas",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Tremolo",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D5",
+              "lo": 48,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Tremolo Accented",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D5",
+              "lo": 48,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Tremolo Short",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D5",
+              "lo": 48,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Tremolo Short Decorative",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D5",
+              "lo": 48,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Trills",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D5",
+              "lo": 48,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Trills Accented",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D5",
+              "lo": 48,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Trills Short Decorative",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "A5",
+              "lo": 48,
+              "hi": 93
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 4,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Violas Dynamics",
+      "group": "Violas",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Crescendo Long",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C#5",
+              "lo": 48,
+              "hi": 85
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Crescendo Short",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C#5",
+              "lo": 48,
+              "hi": 85
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Decrescendo Long",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C#5",
+              "lo": 48,
+              "hi": 85
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Decrescendo Short",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C#5",
+              "lo": 48,
+              "hi": 85
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Swells Long",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C#5",
+              "lo": 48,
+              "hi": 85
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Swells Short",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C#5",
+              "lo": 48,
+              "hi": 85
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Swells Long Rebow",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C#5",
+              "lo": 48,
+              "hi": 85
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Swells Short Rebow",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "C#5",
+              "lo": 48,
+              "hi": 85
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Violas Repetitions",
+      "group": "Violas",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Repetitions 16th",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D5",
+              "lo": 48,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Repetitions Triplets",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C2",
+              "to": "D5",
+              "lo": 48,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Celli Longs and Shorts",
+      "group": "Celli",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Sustains Soft",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Sustains Accented",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Espressivo Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Espressivo Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Portato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Portato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 4,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Martele Bold",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "fff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Portamento",
+            "Slurred",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C#5",
+              "lo": 36,
+              "hi": 85
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 7,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "Staccato Blurred",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C#5",
+              "lo": 36,
+              "hi": 85
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 5,
+          "issues": []
+        },
+        {
+          "index": 12,
+          "docNumber": 12,
+          "name": "Spiccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 6,
+          "issues": []
+        },
+        {
+          "index": 13,
+          "docNumber": 13,
+          "name": "Spiccato Serial",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 19,
+          "issues": []
+        },
+        {
+          "index": 14,
+          "docNumber": 14,
+          "name": "Pizzicato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 5,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Celli Ornaments",
+      "group": "Celli",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Tremolo",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mp",
+            "f",
+            "ff"
+          ],
+          "dynamicCountDocs": 4,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Tremolo Accented",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Tremolo Short",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Tremolo Short Decorative",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 4,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Trills",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Trills Short",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "D5",
+              "lo": 36,
+              "hi": 86
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 2,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Trills Short Decorative",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 4,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Celli Dynamics",
+      "group": "Celli",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Crescendo Long",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "G#4",
+              "lo": 36,
+              "hi": 80
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Crescendo Short",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "G#4",
+              "lo": 36,
+              "hi": 80
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Decrescendo Long",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "G#4",
+              "lo": 36,
+              "hi": 80
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Decrescendo Short",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "G#4",
+              "lo": 36,
+              "hi": 80
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Swells Long",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "G4",
+              "lo": 36,
+              "hi": 79
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Swells Short",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "G4",
+              "lo": 36,
+              "hi": 79
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Swells Long Rebow",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "G4",
+              "lo": 36,
+              "hi": 79
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Swells Short Rebow",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "G4",
+              "lo": 36,
+              "hi": 79
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Celli Repetitions",
+      "group": "Celli",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Repetitions 16th",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Repetitions Triplets",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C5",
+              "lo": 36,
+              "hi": 84
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Celli Octave Scale Runs",
+      "group": "Celli",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "C maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C3",
+              "lo": 36,
+              "hi": 60
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "C# maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C#1",
+              "to": "C#3",
+              "lo": 37,
+              "hi": 61
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "D maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C#1",
+              "to": "B2",
+              "lo": 37,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "D# maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D1",
+              "to": "C3",
+              "lo": 38,
+              "hi": 60
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "E maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C#1",
+              "to": "B2",
+              "lo": 37,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "F maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D1",
+              "to": "C3",
+              "lo": 38,
+              "hi": 60
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "F# maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C#1",
+              "to": "B2",
+              "lo": 37,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "G maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C1",
+              "to": "C3",
+              "lo": 36,
+              "hi": 60
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "G# maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C#1",
+              "to": "C#3",
+              "lo": 37,
+              "hi": 61
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "A maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C#1",
+              "to": "C#3",
+              "lo": 37,
+              "hi": 61
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "A# maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "D1",
+              "to": "D3",
+              "lo": 38,
+              "hi": 62
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 12,
+          "docNumber": 12,
+          "name": "B maj",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C#1",
+              "to": "B2",
+              "lo": 37,
+              "hi": 59
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Basses Longs and Shorts",
+      "group": "Basses",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Sustains + Legato",
+          "category": "long",
+          "legato": true,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C4",
+              "lo": 24,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Sustains",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C4",
+              "lo": 24,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Sustains Soft",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C4",
+              "lo": 24,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Sustains Accented",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C4",
+              "lo": 24,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Espressivo Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C4",
+              "lo": 24,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Espressivo Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C4",
+              "lo": 24,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Portato Long",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C4",
+              "lo": 24,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 4,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Portato Short",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C4",
+              "lo": 24,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 4,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 9,
+          "docNumber": 9,
+          "name": "Martele Bold",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C4",
+              "lo": 24,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "fff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 3,
+          "legatoTypes": [
+            "Legato",
+            "Runs"
+          ],
+          "issues": []
+        },
+        {
+          "index": 10,
+          "docNumber": 10,
+          "name": "Staccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C4",
+              "lo": 24,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 7,
+          "issues": []
+        },
+        {
+          "index": 11,
+          "docNumber": 11,
+          "name": "Staccato Bold",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C4",
+              "lo": 24,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "fff"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 3,
+          "issues": []
+        },
+        {
+          "index": 12,
+          "docNumber": 12,
+          "name": "Spiccato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C3",
+              "lo": 24,
+              "hi": 60
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 6,
+          "issues": []
+        },
+        {
+          "index": 13,
+          "docNumber": 13,
+          "name": "Spiccato Serial",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C3",
+              "lo": 24,
+              "hi": 60
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 19,
+          "issues": []
+        },
+        {
+          "index": 14,
+          "docNumber": 14,
+          "name": "Pizzicato",
+          "category": "short",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C3",
+              "lo": 24,
+              "hi": 60
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 5,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Basses Ornaments",
+      "group": "Basses",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Tremolo",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C4",
+              "lo": 24,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "pp",
+            "mp",
+            "ff"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Tremolo Accented",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C4",
+              "lo": 24,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "f"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Trills",
+          "category": "long",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C4",
+              "lo": 24,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mp",
+            "f"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Dynamics",
+      "group": "Basses",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Crescendo Long",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C4",
+              "lo": 24,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Crescendo Short",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C4",
+              "lo": 24,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 3,
+          "docNumber": 3,
+          "name": "Decrescendo Long",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C4",
+              "lo": 24,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 4,
+          "docNumber": 4,
+          "name": "Decrescendo Short",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C4",
+              "lo": 24,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mf",
+            "ff"
+          ],
+          "dynamicCountDocs": 2,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 5,
+          "docNumber": 5,
+          "name": "Swells Long",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C4",
+              "lo": 24,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 6,
+          "docNumber": 6,
+          "name": "Swells Short",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C4",
+              "lo": 24,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 7,
+          "docNumber": 7,
+          "name": "Swells Long Rebow",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C4",
+              "lo": 24,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        },
+        {
+          "index": 8,
+          "docNumber": 8,
+          "name": "Swells Short Rebow",
+          "category": "dynamic",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C4",
+              "lo": 24,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "mf"
+          ],
+          "dynamicCountDocs": 1,
+          "roundRobins": 1,
+          "legatoTypes": [
+            "Slurred"
+          ],
+          "issues": []
+        }
+      ]
+    },
+    {
+      "name": "Basses Repetitions",
+      "group": "Basses",
+      "articulations": [
+        {
+          "index": 1,
+          "docNumber": 1,
+          "name": "Repetitions 16th",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C4",
+              "lo": 24,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        },
+        {
+          "index": 2,
+          "docNumber": 2,
+          "name": "Repetitions Triplets",
+          "category": "phrase",
+          "legato": false,
+          "ranges": [
+            {
+              "from": "C0",
+              "to": "C4",
+              "lo": 24,
+              "hi": 72
+            }
+          ],
+          "dynamics": [
+            "p",
+            "mf",
+            "f"
+          ],
+          "dynamicCountDocs": 3,
+          "roundRobins": 1,
+          "issues": []
+        }
+      ]
+    }
+  ]
+}
