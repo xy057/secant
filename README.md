@@ -1,7 +1,7 @@
 # Secant
 
 Measures the transient point (the negative track delay) of every articulation × note × dynamic layer ×
-round robin of a VST3 instrument, with sub-sample precision. Works with any VST3 player; with SINE Player
+round robin of a VST3 instrument, works with most VST3 player; with SINE Player
 (Orchestral Tools) it also reads the player's own configuration. Results are JSON.
 
 ## Build
