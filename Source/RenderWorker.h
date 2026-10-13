@@ -15,6 +15,9 @@ struct RunContext
     std::atomic<int> loadedWorkers { 0 }; // workers that finished waiting for the plugin to sound
     std::atomic<int64_t> doneMilliUnits { 0 }; // finished jobs' units x 1000 (progress / ETA)
     std::atomic<int64_t> legatoTransitionsDone { 0 }; // live count (a legato job reports its results only when it ends)
+    // determinism check: the first worker to load runs it (it may switch `settings` to Never), the others
+    // wait for its verdict before taking a job
+    std::atomic<bool> determinismClaimed { false }, determinismDone { false };
     int64_t legatoTransitionsTotal = 0;
     double totalUnits = 0;
     ResultStore* store = nullptr;
@@ -59,6 +62,7 @@ private:
     // musical actions
     void sendKeyswitch (int note);
     void selectArticulation (int cc1);
+    void sendResetKey(); // after a reset pause: the player's RR reset key, if it has one
     bool playHit (int note, int velocity, int cc1, Category, Capture& out);
     void playTimedHit (int note, int velocity, int64_t tOn, int64_t hold, int captureLen, Capture& out);
     void runSeries (const ArticulationPlan&, int note, int dynIndex, std::vector<Hit>& out, std::vector<Series>& seriesOut);
@@ -83,6 +87,8 @@ private:
     int64_t lastNoteOn = std::numeric_limits<int32_t>::min();
     int currentKeyswitch = -1;
     bool waitForLoad();
+    bool awaitDeterminismVerdict();
+    void checkDeterminism();
     void runJob (const Job&);
 
     double msToSamples (double ms) const { return ms * ctx.settings.sampleRate / 1000.0; }

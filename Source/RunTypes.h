@@ -68,6 +68,18 @@ struct RunSettings
     // replaying from a reset state - series notes are spaced until the previous one is silent instead of
     // tail subtraction, no fast-repetition series, dynamics source not probed (velocity unless set)
     bool rrNeverResets = false;
+    // >= 0: the player returns its round robins to the first recording on this key (e.g. a Kontakt script's
+    // RR reset key) rather than after a pause. Sent after every reset pause, which then only lets tails settle.
+    int rrResetKey = -1;
+    // Before the first job, one worker renders a short series from the reset state until three
+    // consecutive renders agree on their first determinismNotes notes (the first render may be a
+    // cold-cache play). Exact tail subtraction, fast repetition, the dynamics probe and the legato chains
+    // all replay from the reset state; humanize (random gain / timing / sample start), random round robins
+    // or a reset that doesn't happen break that, so if they never agree the run switches to Never.
+    bool checkDeterminism = true;
+    int determinismNotes = 4;
+    int determinismMaxRenders = 6;
+    double determinismToleranceDb = -80.0; // largest sample difference, relative to the render's peak
     double rrMaxIntervalMs = 1200.0; // hard cap on in-series spacing (SINE restarts its cycle at ~1.5 s)
     // Fast repetition (short articulations): the plugin plays extra variants when notes repeat quickly.
     // Measured with tail subtraction: render(notes 0..k) - render(notes 0..k-1) = clean note k.
@@ -88,6 +100,9 @@ struct RunSettings
     double rrPriorSimilarity = 0.98;
     double rrPriorPeakDb = 1.0;     // the same recording replayed at a slightly different level (seen: first hit of a fast series, +0.4 dB)
     double rrPriorOnsetMs = 1.0;
+    // players without their own RR count: the preset's count instead - only the docs' claim, so it is
+    // used only once the series itself has repeated a recording exactly one such cycle later
+    bool useRRPriorFromPreset = true;
 
     // ---- legato / portamento transitions
     // Every transition is rendered as a legato chain A B A B ... from the plugin's reset state:
@@ -146,6 +161,13 @@ struct ArticulationPlan
 
     // round robins according to the player (0 = unknown / random)
     int expectedRoundRobins() const { return hasSine && ! sine.randomRR ? sine.roundRobins : 0; }
+    // cycle length for the RR prior: the player's own count, else (presetFallback) the preset's
+    int priorRoundRobins (bool presetFallback) const
+    {
+        if (hasSine)
+            return expectedRoundRobins();
+        return presetFallback && art.roundRobins > 1 ? art.roundRobins : 0;
+    }
     // silence that returns this articulation to its reset state: the configured pause, but never less
     // than the player's own round-robin reset time (SINE: resetAfterMS, e.g. 4000 ms for Berlin runs)
     double resetPauseMs (double configured) const { return hasSine ? juce::jmax (configured, sine.rrResetMs + 250.0) : configured; }

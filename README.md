@@ -28,6 +28,11 @@ Tagging `v*` builds macOS (universal) and Windows releases via GitHub Actions.
 
 Results go to `~/Documents/Secant/Results/`, each with a compact `*.delays.json` beside it.
 
+**RR reset** (players other than SINE): *Never* if the round robins keep cycling, a time if the player
+restarts them after a pause, or *Reset key* if it restarts them on a key. With anything but *Never*,
+Secant first checks that the player replays identically from that reset, and switches to *Never* if it
+doesn't (humanize, random round robins, wrong reset setting). The result is in `determinismCheck`.
+
 ## More
 
 - [PRESET.md](PRESET.md): writing a preset for another library

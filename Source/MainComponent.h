@@ -147,6 +147,7 @@ private:
     juce::ComboBox smoothBox;
     juce::Label rrResetLabel { {}, "RR reset" };
     juce::ComboBox rrResetBox;
+    juce::TextEditor rrResetKeyEdit; // shown for "Reset key"
     juce::ComboBox primaryBoxes[4];
     juce::ToggleButton legatoToggle { "Legato" };
     juce::Label legatoIntervalsLabel { {}, "Intervals" }, legatoGapsLabel { {}, "Spacing" }, legatoPrimaryLabel { {}, "Point" };

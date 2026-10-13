@@ -39,6 +39,8 @@ public:
     void setResolvedDynamics (int planIdx, DynamicsSource); // result of a worker's auto-detection
     // the player's own configuration (SINE state), exported for reference
     void setSineInfo (const SineState&, const juce::StringArray& notes);
+    // the determinism check's result; forcedNever: it switched the run to RR reset Never
+    void setDeterminism (const juce::var& result, bool forcedNever);
 
     juce::var toJson() const;
     juce::Result writeJson (const juce::File&) const;
@@ -55,6 +57,7 @@ private:
     std::vector<std::vector<LegatoHit>> legato;
     SineState sine;
     juce::StringArray sineNotes;
+    juce::var determinism;
     std::vector<int64_t> jobsDonePer;
     RunSettings settings;
     juce::String instrumentName, instrumentGroup, collectionName, collectionSource, vendor;

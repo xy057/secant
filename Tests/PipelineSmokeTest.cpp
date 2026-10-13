@@ -2,6 +2,9 @@
 // master state -> cloned RenderWorkers (parallel) -> RR cycle discovery -> analysis -> JSON.
 //
 //   PipelineSmokeTest --fake out.json            built-in deterministic RR sampler, with assertions
+//     FAKE_MODE=humanize                          ...with a random level per note: the determinism check must switch to Never
+//     FAKE_MODE=resetkey                          ...whose round robins reset only on a key (never after a pause)
+//     FAKE_MODE=noreset                           ...the same sampler, but Secant isn't told the key: must switch to Never
 //   PipelineSmokeTest <plugin.vst3> out.json [N] any VST3 instrument (default patch), no assertions
 //   PipelineSmokeTest <plugin.vst3> out.json N <state.pluginstate> <keyswitch> <notes,comma> <dyn,comma> [category]
 //                                            real instrument from a saved Secant plugin state
@@ -37,6 +40,10 @@ const FakeArticulation kFakeArts[] = {
 };
 constexpr int kLegatoArt = 4;
 constexpr double kRiseMs = 3.0;
+constexpr int kResetKey = 10; // FAKE_MODE=resetkey: this key resets every round-robin counter
+
+enum class FakeMode { normal, humanize, resetKey };
+FakeMode fakeMode = FakeMode::normal;
 
 // Fake legato transitions (ground truth):
 //   velocity < 64             -> "Portamento": log-frequency glide from 20 ms, 150 ms long
@@ -96,6 +103,7 @@ private:
         int note, rr, velocity, art;
         int64_t start;
         int64_t releaseAt = -1;
+        float gain = 1.0f; // FAKE_MODE=humanize: random level per note
         // legato voices: pitch path and continuous phase
         double fromHz = 0, toHz = 0;
         int64_t glideStart = 0, glideEnd = 0, lastOn = 0;
@@ -116,6 +124,12 @@ private:
     {
         if (m.isNoteOn())
         {
+            if (fakeMode == FakeMode::resetKey && m.getNoteNumber() == kResetKey)
+            {
+                for (auto& c : counters)
+                    c.clear();
+                return;
+            }
             if (m.getNoteNumber() < (int) std::size (kFakeArts)) // keyswitch
             {
                 art = m.getNoteNumber();
@@ -159,14 +173,16 @@ private:
                 rr = random.nextInt (a.rrCount);
             else
             {
-                // per-key RR counter that resets after 2.5 s without a note, like SINE
+                // per-key RR counter that resets after 2.5 s without a note, like SINE (resetkey: only on the key)
                 const auto it = lastOn[art].find (m.getNoteNumber());
-                if (it != lastOn[art].end() && cursor - it->second > (int64_t) (2.5 * sampleRate))
+                if (fakeMode != FakeMode::resetKey && it != lastOn[art].end() && cursor - it->second > (int64_t) (2.5 * sampleRate))
                     counters[art][m.getNoteNumber()] = 0;
                 lastOn[art][m.getNoteNumber()] = cursor;
                 rr = counters[art][m.getNoteNumber()]++ % a.rrCount;
             }
             voices.push_back ({ m.getNoteNumber(), rr, m.getVelocity(), art, cursor });
+            if (fakeMode == FakeMode::humanize)
+                voices.back().gain = 1.0f + 0.1f * (random.nextFloat() - 0.5f);
         }
         else if (m.isNoteOff())
         {
@@ -215,7 +231,7 @@ private:
                 if (v.releaseAt >= 0)
                     env *= std::exp (-(double) (t - v.releaseAt) / (0.01 * sampleRate));
                 const double f = midiToHz (v.note) * (1.0 + 0.003 * v.rr);
-                sum += (float) (0.3 * (v.velocity / 127.0) * env
+                sum += (float) (0.3 * v.gain * (v.velocity / 127.0) * env
                                 * std::sin (2.0 * juce::MathConstants<double>::pi * f * tMs / 1000.0 + 1.3 * v.rr));
             }
             for (int c = 0; c < b.getNumChannels(); ++c)
@@ -238,6 +254,7 @@ private:
 };
 
 int failures = 0;
+bool expectNever = false; // fake modes the determinism check must catch
 void check (bool ok, const juce::String& what)
 {
     std::printf ("  %-78s %s\n", what.toRawUTF8(), ok ? "ok" : "FAIL");
@@ -288,6 +305,22 @@ int main (int argc, char* argv[])
         s.legatoResetPauseMs = juce::jmax (s.rrResetPauseMs, adaptiveMs + 250.0);
         std::printf ("RR reset %g ms: pauses %g / legato %g ms\n", rrReset, s.rrResetPauseMs, s.legatoResetPauseMs);
     }
+    if (fake)
+    {
+        const auto mode = juce::SystemStats::getEnvironmentVariable ("FAKE_MODE", "normal");
+        fakeMode = mode == "humanize" ? FakeMode::humanize
+                   : mode == "resetkey" || mode == "noreset" ? FakeMode::resetKey
+                                                             : FakeMode::normal;
+        expectNever = mode == "humanize" || mode == "noreset";
+        if (mode == "resetkey")
+        {
+            // like the app's "RR reset: Reset key"
+            s.rrResetKey = kResetKey;
+            s.rrResetPauseMs = 500.0;
+            s.legatoResetPauseMs = 1000.0;
+        }
+    }
+    s.checkDeterminism = ! s.rrNeverResets;
     s.numWorkers = numWorkers;
     s.settleSec = 0.1;
     s.loadTimeoutSec = 20;
@@ -469,6 +502,26 @@ int main (int argc, char* argv[])
 
     // ------------------------------------------------------------------ assertions (fake sampler)
     const auto json = store.toJson();
+    const auto det = json["determinismCheck"];
+    std::printf ("\n[determinism check]  passed %s, renders %d\n", det["passed"].toString().toRawUTF8(), (int) det["renders"]);
+    if (expectNever)
+    {
+        check (det.isObject() && ! (bool) det["passed"] && (bool) det["forcedNever"], "the determinism check fails");
+        check ((bool) json["render"]["rrNeverResets"], "the run switched to RR reset Never");
+        bool warned = false;
+        for (auto& w : *json["warnings"].getArray())
+            warned |= w.toString().contains ("doesn't replay identically");
+        check (warned, "warning raised");
+        bool fast = false;
+        for (auto& h : *json["articulations"][0]["hits"].getArray())
+            fast |= (bool) h["fastRepetition"] || (bool) h["tailSubtracted"];
+        check (! fast, "nothing replayed from the reset state (no fast repetition / tail subtraction)");
+        std::printf ("\n%s (%d failures)\n", failures == 0 ? "ALL PASSED" : "FAILED", failures);
+        return failures == 0 ? 0 : 1;
+    }
+    if (s.checkDeterminism)
+        check (det.isObject() && (bool) det["passed"] && ! (bool) json["render"]["rrNeverResets"],
+               "determinism check passed, the run keeps its RR reset");
     for (int i = 0; i < numArts; ++i)
     {
         const auto& fa = kFakeArts[i];
@@ -541,7 +594,11 @@ int main (int argc, char* argv[])
                                                         + juce::String (worstEnd, 4) + " ms)");
         }
 
+        // Never: no fast-repetition series (it replays from a reset state)
+        if (s.rrNeverResets)
+            check (! a["negativeDelayMsTable"]["C4"]["f"]["fastRepetition"].isObject(), "Never: no fast-repetition series");
         // fast repetition: tail-subtracted, so the clean notes must match the main series' samples
+        else
         {
             const auto fr = a["negativeDelayMsTable"]["C4"]["f"]["fastRepetition"];
             const auto main = a["negativeDelayMsTable"]["C4"]["f"]["cycle"];

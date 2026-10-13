@@ -75,6 +75,7 @@ void ResultStore::reset (std::vector<ArticulationPlan> p, const RunSettings& s, 
         total += totalJobsForLocked (i);
     sine = {};
     sineNotes.clear();
+    determinism = juce::var();
     done = 0;
     hitCount = 0;
     instrumentName = inst.name;
@@ -134,6 +135,17 @@ juce::StringArray ResultStore::drainLog()
     auto out = pendingLog;
     pendingLog.clear();
     return out;
+}
+
+void ResultStore::setDeterminism (const juce::var& result, bool forcedNever)
+{
+    const juce::ScopedLock sl (lock);
+    determinism = result;
+    if (forcedNever)
+    {
+        settings.rrNeverResets = true;
+        settings.rrResetKey = -1;
+    }
 }
 
 void ResultStore::addWarning (const juce::String& w)
@@ -552,6 +564,8 @@ juce::var ResultStore::toJson() const
         p->setProperty ("stateFile", plugin.stateFile);
         root->setProperty ("plugin", juce::var (p));
     }
+    if (! determinism.isVoid())
+        root->setProperty ("determinismCheck", determinism);
     {
         auto* pr = new juce::DynamicObject();
         pr->setProperty ("vendor", vendor);
@@ -584,6 +598,8 @@ juce::var ResultStore::toJson() const
         r->setProperty ("rrResetPauseMs", settings.rrResetPauseMs);
         // > 0: the player's RR reset time was set to this for every articulation for the run
         r->setProperty ("rrResetOverrideMs", settings.rrResetOverrideMs);
+        r->setProperty ("rrNeverResets", settings.rrNeverResets);
+        r->setProperty ("rrResetKey", settings.rrResetKey >= 0 ? juce::var (noteName (settings.rrResetKey)) : juce::var());
         r->setProperty ("rrMaxIntervalMs", settings.rrMaxIntervalMs);
         r->setProperty ("fastRepetition", settings.fastRepetition);
         r->setProperty ("subtractTailsForLongNotes", settings.subtractTailsForLongNotes);
@@ -598,6 +614,7 @@ juce::var ResultStore::toJson() const
         r->setProperty ("rrPriorSimilarity", settings.rrPriorSimilarity);
         r->setProperty ("rrPriorPeakDb", settings.rrPriorPeakDb);
         r->setProperty ("rrPriorOnsetMs", settings.rrPriorOnsetMs);
+        r->setProperty ("useRRPriorFromPreset", settings.useRRPriorFromPreset);
         {
             auto* lg = new juce::DynamicObject();
             lg->setProperty ("enabled", settings.measureLegato);

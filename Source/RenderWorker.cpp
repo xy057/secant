@@ -136,6 +136,18 @@ void RenderWorker::sendKeyswitch (int note)
     advanceTo (now + (int64_t) msToSamples (ctx.settings.keyswitchSettleMs), nullptr);
 }
 
+// Players that reset their round robins on a key rather than after a pause: the key ends every reset
+// pause. Ends on a block boundary, so what follows sits on the same grid as without a key.
+void RenderWorker::sendResetKey()
+{
+    const int key = ctx.settings.rrResetKey;
+    if (key < 0)
+        return;
+    schedule (juce::MidiMessage::noteOn (1, key, (juce::uint8) 100), now);
+    schedule (juce::MidiMessage::noteOff (1, key), now + (int64_t) msToSamples (40.0));
+    advanceTo (alignUp (now + (int64_t) msToSamples (ctx.settings.keyswitchSettleMs)), nullptr);
+}
+
 bool RenderWorker::playHit (int note, int velocity, int cc1, Category cat, Capture& out)
 {
     const auto& s = ctx.settings;
@@ -244,6 +256,10 @@ namespace
         int lastNewSample = 0, distinctSoFar = 0;
         int hypothesis = 0, lined = 0;
         int expectedPeriod = 0; // the player's RR count (0 = unknown): enables the cycle-position prior
+        // the count is only the preset's claim (not the player's): the prior waits until a hit has matched,
+        // under the normal criteria, the hit exactly one such cycle earlier - a wrong count never gets there
+        bool priorNeedsEvidence = false;
+        bool periodSeen = false;
 
         int originalOf (int k) const { return hits[(size_t) k].duplicateOf < 0 ? k : hits[(size_t) k].duplicateOf; }
 
@@ -330,7 +346,7 @@ namespace
                 h.looseMatch = true;
             }
             // the player's own RR count: the hit one (or two) cycles back should be this recording
-            if (h.duplicateOf < 0 && expectedPeriod > 0 && h.onset.valid)
+            if (h.duplicateOf < 0 && expectedPeriod > 0 && h.onset.valid && (periodSeen || ! priorNeedsEvidence))
             {
                 const int r = (int) resolved.size();
                 for (int back = expectedPeriod; back <= 2 * expectedPeriod && r - back >= 0; back += expectedPeriod)
@@ -378,6 +394,9 @@ namespace
             // cycle detection runs on the resolved hits only (positions in `resolved`)
             resolved.push_back (k);
             const int r = (int) resolved.size() - 1;
+            if (! h.isOriginal() && ! h.priorMatch && expectedPeriod > 0 && r >= expectedPeriod
+                && originalOf (resolved[(size_t) (r - expectedPeriod)]) == originalOf (k))
+                periodSeen = true;
             if (h.isOriginal())
             {
                 hypothesis = 0;
@@ -436,6 +455,7 @@ DynamicsSource RenderWorker::detectDynamicsSource (const ArticulationPlan& plan,
         schedule (juce::MidiMessage::controllerEvent (1, 1, cc1), now);
         renderUntilSilent (s.tailMaxMs);
         advanceTo (alignUp (now + (int64_t) msToSamples (plan.resetPauseMs (s.rrResetPauseMs))), nullptr);
+        sendResetKey();
         Capture c;
         playTimedHit (note, vel, now, (int64_t) msToSamples (250.0), captureLen, c);
         return c.buffer;
@@ -576,6 +596,7 @@ void RenderWorker::runSeries (const ArticulationPlan& plan, int note, int d, std
         selectArticulation (plan.cc1For (d));
         renderUntilSilent (s.tailMaxMs); // earlier tails first: the pause may be as short as the RR reset time
         advanceTo (now + (int64_t) msToSamples (plan.resetPauseMs (s.rrResetPauseMs)), nullptr);
+        sendResetKey();
         const int64_t t0 = alignUp (now + (int64_t) msToSamples (s.prerollMs));
         // transport restarts at the first note-on: tempo-synced patches (repetitions, runs) then start every
         // note on a beat (1000 ms spacing = 2 beats at 120 bpm) instead of wherever the transport happens to be
@@ -587,7 +608,8 @@ void RenderWorker::runSeries (const ArticulationPlan& plan, int note, int d, std
         sb.info.intervalMs = (double) interval * 1000.0 / s.sampleRate;
         sb.info.retries = attempt;
         sb.allowRetry = attempt < s.rrSeriesRetries;
-        sb.expectedPeriod = s.useRRPrior ? plan.expectedRoundRobins() : 0;
+        sb.expectedPeriod = s.useRRPrior ? plan.priorRoundRobins (s.useRRPriorFromPreset) : 0;
+        sb.priorNeedsEvidence = ! plan.hasSine;
         bool restart = false, maskedOnset = false;
         int64_t nextOn = t0;
 
@@ -659,6 +681,7 @@ juce::AudioBuffer<float> RenderWorker::renderSequence (int note, int velocity, i
     selectArticulation (cc1);
     renderUntilSilent (s.tailMaxMs);
     advanceTo (alignUp (now + (int64_t) msToSamples (juce::jmax (s.rrResetPauseMs + 1000.0, playerResetMs))), nullptr);
+    sendResetKey();
     const int64_t t0 = now;
     playHead.origin = t0; // first note-on on beat 0 (see runSeries)
     for (int i = 0; i < count; ++i)
@@ -696,7 +719,8 @@ void RenderWorker::runSubtractedSeries (const ArticulationPlan& plan, int note, 
         sb.info.intervalMs = (double) interval * 1000.0 / s.sampleRate;
         sb.info.retries = attempt;
         sb.allowRetry = attempt < s.rrSeriesRetries;
-        sb.expectedPeriod = s.useRRPrior ? plan.expectedRoundRobins() : 0;
+        sb.expectedPeriod = s.useRRPrior ? plan.priorRoundRobins (s.useRRPriorFromPreset) : 0;
+        sb.priorNeedsEvidence = ! plan.hasSine;
         bool restart = false;
 
         juce::AudioBuffer<float> tailOfPrevious; // render(k)[window k], empty for k = 0
@@ -768,6 +792,7 @@ juce::AudioBuffer<float> RenderWorker::renderChain (const std::vector<int>& note
     advanceTo (alignUp (juce::jmax (juce::jmax (now + (int64_t) msToSamples (s.cc1SettleMs), now + (int64_t) msToSamples (playerResetMs)),
                                     lastNoteOn + (int64_t) msToSamples (s.legatoResetPauseMs))),
                nullptr);
+    sendResetKey();
     // the transport restarts here for every render: tempo / beat-position dependent behaviour (SINE's
     // legato speed, synced patches) then sees exactly the same timeline each time
     const int64_t t0 = alignUp (now + pre);
@@ -1033,12 +1058,161 @@ void RenderWorker::runLegatoJob (int planIdx, int note, int d)
         ctx.store->addLegatoJob (planIdx, std::move (out));
 }
 
+// ---------------------------------------------------------------------------- determinism check
+
+// Does the player replay identically from its reset state? A short series (a few notes at the series
+// spacing) is rendered after a reset pause, each render one note longer than the one before, and only
+// the first `count` notes are compared. A round-robin counter that doesn't reset then starts every render
+// one recording later - with renders of equal length it could come round to the same recording (length =
+// a multiple of the cycle) and look repeatable. Passing takes three consecutive renders that agree: one
+// render may differ (cold cache, a dropped note), and two consecutive length steps can't both be whole
+// cycles. If they never agree, nothing that replays from the reset state can be trusted: switch to Never.
+void RenderWorker::checkDeterminism()
+{
+    auto& s = ctx.settings;
+    // the articulation most likely to show round robins
+    const ArticulationPlan* plan = &ctx.plans.front();
+    for (const auto& p : ctx.plans)
+        if (juce::jmax (p.expectedRoundRobins(), p.art.roundRobins) > 1)
+        {
+            plan = &p;
+            break;
+        }
+    const int note = plan->notes[plan->notes.size() / 2];
+    const int layer = plan->art.dynamics.size() - 1;
+    const int vel = plan->velocityToSend (layer), cc = plan->cc1For (layer);
+    const auto& timing = s.timing.at (plan->category);
+    const int64_t interval = blockInterval (juce::jmin (timing.intervalMs, s.rrMaxIntervalMs));
+    const int64_t hold = juce::jmin<int64_t> ((int64_t) msToSamples (timing.holdMs), interval);
+    const int pre = (int) msToSamples (s.preCaptureMs);
+    const int count = juce::jmax (1, s.determinismNotes);
+    const int len = pre + (int) (count * interval) + plugin->getLatencySamples();
+    playerResetMs = plan->resetPauseMs (0.0);
+    sendKeyswitch (plan->keyswitch);
+
+    auto render = [&] (int extra) {
+        selectArticulation (cc);
+        renderUntilSilent (s.tailMaxMs);
+        advanceTo (now + (int64_t) msToSamples (plan->resetPauseMs (s.rrResetPauseMs)), nullptr);
+        sendResetKey();
+        const int64_t t0 = alignUp (now + (int64_t) msToSamples (s.prerollMs));
+        playHead.origin = t0;
+        for (int i = 0; i < count + extra; ++i)
+        {
+            schedule (juce::MidiMessage::noteOn (1, note, (juce::uint8) vel), t0 + i * interval);
+            schedule (juce::MidiMessage::noteOff (1, note), t0 + i * interval + hold);
+        }
+        // the capture ends before note `count` reaches the output; the extra notes still play
+        Capture c;
+        c.start = t0 - pre;
+        c.buffer.setSize (mainChannels, len, false, false, true);
+        c.buffer.clear();
+        advanceTo (c.start + len, &c);
+        advanceTo (t0 + (count + extra) * interval, nullptr);
+        return std::move (c.buffer);
+    };
+    // largest sample difference relative to the peak, in dB (-200 = identical)
+    float peak = 0;
+    auto differenceDb = [&peak] (const juce::AudioBuffer<float>& a, const juce::AudioBuffer<float>& b) {
+        float diff = 0;
+        for (int c = 0; c < a.getNumChannels(); ++c)
+            for (int i = 0; i < a.getNumSamples(); ++i)
+            {
+                peak = juce::jmax (peak, std::abs (a.getSample (c, i)));
+                diff = juce::jmax (diff, std::abs (a.getSample (c, i) - b.getSample (c, i)));
+            }
+        return peak > 0 ? (double) juce::Decibels::gainToDecibels (diff / peak, -200.0f) : -200.0;
+    };
+
+    juce::Array<juce::var> diffs;
+    juce::StringArray diffText;
+    bool passed = false;
+    int agreeing = 0; // consecutive pairs that agree
+    auto prev = render (0);
+    for (int r = 1; r < juce::jmax (3, s.determinismMaxRenders) && ! threadShouldExit(); ++r)
+    {
+        auto cur = render (r);
+        const double d = differenceDb (prev, cur);
+        diffs.add (d);
+        diffText.add (d <= -200.0 ? juce::String ("identical") : juce::String (d, 1) + " dB");
+        agreeing = d <= s.determinismToleranceDb ? agreeing + 1 : 0;
+        if (agreeing >= 2)
+        {
+            passed = true;
+            break;
+        }
+        prev = std::move (cur);
+    }
+    if (threadShouldExit())
+        return;
+
+    const juce::String what = plan->art.name + " " + noteName (note) + " " + plan->art.dynamics[layer];
+    auto* o = new juce::DynamicObject();
+    o->setProperty ("articulation", plan->art.name);
+    o->setProperty ("note", noteName (note));
+    o->setProperty ("dynamic", plan->art.dynamics[layer]);
+    o->setProperty ("notes", count);
+    o->setProperty ("renders", diffs.size() + 1);
+    o->setProperty ("differenceDb", diffs);
+    o->setProperty ("toleranceDb", s.determinismToleranceDb);
+    if (peak <= 0)
+    {
+        // nothing to compare: leave the run as configured
+        o->setProperty ("passed", juce::var());
+        ctx.store->log ("worker " + juce::String (id) + ": determinism check inconclusive (" + what + " was silent)");
+        ctx.store->setDeterminism (juce::var (o), false);
+        return;
+    }
+    o->setProperty ("passed", passed);
+    if (passed)
+    {
+        ctx.store->log ("worker " + juce::String (id) + ": determinism check passed (" + what + ", consecutive renders: "
+                        + diffText.joinIntoString (", ") + ")");
+        ctx.store->setDeterminism (juce::var (o), false);
+        return;
+    }
+    // everything below reads the settings after this, and the other workers wait for this verdict
+    s.rrNeverResets = true;
+    s.rrResetKey = -1;
+    o->setProperty ("forcedNever", true);
+    ctx.store->setDeterminism (juce::var (o), true);
+    const juce::String w = "The player doesn't replay identically from its reset state (" + what + ", consecutive renders: "
+                           + diffText.joinIntoString (", ") + " difference relative to the peak). Likely humanize (random level, timing or "
+                           "sample start), random round robins, or a round-robin reset that doesn't happen (check the RR reset "
+                           "time or key). Switched to RR reset: Never - no tail subtraction, fast repetition or dynamics probe; "
+                           "legato transitions with round robins are flagged.";
+    ctx.store->log ("worker " + juce::String (id) + ": " + w);
+    ctx.store->addWarning (w);
+}
+
+// The first worker that loads runs the check; the others wait for its verdict, because it may switch
+// the whole run to Never before any job starts.
+bool RenderWorker::awaitDeterminismVerdict()
+{
+    if (! ctx.settings.checkDeterminism)
+        return true;
+    bool expected = false;
+    if (ctx.determinismClaimed.compare_exchange_strong (expected, true))
+    {
+        checkDeterminism();
+        ctx.determinismDone = true;
+        return ! threadShouldExit();
+    }
+    while (! ctx.determinismDone.load())
+    {
+        if (threadShouldExit())
+            return false;
+        wait (50);
+    }
+    return true;
+}
+
 void RenderWorker::run()
 {
     wallStart = juce::Time::getMillisecondCounterHiRes() / 1000.0;
     const bool loaded = waitForLoad();
     ++ctx.loadedWorkers; // lets the host bring up the next instance
-    if (loaded)
+    if (loaded && awaitDeterminismVerdict())
     {
         while (! threadShouldExit())
         {
