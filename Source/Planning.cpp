@@ -16,20 +16,20 @@ void attachSine (ArticulationPlan& p, const SineInstrument* inst, DynamicsSource
         s = byKs;
         if (byTitle == nullptr)
             notes.warnings.add (label + ": keyswitch " + noteName (p.keyswitch) + " plays '" + byKs->title
-                                + "' in SINE (different name - check the preset)");
+                                + "' in SINE. Check the name in the preset.");
     }
     else if (byTitle != nullptr && byTitle->keyswitch >= 0)
     {
         // the player has this articulation on another key: trust the player
         notes.log.add (label + ": keyswitch " + (p.keyswitch >= 0 ? noteName (p.keyswitch) : juce::String ("-")) + " -> "
-                       + noteName (byTitle->keyswitch) + " (where SINE has '" + byTitle->title + "'"
+                       + noteName (byTitle->keyswitch) + " (SINE's '" + byTitle->title + "'"
                        + (byKs != nullptr ? "; " + noteName (p.keyswitch) + " plays '" + byKs->title + "'" : juce::String()) + ")");
         p.keyswitch = byTitle->keyswitch;
         s = byTitle;
     }
     if (s == nullptr)
     {
-        notes.warnings.add (label + ": not found in SINE's articulation list (keyswitch "
+        notes.warnings.add (label + ": not in SINE (keyswitch "
                             + (p.keyswitch >= 0 ? noteName (p.keyswitch) : juce::String ("-")) + ")");
         return;
     }
@@ -38,25 +38,23 @@ void attachSine (ArticulationPlan& p, const SineInstrument* inst, DynamicsSource
 
     if (! s->dynamics.isEmpty() && s->dynamics != p.art.dynamics)
     {
-        notes.warnings.add (label + ": docs list " + juce::String (p.art.dynamics.size()) + " dynamic layers ("
-                            + p.art.dynamics.joinIntoString (" ") + "), SINE has " + juce::String (s->dynamics.size()) + " ("
-                            + s->dynamics.joinIntoString (" ") + ") - using SINE's");
+        notes.warnings.add (label + ": layers " + p.art.dynamics.joinIntoString (" ") + " in the preset, "
+                            + s->dynamics.joinIntoString (" ") + " in SINE. Using SINE's.");
         p.art.dynamics = s->dynamics;
     }
     if (userDynSource == DynamicsSource::autoDetect)
     {
         p.dynSource = s->modwheelDynamics ? DynamicsSource::cc1 : DynamicsSource::velocity;
-        notes.log.add (label + ": dynamics -> " + toString (p.dynSource) + " (SINE: mod wheel control "
-                       + (s->modwheelDynamics ? "on" : "off") + ")");
+        notes.log.add (label + ": dynamics -> " + toString (p.dynSource) + " (from SINE)");
     }
     if (s->roundRobins != p.art.roundRobins)
-        notes.warnings.add (label + ": docs say " + juce::String (p.art.roundRobins) + " round robins, SINE has "
-                            + juce::String (s->roundRobins));
+        notes.warnings.add (label + ": " + juce::String (p.art.roundRobins) + " round robins in the preset, "
+                            + juce::String (s->roundRobins) + " in SINE");
     if (s->randomRR)
-        notes.log.add (label + ": SINE plays its round robins in random order");
+        notes.log.add (label + ": random round robins");
     if (s->legato != p.art.legato)
-        notes.warnings.add (label + ": legato " + (s->legato ? "on" : "off") + " in SINE, docs say "
-                            + (p.art.legato ? "legato" : "not legato"));
+        notes.warnings.add (label + ": legato " + (s->legato ? "on" : "off") + " in SINE, "
+                            + (p.art.legato ? "on" : "off") + " in the preset");
 }
 
 LegatoChainShape legatoChainShape (const ArticulationPlan& p, const RunSettings& s)

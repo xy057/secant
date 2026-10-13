@@ -32,6 +32,12 @@ juce::File resultsDir()
 {
     return dataDir().getChildFile ("Results");
 }
+
+// UI text with typographic characters (…)
+juce::String utf8 (const char* s)
+{
+    return juce::String (juce::CharPointer_UTF8 (s));
+}
 } // namespace
 
 // ============================================================================ cell editors
@@ -97,10 +103,8 @@ public:
         addItem ("Auto", 3);
         addItem ("Velocity", 1);
         addItem ("CC1", 2);
-        setTooltip ("How the plugin switches dynamic layers for this articulation.\n"
-                    "Auto: detected per articulation (whichever of velocity / CC1 actually changes the sample).\n"
-                    "Velocity: layer midpoints are sent as velocity (CC1 parked at 100).\n"
-                    "CC1: each layer's pure crossfade point is sent as CC1 (velocity 100).");
+        setTooltip ("How this articulation switches dynamic layers.\n"
+                    "Auto: detect it.\nVelocity: send layers as velocity.\nCC1: send layers as mod wheel.");
         onChange = [this] {
             if (row < 0)
                 return;
@@ -133,7 +137,7 @@ public:
     explicit KeyswitchLabel (MainComponent& o) : owner (o)
     {
         setEditable (false, true, false);
-        setTooltip ("Double-click to set (note name like C-1, or MIDI number) - saved with the preset. Clear to return to base + index - 1.");
+        setTooltip ("Double-click to set a note (C-1) or MIDI number. Clear to use the keyswitch base.");
         onTextChange = [this] {
             if (row < 0)
                 return;
@@ -210,8 +214,8 @@ public:
                 default: break;
             }
             if (! ok)
-                owner.log ("Not accepted: '" + t + "' (" + juce::String (col == colRange ? "ranges like C2-C6, D7 or 36-96" : col == colRR ? "a number >= 1"
-                                                                                                                                       : "must not be empty") + ")");
+                owner.log ("Invalid value '" + t + "'. " + juce::String (col == colRange ? "Use ranges like C2-C6, D7 or 36-96."
+                                                                          : col == colRR ? "Enter 1 or more." : "Enter a value."));
             else
                 owner.presetEdited();
             refresh();
@@ -228,9 +232,9 @@ public:
         col = c;
         refresh();
         setEnabled (! owner.running);
-        setTooltip (col == colRange ? "Double-click to edit: C2-C6, D7 (note names, C3 = 60, or MIDI numbers)"
-                    : col == colDynamics ? "Double-click to edit: layer names in order, e.g. pp mf ff"
-                    : col == colRR ? "Double-click to edit: round robins per note (the player's own count wins when it reports one)"
+        setTooltip (col == colRange ? "Double-click to edit, e.g. C2-C6, D7 (C3 = 60)"
+                    : col == colDynamics ? "Double-click to edit, e.g. pp mf ff"
+                    : col == colRR ? "Double-click to edit round robins per note"
                                    : "Double-click to rename");
     }
 
@@ -254,7 +258,7 @@ class MainComponent::LegatoToggle : public juce::ToggleButton
 public:
     explicit LegatoToggle (MainComponent& o) : owner (o)
     {
-        setTooltip ("Legato patch: transitions are measured (with Legato ticked in the settings)");
+        setTooltip ("Legato articulation. Transitions are measured when Legato is on.");
         onClick = [this] {
             if (auto* a = owner.articulationAt (row); a != nullptr && a->legato != getToggleState())
             {
@@ -320,24 +324,22 @@ MainComponent::MainComponent()
     addAndMakeVisible (presetButton);
     addAndMakeVisible (presetLabel);
     addAndMakeVisible (instrumentBox);
-    presetLabel.setText ("No preset loaded", juce::dontSendNotification);
+    presetLabel.setText ("No preset", juce::dontSendNotification);
     presetButton.onClick = [this] { choosePreset(); };
-    presetButton.setTooltip ("Load a preset JSON (presets/...)");
+    presetButton.setTooltip ("Open a preset file");
     for (auto* b : { &newPresetButton, &savePresetButton, &addInstrumentButton, &removeInstrumentButton })
         addAndMakeVisible (b);
-    newPresetButton.setTooltip ("Start an empty preset (any player - e.g. a Kontakt instrument): add articulations with + below "
-                                "and double-click the cells to fill them in");
-    savePresetButton.setTooltip ("Save the preset with your edits (names, ranges, layers, RR, categories, legato, keyswitches, dyn src), "
-                                 "optionally with the loaded SINE instrument's own configuration");
-    addInstrumentButton.setTooltip ("Add an instrument to the preset");
-    removeInstrumentButton.setTooltip ("Remove the selected instrument from the preset");
+    newPresetButton.setTooltip ("Create an empty preset");
+    savePresetButton.setTooltip ("Save the preset with your edits");
+    addInstrumentButton.setTooltip ("Add an instrument");
+    removeInstrumentButton.setTooltip ("Remove the selected instrument");
     newPresetButton.onClick = [this] { newPreset(); };
     savePresetButton.onClick = [this] { showSaveMenu(); };
     addInstrumentButton.onClick = [this] { addInstrument(); };
     removeInstrumentButton.onClick = [this] { removeInstrument(); };
     // typing a name renames the selected instrument
     instrumentBox.setEditableText (true);
-    instrumentBox.setTextWhenNothingSelected ("Choose the instrument loaded in the plugin");
+    instrumentBox.setTextWhenNothingSelected ("Choose the loaded instrument");
     instrumentBox.onChange = [this] {
         if (instrumentBox.getSelectedId() > 0)
         {
@@ -357,8 +359,8 @@ MainComponent::MainComponent()
     };
 
     // --- settings
-    primaryLabel.setTooltip ("Primary onset method per category (short / long / dynamic / phrase). All methods are exported.");
-    ksLabel.setTooltip ("Keyswitch base: the note of articulation #1's keyswitch (C3 = 60)");
+    primaryLabel.setTooltip ("Onset method per category. All methods are exported.");
+    ksLabel.setTooltip ("Keyswitch of articulation #1 (C3 = 60)");
     for (auto& l : primaryCatLabels)
     {
         l.setFont (juce::FontOptions (12.0f));
@@ -378,12 +380,12 @@ MainComponent::MainComponent()
     workersSlider.setRange (1, juce::jmax (1, juce::SystemStats::getNumCpus()), 1);
     workersSlider.setValue (juce::jlimit (1, 8, juce::SystemStats::getNumCpus() / 2));
     workersSlider.setTextBoxStyle (juce::Slider::TextBoxLeft, false, 40, 24);
-    workersSlider.setTooltip ("Parallel plugin instances. Each one loads the instrument's samples into RAM.");
+    workersSlider.setTooltip ("Plugin instances running in parallel. Each loads its own samples.");
     addAndMakeVisible (workersSlider);
 
     ksBaseEdit.setText ("C-2");
-    ksBaseEdit.setTooltip ("Keyswitch of articulation #1. Articulation n uses base + n - 1, legato slots included.\n"
-                           "Check SINE's articulation list for the actual keys and adjust.");
+    ksBaseEdit.setTooltip ("Keyswitch of articulation #1. Articulation n uses base + n - 1. "
+                           "Double-click a KS cell to override one.");
     ksBaseEdit.onTextChange = [this] { table.updateContent(); table.repaint(); };
     addAndMakeVisible (ksBaseEdit);
     useKsToggle.setToggleState (true, juce::dontSendNotification);
@@ -404,59 +406,41 @@ MainComponent::MainComponent()
     speedBox.addItem ("2x realtime", 4);
     speedBox.addItem ("Realtime", 5);
     speedBox.setSelectedId (1);
-    speedBox.setTooltip ("Throttle rendering if the plugin's disk streaming can't keep up in offline mode "
-                         "(watch RR similarity / silent hits in the results).");
+    speedBox.setTooltip ("Slow down rendering if the plugin can't stream samples fast enough");
     addAndMakeVisible (speedBox);
 
     confirmLabel.setFont (juce::FontOptions (13.0f));
     addAndMakeVisible (confirmLabel);
-    confirmBox.addItem ("Off (stop at first repeat)", 1);
+    confirmBox.addItem ("Off", 1);
     confirmBox.addItem ("+1 hit", 2);
     confirmBox.addItem ("+2 hits", 3);
     confirmBox.addItem ("+4 hits", 5);
     confirmBox.setSelectedId (3);
-    confirmBox.setTooltip ("Each note/layer is played until a hit repeats an earlier one (the RR cycle closed).\n"
-                           "Confirmation: this many further hits must line up with the cycle - guards against random RR.");
+    confirmBox.setTooltip ("Extra hits that must match after the round-robin cycle repeats. Catches random round robins.");
     addAndMakeVisible (confirmBox);
     rrResetLabel.setFont (juce::FontOptions (13.0f));
     addAndMakeVisible (rrResetLabel);
-    rrResetBox.addItem ("As in SINE", 1);
-    rrResetBox.addItem ("Never", 2);
-    for (int ms : { 1000, 1500, 2000, 3000 })
-        rrResetBox.addItem (juce::String (ms) + " ms", ms);
-    rrResetBox.setSelectedId (1);
-    rrResetBox.setTooltip ("Round-robin reset: after how long a pause the player goes back to its first round robin.\n"
-                           "Never: the round robin never resets automatically - it keeps cycling (sequential) or picks at random, "
-                           "whatever the pause (common in Kontakt). Notes are then spaced until the previous one is silent, "
-                           "with no tail subtraction or fast repetition, and layers are sent as velocity unless set per row.\n"
-                           "'As in SINE' (SINE Player only) uses each articulation's own time from the "
-                           "player (change it in SINE and the run follows). A value is written into the workers' copy of the "
-                           "player state for every articulation, and the pauses before each series / legato chain shrink to it "
-                           "(Berlin's runs default to 4000 ms).\nIt is part of how the instrument plays: legato chains whose "
-                           "notes die away for longer than this reset between notes and only reach the first recording(s). "
-                           "The minimum is 1000 ms - the silence between notes within a series (up to ~700 ms) must not reset "
-                           "the counter.");
+    // items + tooltip depend on the loaded player ("As in SINE" only with SINE Player): see updateRrResetBox()
+    updateRrResetBox (false);
     addAndMakeVisible (rrResetBox);
     maxHitsLabel.setFont (juce::FontOptions (13.0f));
     addAndMakeVisible (maxHitsLabel);
     for (int n : { 16, 32, 48, 64, 128 })
         maxHitsBox.addItem (juce::String (n), n);
     maxHitsBox.setSelectedId (48);
-    maxHitsBox.setTooltip ("Safety cap per note/layer for instruments that never repeat.");
+    maxHitsBox.setTooltip ("Hit limit per note and layer, for instruments that never repeat");
     addAndMakeVisible (maxHitsBox);
     allSoundOffToggle.setToggleState (true, juce::dontSendNotification);
     addAndMakeVisible (allSoundOffToggle);
 
     smoothLabel.setFont (juce::FontOptions (13.0f));
     addAndMakeVisible (smoothLabel);
-    smoothBox.addItem ("Off (raw Hilbert)", 1);
+    smoothBox.addItem ("Off", 1);
     smoothBox.addItem ("1/4 period", 2);
     smoothBox.addItem ("1/2 period", 3);
     smoothBox.addItem ("1 period", 4);
     smoothBox.setSelectedId (3);
-    smoothBox.setTooltip ("Pitch-adaptive smoothing of the Hilbert envelope, in periods of the played note's fundamental.\n"
-                          "Averaging over whole periods cancels harmonic beating so the onset doesn't depend on waveform phase; "
-                          "more smoothing = more phase-robust but blurrier for low notes.");
+    smoothBox.setTooltip ("Envelope smoothing, in periods of the note's pitch. More is steadier but blurs low notes.");
     addAndMakeVisible (smoothBox);
 
     const RunSettings defaults;
@@ -464,15 +448,13 @@ MainComponent::MainComponent()
     {
         primaryBoxes[i].addItemList (onsetMethodKeys(), 1);
         primaryBoxes[i].setSelectedItemIndex (onsetMethodKeys().indexOf (defaults.timing.at (kCategoryOrder[i]).primaryMethod));
-        primaryBoxes[i].setTooltip ("Primary method for '" + kCategories[i] + "' articulations. All methods are exported anyway.");
+        primaryBoxes[i].setTooltip ("Onset method for " + kCategories[i] + " articulations");
         addAndMakeVisible (primaryBoxes[i]);
     }
 
     // --- legato
     legatoToggle.setToggleState (defaults.measureLegato, juce::dontSendNotification);
-    legatoToggle.setTooltip ("Measure legato / portamento transition times for legato articulations: every interval up to the chosen "
-                             "size, in both directions, for every dynamic layer, legato type (SINE's velocity zones) and note spacing "
-                             "(SINE's speed zones / adaptive legato).");
+    legatoToggle.setTooltip ("Measure transition times of legato articulations");
     addAndMakeVisible (legatoToggle);
     for (auto* l : { &legatoIntervalsLabel, &legatoGapsLabel, &legatoPrimaryLabel })
     {
@@ -485,22 +467,20 @@ MainComponent::MainComponent()
     legatoIntervalsBox.addItem ("Seconds only", 2);
     legatoIntervalsBox.addItem ("Octave + unison", 13);
     legatoIntervalsBox.setSelectedId (12);
-    legatoIntervalsBox.setTooltip ("Intervals measured from every note, up and down (both directions come from the same chain).");
+    legatoIntervalsBox.setTooltip ("Intervals measured up and down from each note");
     addAndMakeVisible (legatoIntervalsBox);
     legatoGapsBox.addItem ("Standard 100-1000 ms", 1);
     legatoGapsBox.addItem ("Sweep 60-1500 ms", 2);
     legatoGapsBox.addItem ("Slow 1000 ms", 3);
     legatoGapsBox.setSelectedId (1);
-    legatoGapsBox.setTooltip ("Note-on spacing of the legato chains. SINE picks the legato type by spacing (speed zones) and adapts the "
-                              "transition to it (adaptive legato); every speed zone is always covered.");
+    legatoGapsBox.setTooltip ("Time between notes. Some players change the legato type with playing speed.");
     addAndMakeVisible (legatoGapsBox);
     legatoPrimaryBox.addItem ("Arrival", 1);
     legatoPrimaryBox.addItem ("Midpoint", 2);
     legatoPrimaryBox.addItem ("Start", 3);
     legatoPrimaryBox.setSelectedId (1);
-    legatoPrimaryBox.setTooltip ("Which moment of the transition goes on the grid (all are exported):\n"
-                                 "Arrival - the target pitch is established\nMidpoint - the pitch crossing of a glide\n"
-                                 "Start - the source pitch ends");
+    legatoPrimaryBox.setTooltip ("Transition point used for the delay. All are exported.\n"
+                                 "Arrival: target pitch reached\nMidpoint: halfway through the glide\nStart: first pitch ends");
     addAndMakeVisible (legatoPrimaryBox);
 
     // --- table
@@ -531,8 +511,8 @@ MainComponent::MainComponent()
     table.setMultipleSelectionEnabled (true);
     addAndMakeVisible (addArtButton);
     addAndMakeVisible (removeArtButton);
-    addArtButton.setTooltip ("Add an articulation (after the selected row)");
-    removeArtButton.setTooltip ("Remove the selected articulations from the preset");
+    addArtButton.setTooltip ("Add an articulation");
+    removeArtButton.setTooltip ("Remove the selected articulations");
     addArtButton.onClick = [this] { addArticulation(); };
     removeArtButton.onClick = [this] { removeArticulations(); };
     allButton.onClick = [this] { setAllRuns (true); };
@@ -561,8 +541,7 @@ MainComponent::MainComponent()
     setSize (980, 860);
     startTimerHz (10);
 
-    log ("Workflow: Load the plugin -> Open Editor -> load your instrument in it (one mic position keeps RAM low) -> "
-         "Load Preset JSON -> pick the same instrument -> check keyswitch base -> Start.");
+    log ("Load the plugin and your instrument (one mic position). Open a preset, choose the same instrument, then click Start.");
 }
 
 MainComponent::~MainComponent()
@@ -756,7 +735,7 @@ void MainComponent::loadPlugin()
         format->findAllTypesForFile (descs, pluginFiles[i].getFullPathName());
     if (descs.isEmpty())
     {
-        log ("Could not read plugin: " + pluginFiles[i].getFullPathName());
+        log ("Couldn't open " + pluginFiles[i].getFullPathName());
         return;
     }
     masterDesc = *descs[0];
@@ -768,7 +747,7 @@ void MainComponent::loadPlugin()
         }
 
     const auto settings = collectSettings();
-    log ("Loading " + masterDesc.name + " (" + masterDesc.manufacturerName + " " + masterDesc.version + ")...");
+    log (utf8 ("Loading ") + masterDesc.name + " " + masterDesc.version + utf8 ("…"));
     loadPluginButton.setEnabled (false);
     juce::Component::SafePointer<MainComponent> safe (this);
     formatManager.createPluginInstanceAsync (masterDesc, settings.sampleRate, settings.blockSize,
@@ -778,16 +757,16 @@ void MainComponent::loadPlugin()
             safe->loadPluginButton.setEnabled (true);
             if (inst == nullptr)
             {
-                safe->log ("Plugin failed to load: " + error);
+                safe->log ("Couldn't load the plugin: " + error);
                 return;
             }
             inst->enableAllBuses();
             inst->prepareToPlay (settings.sampleRate, settings.blockSize);
             safe->master = std::move (inst);
-            safe->pluginGroup.setText ("1. Instrument plugin - " + safe->masterDesc.name + " loaded, latency "
-                                       + juce::String (safe->master->getLatencySamples()) + " smp, "
-                                       + juce::String (safe->master->getTotalNumOutputChannels()) + " out ch");
-            safe->log ("Loaded. Open the editor and load the instrument you want to measure.");
+            safe->pluginGroup.setText ("1. Plugin: " + safe->masterDesc.name + " (latency "
+                                       + juce::String (safe->master->getLatencySamples()) + " samples, "
+                                       + juce::String (safe->master->getTotalNumOutputChannels()) + " outputs)");
+            safe->log ("Load your instrument in the plugin window.");
             safe->updatePlayerMode();
             safe->updateEnablement();
             safe->showEditor();
@@ -816,7 +795,7 @@ void MainComponent::closeEditor()
 
 void MainComponent::choosePreset()
 {
-    chooser = std::make_unique<juce::FileChooser> ("Load instrument preset", defaultPresetDir(), "*.json");
+    chooser = std::make_unique<juce::FileChooser> ("Open Preset", defaultPresetDir(), "*.json");
     chooser->launchAsync (juce::FileBrowserComponent::openMode | juce::FileBrowserComponent::canSelectFiles,
                           [this] (const juce::FileChooser& fc) {
                               if (fc.getResult().existsAsFile())
@@ -830,7 +809,7 @@ void MainComponent::loadPreset (const juce::File& f)
     auto r = Collection::load (f, c);
     if (r.failed())
     {
-        log ("Preset error: " + r.getErrorMessage());
+        log ("Couldn't open the preset: " + r.getErrorMessage());
         return;
     }
     collection = std::move (c);
@@ -839,7 +818,7 @@ void MainComponent::loadPreset (const juce::File& f)
     refreshInstrumentBox();
     rows.clear();
     table.updateContent();
-    log ("Loaded preset " + f.getFileName() + " - choose the instrument to measure");
+    log ("Opened " + f.getFileName() + ". Choose the instrument to measure.");
     // lead straight into the instrument choice
     juce::Component::SafePointer<juce::ComboBox> box (&instrumentBox);
     juce::MessageManager::callAsync ([box] { if (box != nullptr) box->showPopup(); });
@@ -870,11 +849,10 @@ void MainComponent::selectInstrument (int index)
         && ksBaseEdit.getText().trim() != collection.keyswitchBase)
     {
         ksBaseEdit.setText (collection.keyswitchBase, juce::sendNotification);
-        log ("Keyswitch base set to " + collection.keyswitchBase + " from the preset (change it if your " + collection.player
-             + " uses different keys).");
+        log ("Keyswitch base: " + collection.keyswitchBase + " (from the preset)");
     }
     log ("Instrument: " + inst.displayName() + " (" + juce::String ((int) inst.articulations.size()) + " articulations, "
-         + juce::String ((int) std::count_if (rows.begin(), rows.end(), [] (auto& r) { return r.enabled; })) + " ticked)");
+         + juce::String ((int) std::count_if (rows.begin(), rows.end(), [] (auto& r) { return r.enabled; })) + " selected)");
 }
 
 void MainComponent::setAllRuns (bool enabled)
@@ -912,14 +890,36 @@ void MainComponent::updatePlayerMode()
 {
     // SINE-only: reading the player's articulation list / RR reset times and patching them
     const bool sine = isSinePlayer();
-    rrResetBox.setItemEnabled (1, sine);
-    if (! sine && rrResetBox.getSelectedId() == 1)
-        rrResetBox.setSelectedId (2, juce::dontSendNotification);
-    else if (sine && rrResetBox.getSelectedId() == 2)
-        rrResetBox.setSelectedId (1, juce::dontSendNotification);
-    log (sine ? juce::String ("Player: SINE - its own articulation list, layers, round robins, RR reset times and legato zones are used.")
-              : "Player: " + masterDesc.name + " (generic) - the preset's data is used; RR reset set to 'Never' (round robins keep "
-                "cycling or stay random - choose a time if the player returns to its first round robin after a pause). Keyswitches: KS base + articulation # - 1, or double-click a row's KS.");
+    updateRrResetBox (sine);
+    log (sine ? juce::String ("SINE Player: using its articulations, layers, round robins and legato zones.")
+              : masterDesc.name + ": using the preset. RR reset is set to Never.");
+}
+
+void MainComponent::updateRrResetBox (bool sine)
+{
+    // a ComboBox can't hide an item: rebuild the list, keeping the chosen time. Switching player
+    // type moves between the two defaults ('As in SINE' <-> 'Never').
+    int selected = rrResetBox.getSelectedId();
+    if (selected == 1 && ! sine)
+        selected = 2;
+    else if ((selected == 2 || selected == 0) && sine)
+        selected = 1;
+    else if (selected == 0)
+        selected = 2;
+    rrResetBox.clear (juce::dontSendNotification);
+    if (sine)
+        rrResetBox.addItem ("As in SINE", 1);
+    rrResetBox.addItem ("Never", 2);
+    for (int ms : { 1000, 1500, 2000, 3000 })
+        rrResetBox.addItem (juce::String (ms) + " ms", ms);
+    rrResetBox.setSelectedId (selected, juce::dontSendNotification);
+
+    juce::String tip ("Pause after which the player restarts its round robins.\n");
+    if (sine)
+        tip << "As in SINE: each articulation's own setting.\n";
+    tip << "Never: they keep cycling or stay random (common in Kontakt).\n"
+           "A time: wait that long before each series" << (sine ? ", and set it in SINE." : ".");
+    rrResetBox.setTooltip (tip);
 }
 
 tp::Articulation* MainComponent::articulationAt (int row)
@@ -942,13 +942,13 @@ void MainComponent::updatePresetLabel()
 {
     if (collection.instruments.empty())
     {
-        presetLabel.setText ("No preset loaded", juce::dontSendNotification);
+        presetLabel.setText ("No preset", juce::dontSendNotification);
         return;
     }
     presetLabel.setText ((collection.name.isNotEmpty() ? collection.name : juce::String ("Untitled")) + (presetModified ? " *" : "")
                              + "  (" + juce::String ((int) collection.instruments.size()) + " instruments)",
                          juce::dontSendNotification);
-    presetLabel.setTooltip (presetModified ? "Edited - Save... to keep the changes" : collection.file.getFullPathName());
+    presetLabel.setTooltip (presetModified ? "Edited. Save to keep your changes." : collection.file.getFullPathName());
 }
 
 void MainComponent::refreshInstrumentBox()
@@ -967,7 +967,7 @@ void MainComponent::newPreset()
     if (running)
         return;
     Collection c;
-    c.name = "New preset";
+    c.name = "Untitled";
     c.player = master != nullptr ? masterDesc.name : juce::String ("Generic");
     c.vendor = master != nullptr ? masterDesc.manufacturerName : juce::String();
     c.keyswitchBase = ksBaseEdit.getText().trim();
@@ -981,15 +981,14 @@ void MainComponent::newPreset()
     selectInstrument (0);
     instrumentBox.setSelectedItemIndex (0, juce::dontSendNotification);
     addArticulation();
-    log ("New preset: add articulations with + (above the table), double-click a cell to edit it, type in the instrument box "
-         "to rename the instrument, then Save...");
+    log ("New preset. Add articulations with +, double-click a cell to edit it, then save.");
 }
 
 void MainComponent::showSaveMenu()
 {
     if (collection.instruments.empty())
     {
-        log ("Nothing to save - load a preset or press New.");
+        log ("Nothing to save. Open or create a preset first.");
         return;
     }
     juce::MemoryBlock state;
@@ -997,13 +996,17 @@ void MainComponent::showSaveMenu()
         master->getStateInformation (state);
     const bool sine = parseSineState (state).instrument() != nullptr;
     juce::PopupMenu m;
-    m.addItem ("Save preset...", [this] { savePreset(); });
-    m.addItem ("Save with SINE's configuration...", sine, false, [this, state] {
-        if (applySineConfiguration (state))
-            savePreset();
-    });
-    if (! sine)
-        m.addSectionHeader ("(SINE's configuration: load SINE Player with the instrument and choose it above)");
+    m.addItem (utf8 ("Save Preset…"), [this] { savePreset(); });
+    // only offered with SINE Player: other players' configuration can't be read
+    if (isSinePlayer())
+    {
+        m.addItem (utf8 ("Save with SINE Settings…"), sine, false, [this, state] {
+            if (applySineConfiguration (state))
+                savePreset();
+        });
+        if (! sine)
+            m.addSectionHeader ("Load an instrument in SINE Player first");
+    }
     m.showMenuAsync (juce::PopupMenu::Options().withTargetComponent (savePresetButton));
 }
 
@@ -1090,10 +1093,10 @@ bool MainComponent::applySineConfiguration (const juce::MemoryBlock& state)
     for (auto& s : si->articulations)
         if (s.enabled && ! matched.contains (s.title))
             extra.add (s.title);
-    log ("SINE '" + si->title + "': " + juce::String (changed) + " of " + juce::String ((int) inst.articulations.size())
-         + " articulations updated in " + inst.displayName()
-         + (missing.isEmpty() ? juce::String() : "; not in SINE (left as they are): " + missing.joinIntoString (", "))
-         + (extra.isEmpty() ? juce::String() : "; in SINE but not in the preset: " + extra.joinIntoString (", ")));
+    log ("Updated " + juce::String (changed) + " of " + juce::String ((int) inst.articulations.size()) + " articulations from SINE '"
+         + si->title + "'."
+         + (missing.isEmpty() ? juce::String() : " Not in SINE: " + missing.joinIntoString (", ") + ".")
+         + (extra.isEmpty() ? juce::String() : " Not in the preset: " + extra.joinIntoString (", ") + "."));
     if (changed > 0)
         presetEdited();
     return true;
@@ -1103,19 +1106,19 @@ void MainComponent::savePreset()
 {
     if (collection.instruments.empty())
     {
-        log ("Nothing to save - load a preset or press New.");
+        log ("Nothing to save. Open or create a preset first.");
         return;
     }
     auto start = collection.file != juce::File() ? collection.file
                                                  : defaultPresetDir().getChildFile (juce::File::createLegalFileName (collection.name) + ".json");
-    chooser = std::make_unique<juce::FileChooser> ("Save preset", start, "*.json");
+    chooser = std::make_unique<juce::FileChooser> ("Save Preset", start, "*.json");
     chooser->launchAsync (juce::FileBrowserComponent::saveMode | juce::FileBrowserComponent::warnAboutOverwriting,
                           [this] (const juce::FileChooser& fc) {
                               auto f = fc.getResult();
                               if (f == juce::File())
                                   return;
                               f = f.withFileExtension ("json");
-                              if (collection.name.isEmpty() || collection.name == "New preset")
+                              if (collection.name.isEmpty() || collection.name == "Untitled")
                                   collection.name = f.getFileNameWithoutExtension();
                               collection.keyswitchBase = ksBaseEdit.getText().trim();
                               auto r = collection.save (f);
@@ -1125,7 +1128,7 @@ void MainComponent::savePreset()
                                   presetModified = false;
                                   refreshInstrumentBox();
                               }
-                              log (r.wasOk() ? "Saved preset " + f.getFullPathName() : r.getErrorMessage());
+                              log (r.wasOk() ? "Saved " + f.getFullPathName() : "Couldn't save: " + r.getErrorMessage());
                           });
 }
 
@@ -1152,7 +1155,7 @@ void MainComponent::removeInstrument()
 {
     if (running || instrumentIndex < 0 || instrumentIndex >= (int) collection.instruments.size())
         return;
-    log ("Removed instrument " + collection.instruments[(size_t) instrumentIndex].displayName() + " from the preset (not saved yet)");
+    log ("Removed " + collection.instruments[(size_t) instrumentIndex].displayName() + " (unsaved)");
     collection.instruments.erase (collection.instruments.begin() + instrumentIndex);
     presetModified = true;
     instrumentIndex = -1;
@@ -1220,7 +1223,7 @@ void MainComponent::removeArticulations()
     const auto sel = table.getSelectedRows();
     if (sel.isEmpty())
     {
-        log ("Select the articulation rows to remove first (click a row; Cmd/Shift-click for several).");
+        log ("Select the articulations to remove.");
         return;
     }
     for (int i = sel.getNumRanges(); --i >= 0;)
@@ -1237,7 +1240,7 @@ void MainComponent::removeArticulations()
     table.deselectAllRows();
     presetEdited();
     refreshInstrumentBox();
-    log ("Removed " + juce::String (sel.size()) + " articulation(s) from the preset (not saved yet)");
+    log ("Removed " + juce::String (sel.size()) + (sel.size() == 1 ? " articulation" : " articulations") + " (unsaved)");
 }
 
 // ============================================================================ table
@@ -1443,8 +1446,8 @@ void MainComponent::startRun()
         return;
     if (auto missing = missingStep(); missing.isNotEmpty())
     {
-        log ("Cannot start yet: " + missing);
-        juce::AlertWindow::showMessageBoxAsync (juce::MessageBoxIconType::InfoIcon, "Not ready yet", missing);
+        log ("Can't start. " + missing);
+        juce::AlertWindow::showMessageBoxAsync (juce::MessageBoxIconType::InfoIcon, "Can't Start", missing);
         if (master != nullptr && ! collection.instruments.empty() && instrumentIndex < 0)
             instrumentBox.showPopup();
         return;
@@ -1460,14 +1463,11 @@ void MainComponent::startRun()
     {
         // "As in SINE" has nothing to read from another player: assume the safe case
         settings.rrNeverResets = true;
-        log ("RR reset: not a SINE Player - assuming its round robins never reset automatically (sequential or random); "
-             "choose a time under RR reset if it returns to the first round robin after a pause");
+        log ("RR reset: can't read the player's setting, using Never. Choose a time if the player restarts its round robins.");
     }
     if (settings.rrNeverResets)
     {
-        log ("RR reset: never (round robins keep cycling or are random) - series notes are spaced until the previous one is silent, "
-             "no tail subtraction or fast-repetition "
-             "series, layers switched by velocity unless a row says CC1. 'afterPause' hits are just the first of each series.");
+        log ("RR reset: Never. Notes wait for silence, no tail subtraction or fast repetition, layers use velocity unless set to CC1.");
         settings.rrResetOverrideMs = 0;
     }
     else if (settings.rrResetOverrideMs > 0 && ! sineRun)
@@ -1475,8 +1475,7 @@ void MainComponent::startRun()
         // another player with a known reset time: only the pauses follow it (nothing to patch)
         settings.rrResetPauseMs = settings.rrResetOverrideMs + 250.0;
         settings.legatoResetPauseMs = settings.rrResetPauseMs;
-        log ("RR reset: the player resets after " + juce::String (settings.rrResetOverrideMs, 0) + " ms - reset pauses "
-             + juce::String (settings.rrResetPauseMs, 0) + " ms");
+        log ("RR reset: " + juce::String (settings.rrResetOverrideMs, 0) + " ms, pauses " + juce::String (settings.rrResetPauseMs, 0) + " ms");
     }
     else if (settings.rrResetOverrideMs > 0)
     {
@@ -1495,26 +1494,25 @@ void MainComponent::startRun()
             settings.legatoResetPauseMs = juce::jmax (settings.rrResetPauseMs, adaptiveMs + 250.0);
             if (settings.measureLegato && ! settings.legatoGapsMs.empty()
                 && *std::max_element (settings.legatoGapsMs.begin(), settings.legatoGapsMs.end()) >= settings.rrResetOverrideMs)
-                log ("Note: legato spacings of " + juce::String (settings.rrResetOverrideMs, 0) + " ms and more can reset the round robin "
-                     "between notes of short-sounding patches (runs) - those cells then reach only the first recording(s), as SINE plays them");
-            log ("RR reset set to " + juce::String (settings.rrResetOverrideMs, 0) + " ms for every articulation (in the workers' "
-                 "copy of the player state; your open instance is unchanged) - reset pauses " + juce::String (settings.rrResetPauseMs, 0)
-                 + " ms, legato " + juce::String (settings.legatoResetPauseMs, 0) + " ms");
+                log ("Note: legato spacing of " + juce::String (settings.rrResetOverrideMs, 0) + " ms or more can restart round robins "
+                     "in short patches. Those cells reach only the first recordings.");
+            log ("RR reset: " + juce::String (settings.rrResetOverrideMs, 0) + " ms in the workers (your instance is unchanged), pauses "
+                 + juce::String (settings.rrResetPauseMs, 0) + " ms, legato " + juce::String (settings.legatoResetPauseMs, 0) + " ms");
         }
         else
         {
-            log ("WARNING: could not set the RR reset time in the player state (" + (err.isNotEmpty() ? err : juce::String ("not a SINE state"))
-                 + ") - using the player's own times");
+            log ("Warning: couldn't set RR reset (" + (err.isNotEmpty() ? err : juce::String ("unknown state"))
+                 + "). Using the player's settings.");
             settings.rrResetOverrideMs = 0;
         }
     }
     const auto sineState = parseSineState (runState);
     const auto* sineInst = sineState.instrument();
     if (sineInst != nullptr)
-        log ("SINE " + sineState.samplerVersion + ": '" + sineInst->title + "' with " + juce::String ((int) sineInst->articulations.size())
-             + " articulations - keyswitches, dynamic layers, round robins and legato zones are taken from it.");
-    else
-        log ("Not a SINE state (" + sineState.error + ") - using the preset's data and auto-detection.");
+        log ("SINE " + sineState.samplerVersion + ": '" + sineInst->title + "', " + juce::String ((int) sineInst->articulations.size())
+             + " articulations");
+    else if (isSinePlayer())
+        log ("Couldn't read SINE's settings (" + sineState.error + "). Using the preset.");
     PlanNotes planNotes;
 
     // ---- plans + jobs
@@ -1543,8 +1541,8 @@ void MainComponent::startRun()
                 if (n >= p.sine.keyLow && n <= p.sine.keyHigh)
                     inRange.add (n);
             if (inRange.size() != all.size())
-                planNotes.warnings.add ("#" + juce::String (a.index) + " " + a.name + ": docs range " + a.rangeText() + ", SINE plays "
-                                        + noteName (p.sine.keyLow) + "-" + noteName (p.sine.keyHigh) + " - measuring the overlap");
+                planNotes.warnings.add ("#" + juce::String (a.index) + " " + a.name + ": preset range " + a.rangeText() + ", SINE plays "
+                                        + noteName (p.sine.keyLow) + "-" + noteName (p.sine.keyHigh) + ". Measuring the overlap.");
             if (! inRange.isEmpty())
                 all = inRange;
         }
@@ -1560,7 +1558,7 @@ void MainComponent::startRun()
             playedNotes.addIfNotAlreadyThere (n);
         if (useKsToggle.getToggleState() && p.keyswitch < 0)
         {
-            log ("No valid keyswitch for #" + juce::String (a.index) + " " + a.name + " - check the keyswitch base.");
+            log ("No keyswitch for #" + juce::String (a.index) + " " + a.name + ". Check the keyswitch base.");
             return;
         }
         rows[i].planIdx = (int) c->plans.size();
@@ -1568,13 +1566,13 @@ void MainComponent::startRun()
     }
     if (c->plans.empty())
     {
-        log ("Nothing to run - tick at least one articulation.");
+        log ("Nothing to run. Select at least one articulation.");
         return;
     }
     for (auto& p : c->plans)
         if (p.keyswitch >= 0 && playedNotes.contains (p.keyswitch))
-            log ("WARNING: keyswitch " + noteName (p.keyswitch) + " (#" + juce::String (p.art.index) + " " + p.art.name
-                 + ") lies inside a played note range - keyswitch base is probably wrong.");
+            log ("Warning: keyswitch " + noteName (p.keyswitch) + " (#" + juce::String (p.art.index) + " " + p.art.name
+                 + ") is inside a played range. Check the keyswitch base.");
 
     // one job per note: a single worker plays every articulation and layer of it (SINE keeps
     // its round-robin counters per instance, so a note's sequence must never be split)
@@ -1616,8 +1614,8 @@ void MainComponent::startRun()
             cellText.add (cell.type + " @ " + juce::String (cell.gapMs, 1) + " ms (vel " + juce::String (cell.velocity) + ")");
         const auto shape = legatoChainShape (p, settings);
         if (settings.rrNeverResets && shape.roundRobins > 1)
-            log ("WARNING: " + p.art.name + " has " + juce::String (shape.roundRobins) + " round robins that never reset automatically - "
-                 "legato chains cannot replay identically (transitions will be flagged notConverged / referenceMismatch)");
+            log ("Warning: " + p.art.name + " has " + juce::String (shape.roundRobins) + " round robins that never reset. "
+                 "Its legato transitions will be flagged.");
         log ("Legato " + p.art.name + ": " + cellText.joinIntoString (", ") + "; " + juce::String (p.art.dynamics.size()) + " layers, RR "
              + juce::String (shape.roundRobins) + " (chains of " + juce::String (shape.transitions) + " transitions"
              + (shape.bothStarts ? ", starting on either note" : "") + ")");
@@ -1647,7 +1645,7 @@ void MainComponent::startRun()
         log (l);
     for (auto& w : planNotes.warnings)
     {
-        log ("WARNING: " + w);
+        log ("Warning: " + w);
         store.addWarning (w);
     }
     ResultStore::PluginInfo info;
@@ -1662,13 +1660,12 @@ void MainComponent::startRun()
     ctx = std::move (c);
 
     log ("Run: " + juce::String ((int) ctx->plans.size()) + " articulations, " + juce::String ((int) ctx->jobs.size())
-         + " notes (one worker per note), " + juce::String (store.totalJobs()) + " articulation x note units, "
-         + juce::String (settings.numWorkers) + " workers @ " + juce::String (settings.sampleRate, 0) + " Hz; each series after a "
-         + juce::String (settings.rrResetPauseMs, 0) + " ms reset pause, short/long spacing "
+         + " notes, " + juce::String (settings.numWorkers) + " workers at " + juce::String (settings.sampleRate, 0) + " Hz, pause "
+         + juce::String (settings.rrResetPauseMs, 0) + " ms, short/long spacing "
          + juce::String (settings.timing.at (tp::Category::shortNote).intervalMs, 0) + "/"
          + juce::String (settings.timing.at (tp::Category::longNote).intervalMs, 0) + " ms"
          + (settings.fastRepetition ? ", fast repetition " + juce::String (settings.fastRepIntervalMs, 0) + " ms" : juce::String())
-         + (legatoJobs > 0 ? ", " + juce::String (legatoJobs) + " legato jobs (note x layer)" : juce::String()));
+         + (legatoJobs > 0 ? ", " + juce::String (legatoJobs) + " legato jobs" : juce::String()));
 
     // ---- clone the configured plugin into N workers (VST3 instances are created on the message thread)
     // keep the exact plugin setup next to the results (re-runs, offline RR / timing investigations)
@@ -1676,7 +1673,7 @@ void MainComponent::startRun()
         collection.name + " - " + inst.name + " - " + juce::Time::getCurrentTime().formatted ("%Y-%m-%d %H%M%S") + ".pluginstate"));
     runStateFile.getParentDirectory().createDirectory();
     if (runStateFile.replaceWithData (runState.getData(), runState.getSize()))
-        log ("Plugin state saved: " + runStateFile.getFileName());
+        log ("Saved " + runStateFile.getFileName());
     info.stateFile = runStateFile.getFullPathName();
     store.setPluginInfo (info);
     workers.clear();
@@ -1689,14 +1686,13 @@ void MainComponent::startRun()
     const int delayMs = 0;
     juce::Component::SafePointer<MainComponent> safe (this);
     if (reusable)
-        log ("Reusing " + juce::String ((int) pool.size()) + " already-loaded worker instance(s).");
+        log ("Reusing " + juce::String ((int) pool.size()) + " loaded workers");
     else if (! pool.empty())
     {
         // SINE's sample preloader thread can crash when instances are destroyed while it works (seen twice,
         // both times right after a setup change released a whole pool at once): release them one at a
         // time, then give the plugin a few seconds before new instances start preloading
-        log ("Plugin setup changed - releasing the previous " + juce::String ((int) pool.size())
-             + " worker instance(s) one at a time before loading new ones.");
+        log (utf8 ("Plugin setup changed. Releasing ") + juce::String ((int) pool.size()) + utf8 (" workers…"));
         releasePoolThen ([safe, settings] { if (safe != nullptr) safe->createNextWorker (0, settings); });
         return;
     }
@@ -1728,7 +1724,7 @@ void MainComponent::createNextWorker (int index, RunSettings settings)
         awaitingWorker = -1;
         if (workers.empty())
         {
-            log (stopRequested ? "Stopped." : "No workers could be created.");
+            log (stopRequested ? "Stopped." : "Couldn't create any workers.");
             updateEnablement();
         }
         return;
@@ -1737,7 +1733,7 @@ void MainComponent::createNextWorker (int index, RunSettings settings)
     auto startWorker = [this, safe, index, settings] (std::unique_ptr<juce::AudioPluginInstance> instance, bool reused) {
         workers.push_back (std::make_unique<RenderWorker> (index, std::move (instance), *ctx));
         workers.back()->startThread();
-        log ("Worker " + juce::String (index) + (reused ? " reused" : " created") + ", waiting for it to sound...");
+        log ("Worker " + juce::String (index) + (reused ? " reused" : " created") + utf8 (", waiting for sound…"));
         if (! running)
         {
             running = true;
@@ -1767,7 +1763,7 @@ void MainComponent::createNextWorker (int index, RunSettings settings)
             if (instance == nullptr || self.stopRequested)
             {
                 if (instance == nullptr)
-                    self.log ("Worker " + juce::String (index) + " failed to create: " + err);
+                    self.log ("Couldn't create worker " + juce::String (index) + ": " + err);
                 self.createNextWorker (index + 1, settings);
                 return;
             }
@@ -1784,7 +1780,7 @@ void MainComponent::stopRun()
     stopRequested = true;
     for (auto& w : workers)
         w->signalThreadShouldExit();
-    log ("Stopping...");
+    log (utf8 ("Stopping…"));
 }
 
 void MainComponent::finishRun()
@@ -1809,7 +1805,7 @@ void MainComponent::finishRun()
          + juce::String (store.hitsRendered()) + " hits in "
          + juce::String (elapsed, 1) + " s");
     if (store.doneJobs() < store.totalJobs() && ! stopRequested)
-        log ("Not all hits were rendered - see worker messages above.");
+        log ("Some hits weren't rendered. See the worker messages above.");
 
     if (store.doneJobs() > 0)
     {
@@ -1818,11 +1814,11 @@ void MainComponent::finishRun()
                                                      + juce::Time::getCurrentTime().formatted ("%Y-%m-%d %H%M%S") + ".json");
         lastResultFile = resultsDir().getChildFile (name);
         auto r = store.writeJson (lastResultFile);
-        log (r.wasOk() ? "Saved " + lastResultFile.getFullPathName() : r.getErrorMessage());
+        log (r.wasOk() ? "Saved " + lastResultFile.getFullPathName() : "Couldn't save: " + r.getErrorMessage());
         if (r.wasOk())
         {
             auto d = writeCompactDelays (lastResultFile);
-            log (d.wasOk() ? "Saved delays " + delaysFileFor (lastResultFile).getFileName() : d.getErrorMessage());
+            log (d.wasOk() ? "Saved " + delaysFileFor (lastResultFile).getFileName() : "Couldn't save: " + d.getErrorMessage());
         }
     }
     updateEnablement();
@@ -1837,7 +1833,7 @@ void MainComponent::exportResults()
         return;
     }
     auto start = lastResultFile != juce::File() ? lastResultFile : resultsDir().getChildFile ("results.json");
-    chooser = std::make_unique<juce::FileChooser> ("Export results", start, "*.json");
+    chooser = std::make_unique<juce::FileChooser> ("Export Results", start, "*.json");
     chooser->launchAsync (juce::FileBrowserComponent::saveMode | juce::FileBrowserComponent::warnAboutOverwriting,
                           [this] (const juce::FileChooser& fc) {
                               auto f = fc.getResult();
@@ -1845,11 +1841,11 @@ void MainComponent::exportResults()
                                   return;
                               f = f.withFileExtension ("json");
                               auto r = store.writeJson (f);
-                              log (r.wasOk() ? "Exported " + f.getFullPathName() : r.getErrorMessage());
+                              log (r.wasOk() ? "Exported " + f.getFullPathName() : "Couldn't export: " + r.getErrorMessage());
                               if (r.wasOk())
                               {
                                   auto d = writeCompactDelays (f);
-                                  log (d.wasOk() ? "Exported delays " + delaysFileFor (f).getFileName() : d.getErrorMessage());
+                                  log (d.wasOk() ? "Exported " + delaysFileFor (f).getFileName() : "Couldn't export: " + d.getErrorMessage());
                               }
                           });
 }
@@ -1882,7 +1878,7 @@ void MainComponent::timerCallback()
         if (unitsDone > 0)
         {
             const double remainingSec = elapsed * (unitsTotal - unitsDone) / unitsDone;
-            eta = "ETA " + juce::RelativeTime::seconds (remainingSec).getDescription() + "  (" + juce::String (100.0 * progress, 1) + "%)";
+            eta = juce::RelativeTime::seconds (remainingSec).getDescription() + " left (" + juce::String (100.0 * progress, 0) + "%)";
         }
         // legato jobs run for minutes and report results only at their end: count their transitions live
         if (ctx != nullptr && ctx->legatoTransitionsTotal > 0)
@@ -1891,8 +1887,8 @@ void MainComponent::timerCallback()
         if (juce::Time::getMillisecondCounterHiRes() - lastStatusLogMs > 10000.0)
         {
             lastStatusLogMs = juce::Time::getMillisecondCounterHiRes();
-            log ("[status] jobs " + juce::String (done) + "/" + juce::String (total) + ", hits " + juce::String (store.hitsRendered())
-                 + ", workers alive " + juce::String ((int) std::count_if (workers.begin(), workers.end(), [] (auto& w) { return ! w->finished(); }))
+            log ("Status: jobs " + juce::String (done) + "/" + juce::String (total) + ", hits " + juce::String (store.hitsRendered())
+                 + ", workers " + juce::String ((int) std::count_if (workers.begin(), workers.end(), [] (auto& w) { return ! w->finished(); }))
                  + " " + eta);
         }
         table.repaint();
@@ -1928,9 +1924,9 @@ void MainComponent::refreshNextStep()
 {
     const bool busy = running || creatingWorkers;
     const auto missing = missingStep();
-    nextStepLabel.setText (busy ? juce::String ("Running...")
-                                : missing.isNotEmpty() ? "Next step: " + missing
-                                                       : "Ready: check the ticked articulations and the keyswitch base, then press Start.",
+    nextStepLabel.setText (busy ? utf8 ("Running…")
+                                : missing.isNotEmpty() ? "Next: " + missing
+                                                       : "Ready. Check the keyswitch base, then click Start.",
                            juce::dontSendNotification);
     nextStepLabel.setColour (juce::Label::textColourId, missing.isNotEmpty() && ! busy ? juce::Colours::orange : juce::Colours::lightgreen);
 }
@@ -1938,13 +1934,13 @@ void MainComponent::refreshNextStep()
 juce::String MainComponent::missingStep() const
 {
     if (master == nullptr)
-        return "load the instrument plugin (1. Instrument plugin -> Load), then load your instrument inside its window.";
+        return "Load the plugin, then your instrument in its window.";
     if (collection.instruments.empty())
-        return "load a preset (2. Preset -> Load Preset JSON...).";
+        return "Open a preset.";
     if (instrumentIndex < 0)
-        return "choose the instrument from the preset (the dropdown under Load Preset JSON) - the same one loaded in the plugin.";
+        return "Choose the instrument you loaded in the plugin.";
     if (std::none_of (rows.begin(), rows.end(), [] (auto& r) { return r.enabled; }))
-        return "tick at least one articulation in the Run column.";
+        return "Select at least one articulation.";
     return {};
 }
 

@@ -98,7 +98,7 @@ Save as `presets/<vendor>/<vendor>_<collection>.json`, lower case, words joined 
 | `name` | **yes** | exactly as the player shows it. With SINE it is the fallback match when the keyswitch doesn't fit |
 | `category` | **yes** | `short`, `long`, `dynamic` or `phrase` (see below). An unknown value reads as `short` |
 | `legato` | yes | `true` if playing overlapping notes makes a legato transition |
-| `ranges` | **yes** | list of `{ "lo", "hi" }` MIDI note numbers, inclusive. `from`/`to` are optional note names for readers; **the loader only reads `lo`/`hi`**. `[]` = unplayable: the row starts unticked |
+| `ranges` | **yes** | list of `{ "lo", "hi" }` MIDI note numbers, inclusive. `from`/`to` are optional note names for readers; **the loader only reads `lo`/`hi`**. `[]` = unplayable: the row starts unselected |
 | `dynamics` | **yes** | layer names from soft to loud, e.g. `["pp","mf","ff"]`. One entry per recorded layer. Missing = `["mf"]` |
 | `roundRobins` | yes | RR samples per note and layer. Minimum 1 |
 | `keyswitch` | no | explicit keyswitch as a note name (`"C-1"`) or MIDI number. Use it when keyswitches are not a contiguous grid. Overrides `keyswitchBase + index − 1` |
@@ -209,8 +209,8 @@ print("ok")
 PY
 ```
 
-Then load it in Secant (*Preset › Load…*), choose the instrument and check the table: Range, Dynamics,
-RR and KS should match the docs. Edits made there are written back by *Save… › Save preset…*. With
-SINE Player loaded, *Save… › Save with SINE's configuration…* writes the player's keyswitches, layers,
+Then load it in Secant (*Preset › Open…*), choose the instrument and check the table: Range, Dynamics,
+RR and KS should match the docs. Edits made there are written back by *Save… › Save Preset…*. With
+SINE Player loaded, *Save… › Save with SINE Settings…* writes the player's keyswitches, layers,
 dyn src, RR counts, legato flags and playable ranges into the selected instrument, then saves.
 Use it to correct a preset written from incomplete docs.
