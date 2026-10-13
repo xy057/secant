@@ -300,6 +300,70 @@ private:
     std::function<void()> closeCallback;
 };
 
+// The instance the user configures is never part of a run, but a plugin that never gets an audio callback
+// looks unconnected: Kontakt instruments whose scripts initialise from audio-time callbacks then stay at
+// "Instrument not initialised". Like a DAW with an idle track, this feeds it silent blocks in real time
+// (stopped transport at 120 bpm) for as long as it is loaded. Its output is discarded.
+class MainComponent::MasterPump : public juce::Thread
+{
+public:
+    MasterPump (juce::AudioPluginInstance& p, double rate, int block)
+        : juce::Thread ("MasterPump"), plugin (p), sampleRate (rate), blockSize (block)
+    {
+        playHead.sampleRate = rate;
+        plugin.setPlayHead (&playHead);
+        startThread();
+    }
+    ~MasterPump() override
+    {
+        stopThread (2000);
+        plugin.setPlayHead (nullptr);
+    }
+
+    void run() override
+    {
+        juce::AudioBuffer<float> buffer (juce::jmax (1, plugin.getTotalNumInputChannels(), plugin.getTotalNumOutputChannels()), blockSize);
+        juce::MidiBuffer midi;
+        const double blockMs = blockSize * 1000.0 / sampleRate;
+        double next = juce::Time::getMillisecondCounterHiRes();
+        while (! threadShouldExit())
+        {
+            buffer.clear();
+            midi.clear();
+            plugin.processBlock (buffer, midi);
+            playHead.samples += blockSize;
+            next += blockMs;
+            const double ahead = next - juce::Time::getMillisecondCounterHiRes();
+            if (ahead > 1.0)
+                wait ((int) ahead);
+            else if (ahead < -500.0)
+                next = juce::Time::getMillisecondCounterHiRes(); // fell behind (system busy): don't burst to catch up
+        }
+    }
+
+private:
+    struct PlayHead : juce::AudioPlayHead
+    {
+        std::atomic<int64_t> samples { 0 };
+        double sampleRate = 48000.0;
+        juce::Optional<PositionInfo> getPosition() const override
+        {
+            PositionInfo info;
+            info.setBpm (120.0);
+            info.setTimeSignature (TimeSignature { 4, 4 });
+            info.setIsPlaying (false);
+            info.setTimeInSamples (samples.load());
+            info.setTimeInSeconds ((double) samples.load() / sampleRate);
+            return info;
+        }
+    };
+
+    juce::AudioPluginInstance& plugin;
+    const double sampleRate;
+    const int blockSize;
+    PlayHead playHead;
+};
+
 // ============================================================================ construction
 
 MainComponent::MainComponent()
@@ -560,6 +624,12 @@ MainComponent::~MainComponent()
     workers.clear();
     pool.clear();
     closeEditor();
+    releaseMaster();
+}
+
+void MainComponent::releaseMaster()
+{
+    masterPump = nullptr; // no audio callback may be running when the instance goes
     master = nullptr;
 }
 
@@ -739,7 +809,7 @@ void MainComponent::loadPlugin()
 
     pool.clear();
     closeEditor();
-    master = nullptr;
+    releaseMaster();
 
     juce::OwnedArray<juce::PluginDescription> descs;
     for (auto* format : formatManager.getFormats())
@@ -774,6 +844,7 @@ void MainComponent::loadPlugin()
             inst->enableAllBuses();
             inst->prepareToPlay (settings.sampleRate, settings.blockSize);
             safe->master = std::move (inst);
+            safe->masterPump = std::make_unique<MasterPump> (*safe->master, settings.sampleRate, settings.blockSize);
             safe->pluginGroup.setText ("1. Plugin: " + safe->masterDesc.name + " (latency "
                                        + juce::String (safe->master->getLatencySamples()) + " samples, "
                                        + juce::String (safe->master->getTotalNumOutputChannels()) + " outputs)");

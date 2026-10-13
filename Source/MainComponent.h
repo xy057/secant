@@ -88,13 +88,16 @@ private:
     class LegatoToggle;
 
     class PluginWindow;
+    class MasterPump;
 
     // ---- plugin
     juce::AudioPluginFormatManager formatManager;
     juce::Array<juce::File> pluginFiles;
     juce::PluginDescription masterDesc;
     std::unique_ptr<juce::AudioPluginInstance> master;
+    std::unique_ptr<MasterPump> masterPump; // after `master`: destroyed first
     std::unique_ptr<PluginWindow> editorWindow;
+    void releaseMaster();
 
     // ---- preset
     tp::Collection collection;
