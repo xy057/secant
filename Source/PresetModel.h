@@ -18,6 +18,7 @@ Category categoryFromString (const juce::String&);
 
 enum class DynamicsSource { velocity, cc1, autoDetect };
 juce::String toString (DynamicsSource);
+DynamicsSource dynamicsSourceFromString (const juce::String&); // "velocity" / "cc1", anything else = autoDetect
 
 struct NoteRange { int lo = 0, hi = -1; };
 
@@ -32,7 +33,9 @@ struct Articulation
     juce::StringArray dynamics; // e.g. {"pp","mf","ff"}
     int roundRobins = 1;
     int keyswitch = -1;         // explicit keyswitch note (players without a keyswitch grid, e.g. Kontakt); -1 = base + index - 1
+    DynamicsSource dynamicsSource = DynamicsSource::autoDetect; // how layers switch; auto = detected at run time
     juce::StringArray issues;
+    juce::var json;             // the object it was loaded from: fields Secant doesn't use survive a save
 
     juce::Array<int> allNotes() const;
     juce::String rangeText() const;
@@ -45,6 +48,7 @@ struct Instrument
 {
     juce::String name, group;
     std::vector<Articulation> articulations;
+    juce::var json;
     juce::String displayName() const { return group.isNotEmpty() && group != name ? group + " / " + name : name; }
 };
 
@@ -54,6 +58,7 @@ struct Collection
     juce::String keyswitchBase; // e.g. "C0" - default key of articulation #1, empty if unknown
     juce::File file;
     std::vector<Instrument> instruments;
+    juce::var json;
 
     static juce::Result load (const juce::File&, Collection& out);
     juce::Result save (const juce::File&) const; // secant.preset JSON (the format load() reads)

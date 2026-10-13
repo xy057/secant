@@ -48,6 +48,10 @@ private:
     // preset editing (in memory until saved)
     void newPreset();
     void savePreset();
+    void showSaveMenu();
+    // writes the loaded SINE instrument's keyswitches, layers, dyn src, RR, legato and playable range
+    // into the selected instrument (in memory, logged per articulation); false if there is none
+    bool applySineConfiguration (const juce::MemoryBlock& pluginState);
     void addInstrument();
     void removeInstrument();
     void addArticulation();

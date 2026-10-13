@@ -102,10 +102,16 @@ public:
                     "Velocity: layer midpoints are sent as velocity (CC1 parked at 100).\n"
                     "CC1: each layer's pure crossfade point is sent as CC1 (velocity 100).");
         onChange = [this] {
-            if (row >= 0)
-                owner.rows[(size_t) row].dynSource = getSelectedId() == 2   ? DynamicsSource::cc1
-                                                     : getSelectedId() == 1 ? DynamicsSource::velocity
-                                                                            : DynamicsSource::autoDetect;
+            if (row < 0)
+                return;
+            const auto src = getSelectedId() == 2 ? DynamicsSource::cc1 : getSelectedId() == 1 ? DynamicsSource::velocity : DynamicsSource::autoDetect;
+            owner.rows[(size_t) row].dynSource = src;
+            if (auto* a = owner.articulationAt (row); a != nullptr && a->dynamicsSource != src)
+            {
+                a->dynamicsSource = src; // saved with the preset
+                owner.presetModified = true;
+                owner.updatePresetLabel();
+            }
         };
     }
     void setRow (int r)
@@ -321,11 +327,12 @@ MainComponent::MainComponent()
         addAndMakeVisible (b);
     newPresetButton.setTooltip ("Start an empty preset (any player - e.g. a Kontakt instrument): add articulations with + below "
                                 "and double-click the cells to fill them in");
-    savePresetButton.setTooltip ("Save the preset with your edits (names, ranges, layers, RR, categories, legato, keyswitches)");
+    savePresetButton.setTooltip ("Save the preset with your edits (names, ranges, layers, RR, categories, legato, keyswitches, dyn src), "
+                                 "optionally with the loaded SINE instrument's own configuration");
     addInstrumentButton.setTooltip ("Add an instrument to the preset");
     removeInstrumentButton.setTooltip ("Remove the selected instrument from the preset");
     newPresetButton.onClick = [this] { newPreset(); };
-    savePresetButton.onClick = [this] { savePreset(); };
+    savePresetButton.onClick = [this] { showSaveMenu(); };
     addInstrumentButton.onClick = [this] { addInstrument(); };
     removeInstrumentButton.onClick = [this] { removeInstrument(); };
     // typing a name renames the selected instrument
@@ -851,8 +858,8 @@ void MainComponent::selectInstrument (int index)
         r.enabled = ! a.ranges.isEmpty();
         r.category = a.category;
         r.keyswitchOverride = a.keyswitch;
-        // detected per articulation at run time (SINE mixes velocity- and CC1-switched articulations)
-        r.dynSource = DynamicsSource::autoDetect;
+        // auto: detected per articulation at run time (SINE mixes velocity- and CC1-switched articulations)
+        r.dynSource = a.dynamicsSource;
         rows.push_back (r);
     }
     table.updateContent();
@@ -976,6 +983,120 @@ void MainComponent::newPreset()
     addArticulation();
     log ("New preset: add articulations with + (above the table), double-click a cell to edit it, type in the instrument box "
          "to rename the instrument, then Save...");
+}
+
+void MainComponent::showSaveMenu()
+{
+    if (collection.instruments.empty())
+    {
+        log ("Nothing to save - load a preset or press New.");
+        return;
+    }
+    juce::MemoryBlock state;
+    if (master != nullptr && instrumentIndex >= 0)
+        master->getStateInformation (state);
+    const bool sine = parseSineState (state).instrument() != nullptr;
+    juce::PopupMenu m;
+    m.addItem ("Save preset...", [this] { savePreset(); });
+    m.addItem ("Save with SINE's configuration...", sine, false, [this, state] {
+        if (applySineConfiguration (state))
+            savePreset();
+    });
+    if (! sine)
+        m.addSectionHeader ("(SINE's configuration: load SINE Player with the instrument and choose it above)");
+    m.showMenuAsync (juce::PopupMenu::Options().withTargetComponent (savePresetButton));
+}
+
+bool MainComponent::applySineConfiguration (const juce::MemoryBlock& state)
+{
+    const auto sineState = parseSineState (state);
+    const auto* si = sineState.instrument();
+    if (si == nullptr || instrumentIndex < 0 || running)
+        return false;
+    auto& inst = collection.instruments[(size_t) instrumentIndex];
+    const int base = parseNoteName (ksBaseEdit.getText());
+    int changed = 0;
+    juce::StringArray matched, missing;
+    for (size_t i = 0; i < inst.articulations.size(); ++i)
+    {
+        auto& a = inst.articulations[i];
+        // the same matching a run uses: by keyswitch, else by title (SINE wins on the key)
+        ArticulationPlan p;
+        p.art = a;
+        p.keyswitch = a.keyswitch >= 0 ? a.keyswitch : base >= 0 ? base + a.index - 1 : -1;
+        PlanNotes ignored;
+        attachSine (p, si, DynamicsSource::autoDetect, ignored);
+        if (! p.hasSine)
+        {
+            missing.add ("#" + juce::String (a.index) + " " + a.name);
+            continue;
+        }
+        const auto& s = p.sine;
+        matched.add (s.title);
+        juce::StringArray what;
+        const int defaultKs = base >= 0 ? base + a.index - 1 : -1;
+        const int ks = p.keyswitch == defaultKs ? -1 : p.keyswitch; // explicit only where it leaves the grid
+        if (ks != a.keyswitch)
+        {
+            what.add ("keyswitch " + (ks >= 0 ? noteName (ks) : "base + " + juce::String (a.index) + " - 1"));
+            a.keyswitch = ks;
+            rows[i].keyswitchOverride = ks;
+        }
+        if (! s.dynamics.isEmpty() && s.dynamics != a.dynamics)
+        {
+            what.add ("layers " + a.dynamics.joinIntoString (" ") + " -> " + s.dynamics.joinIntoString (" "));
+            a.dynamics = s.dynamics;
+        }
+        const auto src = s.modwheelDynamics ? DynamicsSource::cc1 : DynamicsSource::velocity;
+        if (a.dynamicsSource == DynamicsSource::autoDetect)
+        {
+            what.add ("dyn src " + toString (src));
+            a.dynamicsSource = src;
+            rows[i].dynSource = src;
+        }
+        if (s.roundRobins >= 1 && s.roundRobins != a.roundRobins)
+        {
+            what.add ("RR " + juce::String (a.roundRobins) + " -> " + juce::String (s.roundRobins));
+            a.roundRobins = s.roundRobins;
+        }
+        if (s.legato != a.legato)
+        {
+            what.add (juce::String ("legato ") + (s.legato ? "on" : "off"));
+            a.legato = s.legato;
+        }
+        if (s.keyLow >= 0 && s.keyHigh >= s.keyLow && ! a.ranges.isEmpty())
+        {
+            // the player's playable range: keep the docs' ranges where they overlap it
+            juce::Array<NoteRange> clipped;
+            for (auto r : a.ranges)
+                if (r.hi >= s.keyLow && r.lo <= s.keyHigh)
+                    clipped.add ({ juce::jmax (r.lo, s.keyLow), juce::jmin (r.hi, s.keyHigh) });
+            const bool same = clipped.size() == a.ranges.size()
+                              && std::equal (clipped.begin(), clipped.end(), a.ranges.begin(),
+                                             [] (const NoteRange& x, const NoteRange& y) { return x.lo == y.lo && x.hi == y.hi; });
+            if (! clipped.isEmpty() && ! same)
+            {
+                what.add ("range " + a.rangeText() + " -> " + noteName (s.keyLow) + "-" + noteName (s.keyHigh) + " overlap");
+                a.ranges = clipped;
+            }
+        }
+        if (! what.isEmpty())
+        {
+            ++changed;
+            log ("#" + juce::String (a.index) + " " + a.name + ": " + what.joinIntoString (", "));
+        }
+    }
+    juce::StringArray extra;
+    for (auto& s : si->articulations)
+        if (s.enabled && ! matched.contains (s.title))
+            extra.add (s.title);
+    log ("SINE '" + si->title + "': " + juce::String (changed) + " of " + juce::String ((int) inst.articulations.size())
+         + " articulations updated in " + inst.displayName()
+         + (missing.isEmpty() ? juce::String() : "; not in SINE (left as they are): " + missing.joinIntoString (", "))
+         + (extra.isEmpty() ? juce::String() : "; in SINE but not in the preset: " + extra.joinIntoString (", ")));
+    if (changed > 0)
+        presetEdited();
+    return true;
 }
 
 void MainComponent::savePreset()

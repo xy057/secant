@@ -58,6 +58,11 @@ juce::String toString (DynamicsSource d)
     return d == DynamicsSource::cc1 ? "cc1" : d == DynamicsSource::autoDetect ? "auto" : "velocity";
 }
 
+DynamicsSource dynamicsSourceFromString (const juce::String& s)
+{
+    return s == "cc1" ? DynamicsSource::cc1 : s == "velocity" ? DynamicsSource::velocity : DynamicsSource::autoDetect;
+}
+
 juce::Array<int> Articulation::allNotes() const
 {
     juce::Array<int> notes;
@@ -87,6 +92,7 @@ juce::Result Collection::load (const juce::File& f, Collection& out)
 
     Collection c;
     c.file = f;
+    c.json = json;
     c.vendor = json["vendor"].toString();
     c.name = json["collection"].toString();
     c.player = json["player"].toString();
@@ -98,6 +104,7 @@ juce::Result Collection::load (const juce::File& f, Collection& out)
         for (auto& iv : *insts)
         {
             Instrument inst;
+            inst.json = iv;
             inst.name = iv["name"].toString();
             inst.group = iv["group"].toString();
             if (auto* arts = iv["articulations"].getArray())
@@ -105,6 +112,7 @@ juce::Result Collection::load (const juce::File& f, Collection& out)
                 for (auto& av : *arts)
                 {
                     Articulation a;
+                    a.json = av;
                     a.index = (int) av["index"];
                     a.docNumber = av["docNumber"];
                     a.name = av["name"].toString();
@@ -113,6 +121,7 @@ juce::Result Collection::load (const juce::File& f, Collection& out)
                     a.roundRobins = juce::jmax (1, (int) av["roundRobins"]);
                     if (av.hasProperty ("keyswitch"))
                         a.keyswitch = av["keyswitch"].isString() ? parseNoteName (av["keyswitch"].toString()) : (int) av["keyswitch"];
+                    a.dynamicsSource = dynamicsSourceFromString (av["dynamicsSource"].toString());
                     if (auto* rs = av["ranges"].getArray())
                         for (auto& rv : *rs)
                             a.ranges.add ({ (int) rv["lo"], (int) rv["hi"] });
@@ -170,9 +179,20 @@ bool parseRangeText (const juce::String& text, juce::Array<NoteRange>& out)
     return true;
 }
 
+namespace
+{
+// a copy of the loaded object (fields Secant doesn't model stay, in their order), or a new one
+juce::DynamicObject* objectFrom (const juce::var& loaded)
+{
+    if (auto* o = loaded.getDynamicObject())
+        return o->clone().release();
+    return new juce::DynamicObject();
+}
+} // namespace
+
 juce::Result Collection::save (const juce::File& f) const
 {
-    auto* root = new juce::DynamicObject();
+    auto* root = objectFrom (json);
     root->setProperty ("format", "secant.preset");
     root->setProperty ("version", 1);
     root->setProperty ("vendor", vendor);
@@ -184,14 +204,16 @@ juce::Result Collection::save (const juce::File& f) const
     juce::Array<juce::var> insts;
     for (auto& inst : instruments)
     {
-        auto* io = new juce::DynamicObject();
+        auto* io = objectFrom (inst.json);
         io->setProperty ("name", inst.name);
         if (inst.group.isNotEmpty())
             io->setProperty ("group", inst.group);
+        else
+            io->removeProperty ("group");
         juce::Array<juce::var> arts;
         for (auto& a : inst.articulations)
         {
-            auto* ao = new juce::DynamicObject();
+            auto* ao = objectFrom (a.json);
             ao->setProperty ("index", a.index);
             ao->setProperty ("docNumber", a.docNumber);
             ao->setProperty ("name", a.name);
@@ -215,6 +237,12 @@ juce::Result Collection::save (const juce::File& f) const
             ao->setProperty ("roundRobins", a.roundRobins);
             if (a.keyswitch >= 0)
                 ao->setProperty ("keyswitch", noteName (a.keyswitch));
+            else
+                ao->removeProperty ("keyswitch");
+            if (a.dynamicsSource != DynamicsSource::autoDetect)
+                ao->setProperty ("dynamicsSource", toString (a.dynamicsSource));
+            else
+                ao->removeProperty ("dynamicsSource");
             juce::Array<juce::var> issues;
             for (auto& s : a.issues)
                 issues.add (s);

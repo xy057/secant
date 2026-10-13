@@ -447,6 +447,7 @@ int main()
         a.dynamics = { "p", "f" };
         a.roundRobins = 4;
         a.keyswitch = 13;
+        a.dynamicsSource = DynamicsSource::cc1;
         inst.articulations.push_back (a);
         c.instruments.push_back (inst);
         const auto f = juce::File::createTempFile (".json");
@@ -459,9 +460,32 @@ int main()
             const auto& b = back.instruments[0].articulations[0];
             expect (b.name == "Spiccato" && b.index == 3 && b.legato && b.roundRobins == 4 && b.keyswitch == 13
                         && b.dynamics == a.dynamics && b.ranges.size() == 1 && b.ranges[0].lo == 55 && b.ranges[0].hi == 96
-                        && back.keyswitchBase == "C-1" && back.player == "Kontakt",
+                        && b.dynamicsSource == DynamicsSource::cc1 && back.keyswitchBase == "C-1" && back.player == "Kontakt",
                     "preset fields survive the round trip", 1, 1, 0);
         }
+        f.deleteFile();
+    }
+    {
+        // a loaded preset keeps the fields Secant doesn't model (legatoTypes, variations, ...) when saved again
+        const auto f = juce::File::createTempFile (".json");
+        f.replaceWithText (R"({"format":"secant.preset","version":1,"collection":"X","notes":"keep",
+            "instruments":[{"name":"Vn","ext":1,"articulations":[{"index":1,"name":"Sus","category":"long",
+            "ranges":[{"lo":48,"hi":96}],"dynamics":["p","f"],"roundRobins":1,"keyswitch":"C0",
+            "legatoTypes":["Fingered","Slurred"],"tempoMeasured":true}]}]})");
+        Collection c, back;
+        bool ok = Collection::load (f, c).wasOk();
+        if (ok)
+        {
+            c.instruments[0].articulations[0].keyswitch = -1;
+            c.instruments[0].articulations[0].roundRobins = 3;
+            ok = c.save (f).wasOk() && Collection::load (f, back).wasOk();
+        }
+        const auto j = juce::JSON::parse (f);
+        const auto& av = j["instruments"][0]["articulations"][0];
+        expect (ok && j["notes"] == juce::var ("keep") && (int) j["instruments"][0]["ext"] == 1
+                    && av["legatoTypes"].size() == 2 && (bool) av["tempoMeasured"] && ! av.hasProperty ("keyswitch")
+                    && (int) av["roundRobins"] == 3 && back.instruments[0].articulations[0].keyswitch == -1,
+                "edited preset keeps unknown fields, drops a cleared keyswitch", ok, 1, 0);
         f.deleteFile();
     }
 
