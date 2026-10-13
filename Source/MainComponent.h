@@ -5,7 +5,7 @@
 #include "RenderWorker.h"
 
 // Workflow:
-//  1. pick a VST3 instrument (SINE Player), load it, open its editor and load the
+//  1. pick a VST3 instrument (any player; SINE Player gets extra support), load it, open its editor and load the
 //     instrument you want to measure (pick one mic position to save RAM per worker)
 //  2. load an instrument preset JSON (presets/berlin/*.json) and pick the matching instrument
 //  3. set the keyswitch base, tick articulations, Start
@@ -62,6 +62,7 @@ private:
     tp::Articulation* articulationAt (int row);
     void updatePlayerMode();             // SINE Player vs any other player (Kontakt, ...)
     bool isSinePlayer() const;
+    void updateRrResetBox (bool sinePlayer); // "As in SINE" is listed only with SINE Player
     bool presetModified = false;
     int keyswitchFor (int row) const;
     tp::RunSettings collectSettings() const;
@@ -122,24 +123,24 @@ private:
     double lastStatusLogMs = 0.0;
 
     // ---- widgets
-    juce::GroupComponent pluginGroup { {}, "1. Instrument plugin" }, presetGroup { {}, "2. Preset" }, settingsGroup { {}, "3. Settings" };
+    juce::GroupComponent pluginGroup { {}, "1. Plugin" }, presetGroup { {}, "2. Preset" }, settingsGroup { {}, "3. Settings" };
     juce::ComboBox pluginBox;
     juce::TextButton rescanButton { "Rescan" }, loadPluginButton { "Load" }, editorButton { "Open Editor" };
     juce::Label pluginStatus;
 
-    juce::TextButton presetButton { "Load..." }, newPresetButton { "New" }, savePresetButton { "Save..." },
+    juce::TextButton presetButton { juce::CharPointer_UTF8 ("Open…") }, newPresetButton { "New" }, savePresetButton { juce::CharPointer_UTF8 ("Save…") },
         addInstrumentButton { "+" }, removeInstrumentButton { "-" };
     juce::Label presetLabel;
     juce::ComboBox instrumentBox;
 
     juce::Label srLabel { {}, "Sample rate" }, workersLabel { {}, "Workers" }, ksLabel { {}, "KS base" },
-        stepLabel { {}, "Notes" }, speedLabel { {}, "Speed" }, primaryLabel { {}, "Onset:" };
+        stepLabel { {}, "Notes" }, speedLabel { {}, "Speed" }, primaryLabel { {}, "Onset" };
     juce::Label primaryCatLabels[4] { { {}, "short" }, { {}, "long" }, { {}, "dynamic" }, { {}, "phrase" } };
     juce::ComboBox sampleRateBox, stepBox, speedBox;
     juce::Slider workersSlider { juce::Slider::IncDecButtons, juce::Slider::TextBoxLeft };
     juce::TextEditor ksBaseEdit;
     juce::ToggleButton useKsToggle { "Send keyswitches" },
-        allSoundOffToggle { "All-sound-off per hit" };
+        allSoundOffToggle { "All Sound Off per hit" };
     juce::Label smoothLabel { {}, "Smoothing" }, maxHitsLabel { {}, "Max hits" };
     juce::ComboBox maxHitsBox, confirmBox;
     juce::Label confirmLabel { {}, "RR confirm" };
@@ -154,7 +155,7 @@ private:
     juce::TableListBox table { "articulations", this };
     juce::TextButton allButton { "All" }, noneButton { "None" }, addArtButton { "+" }, removeArtButton { "-" };
 
-    juce::TextButton startButton { "Start" }, stopButton { "Stop" }, exportButton { "Export JSON..." };
+    juce::TextButton startButton { "Start" }, stopButton { "Stop" }, exportButton { juce::CharPointer_UTF8 ("Export…") };
     juce::ProgressBar progressBar { progress };
     juce::Label etaLabel, nextStepLabel;
     juce::String missingStep() const; // empty when ready to run

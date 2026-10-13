@@ -1,6 +1,6 @@
 # Secant: details
 
-Hosts a VST3 instrument (built for SINE Player / Orchestral Tools Berlin series) and measures the
+Hosts a VST3 instrument (any player; SINE Player / Orchestral Tools gets extra support) and measures the
 **transient point** (the negative delay you need) of every articulation × note × dynamic layer ×
 round robin, with sub-sample precision. Everything is exported as JSON.
 
@@ -28,9 +28,9 @@ Probes for investigating a player (saved `.pluginstate` from a run):
 
 ## Workflow
 
-1. **Plugin**: choose `SINE Player` → *Load* → the editor opens. Load the instrument you want to
+1. **Plugin**: choose the player (e.g. `SINE Player`) → *Load* → the editor opens. Load the instrument you want to
    measure. Use **one mic position**, because every worker loads its own copy of the samples.
-2. **Preset**: *Load Preset JSON…* → `presets/berlin/*.json` → choose the same instrument.
+2. **Preset**: *Open…* → `presets/berlin/*.json` → choose the same instrument.
 3. **Start**. With SINE Player the tool reads SINE's own configuration from the plugin state (see
    *What SINE's state provides*): keyswitches, dynamic layers, velocity vs. mod-wheel dynamics, round-robin
    counts and the legato zone grid. Where the preset (docs) disagrees, SINE wins and the run log / JSON
@@ -122,7 +122,7 @@ legato transitions live (`legato N/M`). Every reset pause (note series, tail sub
 for that articulation (`resetAfterMS` + 250 ms). Berlin's runs use 4000 ms, so a shorter pause leaves
 the RR counter running and no two renders are identical.
 
-**RR reset** (Settings): "As set in SINE" (default) reads each articulation's reset time from the player,
+**RR reset** (Settings): "As in SINE" (default with SINE Player, listed only then) reads each articulation's reset time from the player,
 so changing it in SINE (Round Robin › Reset after) is picked up by the next run. Choosing 1000–3000 ms
 writes that time into the workers' copy of the state for every articulation (your open instance is
 unchanged; `render.rrResetOverrideMs`) and shrinks the reset pauses to it. Note series give the same
@@ -233,8 +233,9 @@ build/DelayExport_artefacts/Release/DelayExport ~/Documents/Secant/Results/*.jso
 
 Secant works with any VST3 instrument. When the loaded plugin is not SINE Player:
 
-- **What is switched off.** The SINE-only parts don't apply: reading the player's articulation list,
-  layers, RR counts and legato zones, and setting its RR reset time. The preset's data is used instead.
+- **What is switched off.** The SINE-only parts don't apply and are hidden (the *As in SINE* RR reset and
+  *Save with SINE Settings…*): reading the player's articulation list, layers, RR counts and legato
+  zones, and setting its RR reset time. The preset's data is used instead.
 - **RR reset.** This is how long a pause it takes before the player goes back to its first round robin.
   For other players it switches to **Never**: the round robin never resets automatically and keeps
   cycling (sequential) or picks at random, however long the pause. That is common in Kontakt. If the
@@ -254,9 +255,9 @@ Secant works with any VST3 instrument. When the loaded plugin is not SINE Player
 | Control | What it does |
 |---|---|
 | **New** | Starts an empty preset |
-| **Load…** | Loads a preset |
-| **Save…** › *Save preset…* | Writes `secant.preset` JSON with your edits, Dyn src included. Fields Secant doesn't use (`legatoTypes`, …) are kept |
-| **Save…** › *Save with SINE's configuration…* | First writes the loaded SINE instrument's keyswitches, layers, dyn src, RR counts, legato flags and playable ranges into the selected instrument (each change is logged), then saves |
+| **Open…** | Opens a preset |
+| **Save…** › *Save Preset…* | Writes `secant.preset` JSON with your edits, Dyn src included. Fields Secant doesn't use (`legatoTypes`, …) are kept |
+| **Save…** › *Save with SINE Settings…* (SINE Player only) | First writes the loaded SINE instrument's keyswitches, layers, dyn src, RR counts, legato flags and playable ranges into the selected instrument (each change is logged), then saves |
 | Instrument **+ / −** | Adds or removes an instrument |
 | Typing in the instrument box | Renames the selected instrument |
 | Table **+ / −** | Adds an articulation after the selected row, or removes the selected rows (Cmd/Shift-click for several) |
