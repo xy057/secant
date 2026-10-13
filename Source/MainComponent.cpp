@@ -421,15 +421,14 @@ MainComponent::MainComponent()
     rrResetLabel.setFont (juce::FontOptions (13.0f));
     addAndMakeVisible (rrResetLabel);
     // items + tooltip depend on the loaded player ("As in SINE" only with SINE Player): see updateRrResetBox()
-    rrResetKeyEdit.setTooltip ("Key that resets the player's round robins (C3 = 60). Sent before every series.");
-    rrResetKeyEdit.setTextToShowWhenEmpty ("key", juce::Colours::grey);
+    rrResetKeyLabel.setFont (juce::FontOptions (13.0f));
+    rrResetKeyLabel.setTooltip ("Optional: key that resets the player's round robins");
+    addChildComponent (rrResetKeyLabel);
+    rrResetKeyEdit.setTooltip ("Optional: key that resets the player's round robins (C3 = 60), sent before every series. "
+                               "Leave empty if the player has none.");
+    rrResetKeyEdit.setTextToShowWhenEmpty ("none", juce::Colours::grey);
     rrResetKeyEdit.onTextChange = [this] { refreshNextStep(); };
     addChildComponent (rrResetKeyEdit);
-    rrResetBox.onChange = [this] {
-        rrResetKeyEdit.setVisible (rrResetBox.getSelectedId() == 3);
-        resized();
-        refreshNextStep();
-    };
     updateRrResetBox (false);
     addAndMakeVisible (rrResetBox);
     maxHitsLabel.setFont (juce::FontOptions (13.0f));
@@ -639,7 +638,7 @@ void MainComponent::resized()
             { &confirmLabel, 70, &confirmBox, 104 },
             { &maxHitsLabel, 58, &maxHitsBox, 60 },
             { &rrResetLabel, 58, &rrResetBox, 100 },
-            { none, 0, &rrResetKeyEdit, 48 },
+            { &rrResetKeyLabel, 50, &rrResetKeyEdit, 48 },
             { &smoothLabel, 68, &smoothBox, 110 },
             { none, 0, &allSoundOffToggle, 160 },
             { &primaryLabel, 46, &primaryCatLabels[0], 40, true },
@@ -910,12 +909,10 @@ void MainComponent::updatePlayerMode()
 void MainComponent::updateRrResetBox (bool sine)
 {
     // a ComboBox can't hide an item: rebuild the list, keeping the chosen time. Switching player
-    // type moves between the two defaults ('As in SINE' <-> 'Never'). "Reset key" is for other players only.
+    // type moves between the two defaults ('As in SINE' <-> 'Never'). The optional RR key is for other players only.
     int selected = rrResetBox.getSelectedId();
     if (selected == 1 && ! sine)
         selected = 2;
-    else if (selected == 3 && sine)
-        selected = 1;
     else if ((selected == 2 || selected == 0) && sine)
         selected = 1;
     else if (selected == 0)
@@ -924,12 +921,11 @@ void MainComponent::updateRrResetBox (bool sine)
     if (sine)
         rrResetBox.addItem ("As in SINE", 1);
     rrResetBox.addItem ("Never", 2);
-    if (! sine)
-        rrResetBox.addItem ("Reset key", 3);
     for (int ms : { 1000, 1500, 2000, 3000 })
         rrResetBox.addItem (juce::String (ms) + " ms", ms);
     rrResetBox.setSelectedId (selected, juce::dontSendNotification);
-    rrResetKeyEdit.setVisible (selected == 3);
+    rrResetKeyLabel.setVisible (! sine);
+    rrResetKeyEdit.setVisible (! sine);
     if (getWidth() > 0)
         resized();
 
@@ -937,10 +933,10 @@ void MainComponent::updateRrResetBox (bool sine)
     if (sine)
         tip << "As in SINE: each articulation's own setting.\n";
     tip << "Never: they keep cycling or stay random (common in Kontakt).\n";
+    tip << "A time: wait that long before each series" << (sine ? ", and set it in SINE." : ".");
     if (! sine)
-        tip << "Reset key: the player resets them on a key; it is sent before each series.\n";
-    tip << "A time: wait that long before each series" << (sine ? ", and set it in SINE." : ".")
-        << "\nWith anything but Never, Secant first checks that the player replays identically, and switches to Never if not.";
+        tip << "\nRR key (optional): the player resets them on a key; it is sent before each series (with Never, it is the reset).";
+    tip << "\nUnless the round robins never reset, Secant first checks that the player replays identically, and switches to Never if not.";
     rrResetBox.setTooltip (tip);
 }
 
@@ -1421,7 +1417,9 @@ RunSettings MainComponent::collectSettings() const
     const int rrId = rrResetBox.getSelectedId();
     s.rrNeverResets = rrId == 2;
     s.rrResetOverrideMs = rrId >= 1000 ? (double) rrId : 0.0;
-    s.rrResetKey = rrId == 3 ? parseNoteName (rrResetKeyEdit.getText().trim()) : -1;
+    // empty (or SINE Player, where it is hidden) = the player has no reset key
+    s.rrResetKey = rrResetKeyEdit.isVisible() && rrResetKeyEdit.getText().trim().isNotEmpty()
+                       ? parseNoteName (rrResetKeyEdit.getText().trim()) : -1;
     s.confirmCycle = confirmBox.getSelectedId() > 1;
     s.confirmHits = juce::jmax (1, confirmBox.getSelectedId() - 1);
     s.maxHitsPerSeries = juce::jmax (2, maxHitsBox.getSelectedId());
@@ -1483,6 +1481,15 @@ void MainComponent::startRun()
     runState.reset();
     master->getStateInformation (runState);
     const bool sineRun = parseSineState (runState).valid;
+    if (settings.rrResetKey >= 0 && settings.rrNeverResets)
+    {
+        // no reset after a pause, but on the key: the pauses only let tails and controllers settle
+        settings.rrNeverResets = false;
+        settings.rrResetPauseMs = 500.0;
+        settings.legatoResetPauseMs = 1000.0;
+        log ("RR reset: key " + noteName (settings.rrResetKey) + " before each series, pauses "
+             + juce::String (settings.rrResetPauseMs, 0) + " ms");
+    }
     if (! sineRun && ! settings.rrNeverResets && settings.rrResetOverrideMs <= 0 && settings.rrResetKey < 0)
     {
         // "As in SINE" has nothing to read from another player: assume the safe case
@@ -1494,20 +1501,13 @@ void MainComponent::startRun()
         log ("RR reset: Never. Notes wait for silence, no tail subtraction or fast repetition, layers use velocity unless set to CC1.");
         settings.rrResetOverrideMs = 0;
     }
-    else if (settings.rrResetKey >= 0)
-    {
-        // the player resets its round robins on a key: the pauses only let tails and controllers settle
-        settings.rrResetPauseMs = 500.0;
-        settings.legatoResetPauseMs = 1000.0;
-        log ("RR reset: key " + noteName (settings.rrResetKey) + " before each series, pauses "
-             + juce::String (settings.rrResetPauseMs, 0) + " ms");
-    }
     else if (settings.rrResetOverrideMs > 0 && ! sineRun)
     {
         // another player with a known reset time: only the pauses follow it (nothing to patch)
         settings.rrResetPauseMs = settings.rrResetOverrideMs + 250.0;
         settings.legatoResetPauseMs = settings.rrResetPauseMs;
-        log ("RR reset: " + juce::String (settings.rrResetOverrideMs, 0) + " ms, pauses " + juce::String (settings.rrResetPauseMs, 0) + " ms");
+        log ("RR reset: " + juce::String (settings.rrResetOverrideMs, 0) + " ms, pauses " + juce::String (settings.rrResetPauseMs, 0) + " ms"
+             + (settings.rrResetKey >= 0 ? ", then key " + noteName (settings.rrResetKey) : juce::String()));
     }
     else if (settings.rrResetOverrideMs > 0)
     {
@@ -1947,7 +1947,7 @@ void MainComponent::updateEnablement()
     presetButton.setEnabled (! busy);
     instrumentBox.setEnabled (! busy && ! collection.instruments.empty());
     for (auto* c : std::initializer_list<juce::Component*> { &sampleRateBox, &workersSlider, &ksBaseEdit, &useKsToggle, &stepBox,
-                                                             &speedBox, &confirmBox, &maxHitsBox, &allSoundOffToggle, &smoothBox, &rrResetBox, &rrResetKeyEdit,
+                                                             &speedBox, &confirmBox, &maxHitsBox, &allSoundOffToggle, &smoothBox, &rrResetBox, &rrResetKeyEdit, &rrResetKeyLabel,
                                                              &allButton, &noneButton,
                                                              &newPresetButton, &savePresetButton, &addInstrumentButton, &removeInstrumentButton,
                                                              &addArtButton, &removeArtButton })
@@ -1978,8 +1978,8 @@ juce::String MainComponent::missingStep() const
         return "Choose the instrument you loaded in the plugin.";
     if (std::none_of (rows.begin(), rows.end(), [] (auto& r) { return r.enabled; }))
         return "Select at least one articulation.";
-    if (rrResetBox.getSelectedId() == 3 && parseNoteName (rrResetKeyEdit.getText().trim()) < 0)
-        return "Enter the RR reset key (e.g. C-1).";
+    if (rrResetKeyEdit.isVisible() && rrResetKeyEdit.getText().trim().isNotEmpty() && parseNoteName (rrResetKeyEdit.getText().trim()) < 0)
+        return "RR key isn't a note (e.g. C-1). Leave it empty if the player has none.";
     return {};
 }
 

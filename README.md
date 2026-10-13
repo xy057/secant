@@ -28,10 +28,12 @@ Tagging `v*` builds macOS (universal) and Windows releases via GitHub Actions.
 
 Results go to `~/Documents/Secant/Results/`, each with a compact `*.delays.json` beside it.
 
-**RR reset** (players other than SINE): *Never* if the round robins keep cycling, a time if the player
-restarts them after a pause, or *Reset key* if it restarts them on a key. With anything but *Never*,
-Secant first checks that the player replays identically from that reset, and switches to *Never* if it
-doesn't (humanize, random round robins, wrong reset setting). The result is in `determinismCheck`.
+**RR reset** (players other than SINE): *Never* if the round robins keep cycling, or a time if the player
+restarts them after a pause. If the player resets them on a key, enter it as *RR key* (optional; leave it
+empty if the player has none): it is sent before every series, and with *Never* it is the reset. Unless
+the round robins never reset, Secant first checks that the player replays identically from that reset,
+and switches to *Never* if it doesn't (humanize, random round robins, wrong reset setting). The result is
+in `determinismCheck`.
 
 ## More
 

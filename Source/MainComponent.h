@@ -147,7 +147,8 @@ private:
     juce::ComboBox smoothBox;
     juce::Label rrResetLabel { {}, "RR reset" };
     juce::ComboBox rrResetBox;
-    juce::TextEditor rrResetKeyEdit; // shown for "Reset key"
+    juce::Label rrResetKeyLabel { {}, "RR key" };
+    juce::TextEditor rrResetKeyEdit; // optional, players other than SINE
     juce::ComboBox primaryBoxes[4];
     juce::ToggleButton legatoToggle { "Legato" };
     juce::Label legatoIntervalsLabel { {}, "Intervals" }, legatoGapsLabel { {}, "Spacing" }, legatoPrimaryLabel { {}, "Point" };
