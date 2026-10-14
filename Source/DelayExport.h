@@ -16,4 +16,14 @@ juce::File delaysFileFor (const juce::File& resultsFile);
 // Reads a full results file and writes its compact form next to it (or to `out`).
 juce::Result writeCompactDelays (const juce::File& resultsFile, juce::File out = {});
 
+// Cubase 15 expression map (InstrumentMap fileVersion 2): one sound slot per articulation, keyswitch
+// as remote and output, and the median delay the GUI shows as the slot's Attack Compensation -
+// the median legato transition delay for articulations with measured legato, else the median onset.
+juce::String cubaseExpressionMap (const juce::var& fullResults);
+
+// "X.json" -> "X.expressionmap"
+juce::File expressionMapFileFor (const juce::File& resultsFile);
+
+juce::Result writeExpressionMap (const juce::File& resultsFile, juce::File out = {});
+
 } // namespace tp

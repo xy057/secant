@@ -1,4 +1,5 @@
-// Writes the compact delays file for saved results: DelayExport <results.json>... (-> <name>.delays.json)
+// Writes the compact delays file and the Cubase expression map for saved results:
+// DelayExport <results.json>... (-> <name>.delays.json, <name>.expressionmap)
 #include "../Source/DelayExport.h"
 #include <iostream>
 
@@ -18,6 +19,11 @@ int main (int argc, char** argv)
         const auto r = tp::writeCompactDelays (f);
         std::cout << (r.wasOk() ? "wrote " + tp::delaysFileFor (f).getFullPathName() : r.getErrorMessage()) << "\n";
         failed += r.failed() ? 1 : 0;
+        if (r.failed())
+            continue;
+        const auto m = tp::writeExpressionMap (f);
+        std::cout << (m.wasOk() ? "wrote " + tp::expressionMapFileFor (f).getFullPathName() : m.getErrorMessage()) << "\n";
+        failed += m.failed() ? 1 : 0;
     }
     return failed > 0 ? 1 : 0;
 }

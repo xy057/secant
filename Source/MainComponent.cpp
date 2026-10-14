@@ -1926,6 +1926,8 @@ void MainComponent::finishRun()
         {
             auto d = writeCompactDelays (lastResultFile);
             log (d.wasOk() ? "Saved " + delaysFileFor (lastResultFile).getFileName() : "Couldn't save: " + d.getErrorMessage());
+            auto m = writeExpressionMap (lastResultFile);
+            log (m.wasOk() ? "Saved " + expressionMapFileFor (lastResultFile).getFileName() : "Couldn't save: " + m.getErrorMessage());
         }
     }
     updateEnablement();
@@ -1953,6 +1955,8 @@ void MainComponent::exportResults()
                               {
                                   auto d = writeCompactDelays (f);
                                   log (d.wasOk() ? "Exported " + delaysFileFor (f).getFileName() : "Couldn't export: " + d.getErrorMessage());
+                                  auto m = writeExpressionMap (f);
+                                  log (m.wasOk() ? "Exported " + expressionMapFileFor (f).getFileName() : "Couldn't export: " + m.getErrorMessage());
                               }
                           });
 }

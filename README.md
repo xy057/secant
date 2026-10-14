@@ -26,7 +26,10 @@ Tagging `v*` builds macOS (universal) and Windows releases via GitHub Actions.
 2. **Preset**: *Open…* a file from `presets/` and choose the same instrument.
 3. **Start**.
 
-Results go to `~/Documents/Secant/Results/`, each with a compact `*.delays.json` beside it.
+Results go to `~/Documents/Secant/Results/`, each with a compact `*.delays.json` and a Cubase 15
+`*.expressionmap` beside it. The expression map has one sound slot per articulation (its keyswitch as
+remote and output) with the median delay shown in the *Median* column as the slot's Attack
+Compensation; articulations with measured legato use the legato median (*L*) instead.
 
 **RR reset** (players other than SINE): *Never* if the round robins keep cycling, or a time if the player
 restarts them after a pause. If the player resets them on a key, enter it as *RR key* (optional; leave it

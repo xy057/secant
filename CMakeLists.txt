@@ -75,7 +75,7 @@ target_compile_definitions(LegatoProbe PRIVATE JUCE_PLUGINHOST_VST3=1 JUCE_PLUGI
 target_link_libraries(LegatoProbe PRIVATE juce::juce_audio_processors juce::juce_dsp juce::juce_gui_extra
     PUBLIC juce::juce_recommended_config_flags juce::juce_recommended_warning_flags)
 
-# Compact delays export from saved results files: DelayExport <results.json>... -> <name>.delays.json
+# Delays export from saved results files: DelayExport <results.json>... -> <name>.delays.json, <name>.expressionmap
 juce_add_console_app(DelayExport PRODUCT_NAME "DelayExport")
 target_sources(DelayExport PRIVATE Tests/DelayExportMain.cpp Source/DelayExport.cpp Source/PresetModel.cpp)
 target_compile_definitions(DelayExport PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0)
