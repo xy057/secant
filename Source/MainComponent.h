@@ -22,6 +22,8 @@ public:
     void resized() override;
 
 private:
+    friend struct MainComponentTest; // Tests/UiStateTest.cpp
+
     // ---- table model
     int getNumRows() override;
     void paintRowBackground (juce::Graphics&, int row, int w, int h, bool selected) override;
@@ -116,7 +118,8 @@ private:
     int poolBlock = 0;
     void createNextWorker (int index, tp::RunSettings settings);
     void releasePoolThen (std::function<void()> next); // one instance at a time (SINE preloader safety)
-    int awaitingWorker = -1;          // index of the worker that must sound before the next is created
+    int awaitingWorker = -1;          // position in `workers` of the one that must sound before the next is created
+    int nextWorkerIndex = 0;          // id of the next worker (ids skip instances that failed to load)
     tp::RunSettings creationSettings;
     bool running = false, creatingWorkers = false, stopRequested = false;
     double progress = 0.0;

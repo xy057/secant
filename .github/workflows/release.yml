@@ -56,16 +56,15 @@ jobs:
 
       - name: Build
         shell: bash
-        run: cmake --build build --config Release --parallel --target Secant OnsetAnalyzerTest
+        run: cmake --build build --config Release --parallel --target Secant OnsetAnalyzerTest UiStateTest
 
       - name: Test
         shell: bash
         run: |
-          if [ "$RUNNER_OS" = "Windows" ]; then
-            build/OnsetAnalyzerTest_artefacts/Release/OnsetAnalyzerTest.exe
-          else
-            build/OnsetAnalyzerTest_artefacts/Release/OnsetAnalyzerTest
-          fi
+          EXT=""
+          if [ "$RUNNER_OS" = "Windows" ]; then EXT=".exe"; fi
+          build/OnsetAnalyzerTest_artefacts/Release/OnsetAnalyzerTest$EXT
+          build/UiStateTest_artefacts/Release/UiStateTest$EXT
 
       - name: Package
         shell: bash

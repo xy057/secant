@@ -17,8 +17,8 @@ namespace
     double asDouble (const juce::var& v, double def = 0) { return v.isVoid() ? def : v.toString().getDoubleValue(); }
     bool asBool (const juce::var& v) { return v.toString().equalsIgnoreCase ("true"); }
 
-    // the JSON object starting at `from`, ignoring trailing binary data
-    juce::String balancedObject (const char* data, size_t size, size_t from)
+    // end (one past the closing brace) of the JSON object starting at `from`, 0 if it never closes
+    size_t balancedEnd (const char* data, size_t size, size_t from)
     {
         int depth = 0;
         bool inString = false, escaped = false;
@@ -35,9 +35,16 @@ namespace
             if (c == '"') inString = true;
             else if (c == '{') ++depth;
             else if (c == '}' && --depth == 0)
-                return juce::String::fromUTF8 (data + from, (int) (i + 1 - from));
+                return i + 1;
         }
-        return {};
+        return 0;
+    }
+
+    // the JSON object starting at `from`, ignoring trailing binary data
+    juce::String balancedObject (const char* data, size_t size, size_t from)
+    {
+        const auto end = balancedEnd (data, size, from);
+        return end > from ? juce::String::fromUTF8 (data + from, (int) (end - from)) : juce::String();
     }
 
     // ranges from a SINE zone list: entries carry "fromValue"; each zone runs up to the next higher one
@@ -132,16 +139,36 @@ namespace
         return out;
     }
 
-    // offset of SINE's JSON inside the component, or -1
+    // offset of SINE's JSON inside the component, or -1. The chunk's binary header in front of it carries
+    // byte counts, any byte of which can be a '{' (0x7B): every object start is tried, not just the first
     int jsonStart (const juce::MemoryBlock& component)
     {
         const auto* data = static_cast<const char*> (component.getData());
-        for (size_t i = 0; i < component.getSize(); ++i)
-            if (data[i] == '{')
+        const auto size = component.getSize();
+        for (size_t i = 0; i < size; ++i)
+        {
+            if (data[i] != '{')
+                continue;
+            // a JSON object opens with a key (or closes at once); a stray header byte rarely does
+            size_t k = i + 1;
+            while (k < size && (data[k] == ' ' || data[k] == '\n' || data[k] == '\r' || data[k] == '\t'))
+                ++k;
+            if (k >= size || (data[k] != '"' && data[k] != '}'))
+                continue;
+            const auto end = balancedEnd (data, size, i);
+            if (end == 0)
+                continue;
+            const auto json = juce::String::fromUTF8 (data + i, (int) (end - i));
+            if (json.contains ("\"samplerVersion\"") || json.contains ("\"instruments\""))
             {
-                auto json = balancedObject (data, component.getSize(), i);
-                return json.contains ("\"samplerVersion\"") || json.contains ("\"instruments\"") ? (int) i : -1;
+                // a stray '{' + '"' in the header can pair up braces across the real start: must be real JSON
+                juce::var parsed;
+                if (juce::JSON::parse (json, parsed).wasOk() && parsed.isObject())
+                    return (int) i;
+                continue;
             }
+            i = end - 1; // a complete object that isn't SINE's: nothing inside it is either
+        }
         return -1;
     }
 } // namespace

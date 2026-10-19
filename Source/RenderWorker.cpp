@@ -540,7 +540,7 @@ void RenderWorker::runJob (const Job& job)
                 const auto hitsBefore = out.size(), seriesBefore = seriesOut.size();
                 runSeries (plan, job.note, d, out, seriesOut);
                 const bool masked = std::any_of (out.begin() + (long) hitsBefore, out.end(), [] (const Hit& h) { return h.tailContaminated; });
-                if (masked && s.subtractTailsWhenMasked && ! s.rrNeverResets && ! threadShouldExit())
+                if (masked && remeasuresMaskedSeries() && ! threadShouldExit())
                 {
                     // low notes: the previous note's tail masks the onset at this spacing -> measure exactly instead
                     out.resize (hitsBefore);
@@ -639,11 +639,13 @@ void RenderWorker::runSeries (const ArticulationPlan& plan, int note, int d, std
                 h.tailDb = h.onset.preRollDb - h.onset.peakDb;
                 h.tailContaminated = h.tailDb > s.tailContaminationDb;
             }
-            else if (k > 0 && s.subtractTailsWhenMasked
+            else if (k > 0 && remeasuresMaskedSeries()
                      && c.buffer.getMagnitude (0, c.buffer.getNumSamples()) > juce::Decibels::decibelsToGain (-70.0f))
             {
                 // not silent: the previous note's tail is so loud that this onset can't rise above it
-                // (repetition phrases). Re-measure the whole series with exact tail subtraction.
+                // (repetition phrases). Re-measure the whole series with exact tail subtraction - the caller
+                // does, so this series' hits are dropped here. (Without a re-measurement - round robins that
+                // never reset, where notes only follow silence anyway - the hit goes to the series as it is.)
                 h.tailContaminated = true;
                 maskedOnset = true;
                 out.push_back (h);

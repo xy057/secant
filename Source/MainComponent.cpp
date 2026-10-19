@@ -18,9 +18,11 @@ juce::File defaultPresetDir()
     return juce::File::getSpecialLocation (juce::File::userDocumentsDirectory);
 }
 
-// ~/Documents/Secant (Results, Logs). The folder of the app's former name is moved here once.
+// ~/Documents/Secant (Results, Logs), or $SECANT_DATA_DIR (tests). The folder of the app's former name is moved here once.
 juce::File dataDir()
 {
+    if (const auto custom = juce::SystemStats::getEnvironmentVariable ("SECANT_DATA_DIR", {}); juce::File::isAbsolutePath (custom))
+        return juce::File (custom);
     const auto docs = juce::File::getSpecialLocation (juce::File::userDocumentsDirectory);
     auto dir = docs.getChildFile ("Secant");
     if (auto old = docs.getChildFile ("TransientProbe"); old.isDirectory() && ! dir.exists())
@@ -785,12 +787,16 @@ void MainComponent::scanPlugins()
 {
     pluginFiles.clear();
     pluginBox.clear (juce::dontSendNotification);
-    for (auto dir : { juce::File ("/Library/Audio/Plug-Ins/VST3"),
-                      juce::File::getSpecialLocation (juce::File::userHomeDirectory).getChildFile ("Library/Audio/Plug-Ins/VST3") })
-        for (auto& f : dir.findChildFiles (juce::File::findFilesAndDirectories, false, "*.vst3"))
-            pluginFiles.add (f);
+    // the platform's standard VST3 folders (macOS: ~/Library and /Library, Windows: Common Files and the
+    // per-user Programs folder), including vendor subfolders; a .vst3 bundle is a leaf, not searched into
+    for (auto* format : formatManager.getFormats())
+        for (auto& path : format->searchPathsForPlugins (format->getDefaultLocationsToSearch(), true, false))
+            pluginFiles.addIfNotAlreadyThere (juce::File (path));
 
-    pluginFiles.sort();
+    // by the name shown, wherever the vendor put the bundle
+    std::sort (pluginFiles.begin(), pluginFiles.end(), [] (const juce::File& a, const juce::File& b) {
+        return a.getFileNameWithoutExtension().compareNatural (b.getFileNameWithoutExtension()) < 0;
+    });
     int preferred = 0;
     for (int i = 0; i < pluginFiles.size(); ++i)
     {
@@ -897,8 +903,8 @@ void MainComponent::loadPreset (const juce::File& f)
     collection = std::move (c);
     presetModified = false;
     instrumentIndex = -1;
+    rows.clear(); // before any refresh: the table reads rows against the selected instrument
     refreshInstrumentBox();
-    rows.clear();
     table.updateContent();
     log ("Opened " + f.getFileName() + ". Choose the instrument to measure.");
     // lead straight into the instrument choice
@@ -950,7 +956,8 @@ void MainComponent::setAllRuns (bool enabled)
 
 int MainComponent::keyswitchFor (int row) const
 {
-    if (! useKsToggle.getToggleState() || instrumentIndex < 0 || row < 0 || row >= (int) rows.size())
+    if (! useKsToggle.getToggleState() || instrumentIndex < 0 || instrumentIndex >= (int) collection.instruments.size() || row < 0
+        || row >= (int) rows.size() || row >= (int) collection.instruments[(size_t) instrumentIndex].articulations.size())
         return -1;
     if (rows[(size_t) row].keyswitchOverride >= 0)
         return rows[(size_t) row].keyswitchOverride;
@@ -1066,6 +1073,7 @@ void MainComponent::newPreset()
     collection = std::move (c);
     presetModified = true;
     instrumentIndex = -1;
+    rows.clear();
     refreshInstrumentBox();
     selectInstrument (0);
     instrumentBox.setSelectedItemIndex (0, juce::dontSendNotification);
@@ -1235,6 +1243,7 @@ void MainComponent::addInstrument()
     collection.instruments.push_back (inst);
     presetModified = true;
     instrumentIndex = (int) collection.instruments.size() - 1;
+    rows.clear(); // the new instrument has no articulations yet
     refreshInstrumentBox();
     selectInstrument (instrumentIndex);
     addArticulation();
@@ -1348,9 +1357,10 @@ void MainComponent::paintRowBackground (juce::Graphics& g, int row, int, int, bo
 
 void MainComponent::paintCell (juce::Graphics& g, int row, int col, int w, int h, bool)
 {
-    if (instrumentIndex < 0 || row >= (int) rows.size())
+    const auto* art = articulationAt (row);
+    if (art == nullptr || row >= (int) rows.size())
         return;
-    const auto& a = collection.instruments[(size_t) instrumentIndex].articulations[(size_t) row];
+    const auto& a = *art;
     const auto& r = rows[(size_t) row];
     juce::String text;
     auto colour = juce::Colours::white;
@@ -1416,12 +1426,12 @@ void MainComponent::paintCell (juce::Graphics& g, int row, int col, int w, int h
 
 juce::Component* MainComponent::refreshComponentForCell (int row, int col, bool, juce::Component* existing)
 {
-    if (row < 0 || row >= (int) rows.size())
+    // rows and the selected instrument's articulations can disagree for a moment while either changes
+    if (row < 0 || row >= (int) rows.size() || articulationAt (row) == nullptr)
     {
         delete existing;
         return nullptr;
     }
-    const bool legato = collection.instruments[(size_t) instrumentIndex].articulations[(size_t) row].legato;
 
     auto make = [&] (auto* typed, auto factory) -> juce::Component* {
         if (typed == nullptr)
@@ -1435,11 +1445,7 @@ juce::Component* MainComponent::refreshComponentForCell (int row, int col, bool,
 
     switch (col)
     {
-        case colRun:
-        {
-            juce::ignoreUnused (legato);
-            return make (dynamic_cast<RunToggle*> (existing), [this] { return new RunToggle (*this); });
-        }
+        case colRun: return make (dynamic_cast<RunToggle*> (existing), [this] { return new RunToggle (*this); });
         case colCategory: return make (dynamic_cast<CategoryBox*> (existing), [this] { return new CategoryBox (*this); });
         case colDynSrc: return make (dynamic_cast<DynSrcBox*> (existing), [this] { return new DynSrcBox (*this); });
         case colKeyswitch: return make (dynamic_cast<KeyswitchLabel*> (existing), [this] { return new KeyswitchLabel (*this); });
@@ -1467,11 +1473,11 @@ juce::Component* MainComponent::refreshComponentForCell (int row, int col, bool,
 
 juce::String MainComponent::getCellTooltip (int row, int col)
 {
-    if (instrumentIndex < 0 || row >= (int) rows.size())
+    const auto* a = articulationAt (row);
+    if (a == nullptr || row >= (int) rows.size())
         return {};
-    const auto& a = collection.instruments[(size_t) instrumentIndex].articulations[(size_t) row];
     if (col == colIssues || col == colName)
-        return a.issues.joinIntoString ("\n");
+        return a->issues.joinIntoString ("\n");
     return {};
 }
 
@@ -1848,8 +1854,10 @@ void MainComponent::createNextWorker (int index, RunSettings settings)
             updateEnablement();
             table.updateContent();
         }
-        // timerCallback creates the next worker once this one has loaded (or given up)
-        awaitingWorker = index;
+        // timerCallback creates the next worker once this one has loaded (or given up). Its position, not
+        // its id: an instance that failed to load leaves a gap in the ids
+        awaitingWorker = (int) workers.size() - 1;
+        nextWorkerIndex = index + 1;
         creationSettings = settings;
         juce::ignoreUnused (safe);
     };
@@ -1858,6 +1866,8 @@ void MainComponent::createNextWorker (int index, RunSettings settings)
     {
         auto instance = std::move (pool.back());
         pool.pop_back();
+        // the pool is keyed on state / rate / block size only: the speed setting may have changed
+        instance->setNonRealtime (settings.nonRealtime);
         startWorker (std::move (instance), true);
         return;
     }
@@ -1969,11 +1979,12 @@ void MainComponent::timerCallback()
 
     if (creatingWorkers && awaitingWorker >= 0 && awaitingWorker < (int) workers.size())
     {
+        // workers load one after another, so the first `i + 1` loaded ones include the awaited one
         const int i = awaitingWorker;
         if (ctx->loadedWorkers.load() > i || workers[(size_t) i]->finished() || stopRequested)
         {
             awaitingWorker = -1;
-            createNextWorker (i + 1, creationSettings);
+            createNextWorker (nextWorkerIndex, creationSettings);
         }
     }
 

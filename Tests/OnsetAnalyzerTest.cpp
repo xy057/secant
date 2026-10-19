@@ -11,6 +11,7 @@
 #include "../Source/LegatoAnalyzer.h"
 #include "../Source/OnsetAnalyzer.h"
 #include "../Source/PresetModel.h"
+#include "../Source/SineState.h"
 #include <cstdio>
 
 using namespace tp;
@@ -26,6 +27,37 @@ void expect (bool ok, const juce::String& what, double got, double want, double 
     std::printf ("  %-52s got %+10.5f want %+10.5f (tol %.5f)  %s\n", what.toRawUTF8(), got, want, tol, ok ? "ok" : "FAIL");
     if (! ok)
         ++failures;
+}
+
+// A SINE Player component chunk: a VST2-style binary header ("VstW" ... "CcnK" byte counts ...) and the
+// JSON after it. `headerByte` replaces one byte of the CcnK size field (0x7B = '{').
+juce::MemoryBlock sineComponent (juce::uint8 headerByte, const char* extraHeader = "")
+{
+    const char* json = R"({"samplerVersion":"1.9","selectedEntry":{"instrumentIndex":"0"},"instruments":[{"title":"Test Trumpet",)"
+                       R"("ksshift":"0","articulations":[{"id":"a1","title":"Staccato","enabled":"true","keyRangeLow":"48",)"
+                       R"("keyRangeHigh":"84","mainOptions":{"switchValue":"24","modwheelControl":"false"},"roundRobinOptions":)"
+                       R"({"resetAfterMS":"1500","randomRoundRobin":"false","roundRobins":[{"enabled":"true"},{"enabled":"true"}]},)"
+                       R"("dynamicsOptions":{"dynamicLayers":[{"title":"p"},{"title":"f"}]}}]}]})";
+    const juce::uint8 header[] = { 'V', 's', 't', 'W', 0, 0, 0, 8, 0, 0, 0, 1, 0, 0, 0, 0,
+                                   'C', 'c', 'n', 'K', 0, 1, headerByte, 0x62, 'F', 'P', 'C', 'h', 0, 0, 0, 2, 'Y', '3', '5', '5' };
+    juce::MemoryBlock m (header, sizeof (header));
+    m.append (extraHeader, std::strlen (extraHeader));
+    m.append (json, std::strlen (json));
+    return m;
+}
+
+// as juce::VST3PluginInstance::getStateInformation: <VST3PluginState><IComponent> in JUCE's binary XML ("VC2!")
+juce::MemoryBlock pluginStateWith (const juce::MemoryBlock& component)
+{
+    juce::XmlElement xml ("VST3PluginState");
+    xml.createNewChildElement ("IComponent")->addTextElement (component.toBase64Encoding());
+    const auto text = xml.toString (juce::XmlElement::TextFormat().singleLine());
+    juce::MemoryBlock out;
+    out.append ("VC2!", 4);
+    const auto len = juce::ByteOrder::swapIfBigEndian ((juce::uint32) text.getNumBytesAsUTF8());
+    out.append (&len, 4);
+    out.append (text.toRawUTF8(), text.getNumBytesAsUTF8() + 1);
+    return out;
 }
 
 // Raised-cosine rise over riseMs, then exponential decay (tau = decayMs): a pluck/bow-like hit.
@@ -487,6 +519,39 @@ int main()
                     && (int) av["roundRobins"] == 3 && back.instruments[0].articulations[0].keyswitch == -1,
                 "edited preset keeps unknown fields, drops a cleared keyswitch", ok, 1, 0);
         f.deleteFile();
+    }
+
+    // ---- SINE Player state: the JSON is found whatever bytes the binary header in front of it holds
+    {
+        auto parsedOk = [] (const juce::MemoryBlock& state) {
+            const auto st = parseSineState (state);
+            const auto* inst = st.instrument();
+            return inst != nullptr && inst->title == "Test Trumpet" && inst->articulations.size() == 1
+                   && inst->articulations[0].keyswitch == 24 && inst->articulations[0].roundRobins == 2
+                   && juce::approximatelyEqual (inst->articulations[0].rrResetMs, 1500.0)
+                   && inst->articulations[0].dynamics == juce::StringArray { "p", "f" };
+        };
+        for (const juce::uint8 b : { (juce::uint8) 0xd4, (juce::uint8) '{' })
+        {
+            const juce::String what = b == '{' ? "with a '{' byte in the header" : "plain header";
+            const auto component = sineComponent (b);
+            expect (parsedOk (component), "SINE component, " + what, parsedOk (component), 1, 0);
+            const auto state = pluginStateWith (component);
+            expect (parsedOk (state), "SINE plugin state, " + what, parsedOk (state), 1, 0);
+            juce::String err;
+            const auto patched = withRoundRobinReset (state, 900.0, &err);
+            const auto patchedState = parseSineState (patched);
+            const auto* inst = patchedState.instrument();
+            const bool ok = inst != nullptr && juce::approximatelyEqual (inst->articulations[0].rrResetMs, 900.0)
+                            && extractSineJson (patched).length() == extractSineJson (state).length();
+            expect (ok, "SINE RR reset patch, " + what + (err.isEmpty() ? juce::String() : " (" + err + ")"), ok, 1, 0);
+        }
+        // a stray '{"' pair in the header (it opens a "string" that runs into the real JSON)
+        const auto stray = sineComponent (0xd4, "{\"x");
+        expect (parsedOk (stray), "SINE component, stray '{\"' in the header", parsedOk (stray), 1, 0);
+        // binary that merely contains braces is not a SINE state
+        const char notSine[] = "\x01{\x02{\"a\":1}\x7b\x7b\"instrumentsX\":2";
+        expect (! parseSineState (juce::MemoryBlock (notSine, sizeof (notSine))).valid, "non-SINE binary with braces rejected", 0, 0, 0);
     }
 
     std::printf ("\n%s (%d failures)\n", failures == 0 ? "ALL PASSED" : "FAILED", failures);

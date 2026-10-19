@@ -72,6 +72,9 @@ private:
                                              int windowLen, int64_t& windowStartOut);
     DynamicsSource detectDynamicsSource (const ArticulationPlan&, int note);
     OnsetParams onsetParamsFor (const ArticulationPlan&, int note, int captureLen) const;
+    // a series whose onsets a previous note's tail masked is measured again with tail subtraction
+    // (needs replays from the reset state, so never with round robins that don't reset)
+    bool remeasuresMaskedSeries() const { return ctx.settings.subtractTailsWhenMasked && ! ctx.settings.rrNeverResets; }
     int64_t alignUp (int64_t t) const;
     int64_t blockInterval (double ms) const;
     std::map<int, DynamicsSource> resolvedDynamics; // per plan, detected once per worker

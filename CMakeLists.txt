@@ -43,11 +43,26 @@ target_link_libraries(Secant PRIVATE
     juce::juce_recommended_warning_flags)
 
 # Unit test for the onset analyzer (no plugin needed): synthesises attacks with
-# known onset times and checks the sub-sample estimates.
+# known onset times and checks the sub-sample estimates. Also the legato analyzer, presets and SINE states.
 juce_add_console_app(OnsetAnalyzerTest PRODUCT_NAME "OnsetAnalyzerTest")
-target_sources(OnsetAnalyzerTest PRIVATE Tests/OnsetAnalyzerTest.cpp Source/OnsetAnalyzer.cpp Source/LegatoAnalyzer.cpp Source/PresetModel.cpp)
+target_sources(OnsetAnalyzerTest PRIVATE Tests/OnsetAnalyzerTest.cpp Source/OnsetAnalyzer.cpp Source/LegatoAnalyzer.cpp Source/PresetModel.cpp
+    Source/SineState.cpp)
 target_compile_definitions(OnsetAnalyzerTest PRIVATE JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0)
 target_link_libraries(OnsetAnalyzerTest PRIVATE juce::juce_core juce::juce_audio_basics juce::juce_dsp
+    PUBLIC juce::juce_recommended_config_flags juce::juce_recommended_warning_flags)
+
+# UI state test (no plugin needed): MainComponent's preset editing keeps the table's rows in step with the
+# selected instrument. libc++ bounds checks turn an out-of-range row into an abort instead of a silent pass.
+juce_add_console_app(UiStateTest PRODUCT_NAME "UiStateTest")
+target_sources(UiStateTest PRIVATE Tests/UiStateTest.cpp
+    Source/MainComponent.cpp Source/PresetModel.cpp Source/OnsetAnalyzer.cpp Source/LegatoAnalyzer.cpp Source/SineState.cpp
+    Source/Planning.cpp Source/RenderWorker.cpp Source/ResultStore.cpp Source/DelayExport.cpp)
+target_compile_definitions(UiStateTest PRIVATE
+    JUCE_PLUGINHOST_VST3=1 JUCE_PLUGINHOST_AU=0 JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0
+    JUCE_APPLICATION_NAME_STRING="UiStateTest" JUCE_APPLICATION_VERSION_STRING="0.2.0"
+    SECANT_SOURCE_DIR="${CMAKE_CURRENT_SOURCE_DIR}"
+    $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_DEBUG>)
+target_link_libraries(UiStateTest PRIVATE juce::juce_audio_utils juce::juce_audio_processors juce::juce_dsp
     PUBLIC juce::juce_recommended_config_flags juce::juce_recommended_warning_flags)
 
 # Headless end-to-end test: real VST3 -> cloned RenderWorkers -> results JSON.
