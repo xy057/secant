@@ -19,7 +19,9 @@ public:
     ~MainComponent() override;
 
     void paint (juce::Graphics&) override;
+    void paintOverChildren (juce::Graphics&) override;
     void resized() override;
+    void lookAndFeelChanged() override; // re-applies the palette's colours (light / dark switch)
 
 private:
     friend struct MainComponentTest; // Tests/UiStateTest.cpp
@@ -135,7 +137,7 @@ private:
     juce::Label pluginStatus;
 
     juce::TextButton presetButton { juce::CharPointer_UTF8 ("Open…") }, newPresetButton { "New" }, savePresetButton { juce::CharPointer_UTF8 ("Save…") },
-        addInstrumentButton { "+" }, removeInstrumentButton { "-" };
+        addInstrumentButton { "+" }, removeInstrumentButton { juce::CharPointer_UTF8 ("\xe2\x88\x92") };
     juce::Label presetLabel;
     juce::ComboBox instrumentBox;
 
@@ -161,7 +163,7 @@ private:
     juce::ComboBox legatoIntervalsBox, legatoGapsBox, legatoPrimaryBox;
 
     juce::TableListBox table { "articulations", this };
-    juce::TextButton allButton { "All" }, noneButton { "None" }, addArtButton { "+" }, removeArtButton { "-" };
+    juce::TextButton allButton { "All" }, noneButton { "None" }, addArtButton { "+" }, removeArtButton { juce::CharPointer_UTF8 ("\xe2\x88\x92") };
 
     juce::TextButton startButton { "Start" }, stopButton { "Stop" }, exportButton { juce::CharPointer_UTF8 ("Export…") };
     juce::ProgressBar progressBar { progress };
@@ -169,6 +171,10 @@ private:
     juce::String missingStep() const; // empty when ready to run
     void refreshNextStep();
     juce::TextEditor logView;
+
+    // appearance: System / Light / Dark (top right of the settings card); hidden without the app's Theme (tests)
+    juce::TextButton appearanceButtons[3] { juce::TextButton { "System" }, juce::TextButton { "Light" }, juce::TextButton { "Dark" } };
+    void updateAppearanceButtons();
 
     std::unique_ptr<juce::FileChooser> chooser;
     juce::TooltipWindow tooltips { this, 400 };

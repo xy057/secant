@@ -1,5 +1,6 @@
 #include "MainComponent.h"
 #include "DelayExport.h"
+#include "Theme.h"
 
 using namespace tp;
 
@@ -71,6 +72,7 @@ class MainComponent::CategoryBox : public juce::ComboBox
 public:
     explicit CategoryBox (MainComponent& o) : owner (o)
     {
+        getProperties().set (ui::cell, true);
         addItemList (kCategories, 1);
         onChange = [this] {
             if (row >= 0 && getSelectedItemIndex() >= 0)
@@ -102,6 +104,7 @@ class MainComponent::DynSrcBox : public juce::ComboBox
 public:
     explicit DynSrcBox (MainComponent& o) : owner (o)
     {
+        getProperties().set (ui::cell, true);
         addItem ("Auto", 3);
         addItem ("Velocity", 1);
         addItem ("CC1", 2);
@@ -139,6 +142,7 @@ public:
     explicit KeyswitchLabel (MainComponent& o) : owner (o)
     {
         setEditable (false, true, false);
+        setFont (ui::font (13.0f));
         setTooltip ("Double-click to set a note (C-1) or MIDI number. Clear to use the keyswitch base.");
         onTextChange = [this] {
             if (row < 0)
@@ -168,7 +172,7 @@ private:
         const bool overridden = owner.rows[(size_t) row].keyswitchOverride >= 0;
         setText (ks < 0 ? juce::String ("-") : noteName (ks) + " (" + juce::String (ks) + ")" + (overridden ? " *" : ""),
                  juce::dontSendNotification);
-        setColour (textColourId, overridden ? juce::Colours::orange : juce::Colours::white);
+        setColour (textColourId, overridden ? ui::colours().warn : ui::colours().text);
     }
 
     MainComponent& owner;
@@ -182,7 +186,7 @@ public:
     explicit TextCell (MainComponent& o) : owner (o)
     {
         setEditable (false, true, false);
-        setFont (juce::FontOptions (13.0f));
+        setFont (ui::font (13.0f));
         onTextChange = [this] {
             auto* a = owner.articulationAt (row);
             if (a == nullptr)
@@ -429,15 +433,14 @@ MainComponent::MainComponent()
     ksLabel.setTooltip ("Keyswitch of articulation #1 (C3 = 60)");
     for (auto& l : primaryCatLabels)
     {
-        l.setFont (juce::FontOptions (12.0f));
+        l.setFont (ui::font (12.0f));
         l.setJustificationType (juce::Justification::centredRight);
-        l.setColour (juce::Label::textColourId, juce::Colours::grey);
         addAndMakeVisible (l);
     }
     for (auto* l : { &srLabel, &workersLabel, &ksLabel, &stepLabel, &speedLabel, &primaryLabel })
     {
         addAndMakeVisible (l);
-        l->setFont (juce::FontOptions (13.0f));
+        l->setFont (ui::font (13.0f));
     }
     sampleRateBox.addItemList ({ "44100", "48000", "88200", "96000" }, 1);
     sampleRateBox.setSelectedId (2);
@@ -475,7 +478,7 @@ MainComponent::MainComponent()
     speedBox.setTooltip ("Slow down rendering if the plugin can't stream samples fast enough");
     addAndMakeVisible (speedBox);
 
-    confirmLabel.setFont (juce::FontOptions (13.0f));
+    confirmLabel.setFont (ui::font (13.0f));
     addAndMakeVisible (confirmLabel);
     confirmBox.addItem ("Off", 1);
     confirmBox.addItem ("+1 hit", 2);
@@ -484,20 +487,19 @@ MainComponent::MainComponent()
     confirmBox.setSelectedId (3);
     confirmBox.setTooltip ("Extra hits that must match after the round-robin cycle repeats. Catches random round robins.");
     addAndMakeVisible (confirmBox);
-    rrResetLabel.setFont (juce::FontOptions (13.0f));
+    rrResetLabel.setFont (ui::font (13.0f));
     addAndMakeVisible (rrResetLabel);
     // items + tooltip depend on the loaded player ("As in SINE" only with SINE Player): see updateRrResetBox()
-    rrResetKeyLabel.setFont (juce::FontOptions (13.0f));
+    rrResetKeyLabel.setFont (ui::font (13.0f));
     rrResetKeyLabel.setTooltip ("Optional: key that resets the player's round robins");
     addChildComponent (rrResetKeyLabel);
     rrResetKeyEdit.setTooltip ("Optional: key that resets the player's round robins (C3 = 60), sent before every series. "
                                "Leave empty if the player has none.");
-    rrResetKeyEdit.setTextToShowWhenEmpty ("none", juce::Colours::grey);
-    rrResetKeyEdit.onTextChange = [this] { refreshNextStep(); };
+        rrResetKeyEdit.onTextChange = [this] { refreshNextStep(); };
     addChildComponent (rrResetKeyEdit);
     updateRrResetBox (false);
     addAndMakeVisible (rrResetBox);
-    maxHitsLabel.setFont (juce::FontOptions (13.0f));
+    maxHitsLabel.setFont (ui::font (13.0f));
     addAndMakeVisible (maxHitsLabel);
     for (int n : { 16, 32, 48, 64, 128 })
         maxHitsBox.addItem (juce::String (n), n);
@@ -507,7 +509,7 @@ MainComponent::MainComponent()
     allSoundOffToggle.setToggleState (true, juce::dontSendNotification);
     addAndMakeVisible (allSoundOffToggle);
 
-    smoothLabel.setFont (juce::FontOptions (13.0f));
+    smoothLabel.setFont (ui::font (13.0f));
     addAndMakeVisible (smoothLabel);
     smoothBox.addItem ("Off", 1);
     smoothBox.addItem ("1/4 period", 2);
@@ -532,7 +534,7 @@ MainComponent::MainComponent()
     addAndMakeVisible (legatoToggle);
     for (auto* l : { &legatoIntervalsLabel, &legatoGapsLabel, &legatoPrimaryLabel })
     {
-        l->setFont (juce::FontOptions (13.0f));
+        l->setFont (ui::font (13.0f));
         addAndMakeVisible (l);
     }
     legatoIntervalsBox.addItem ("Up to an octave", 12);
@@ -576,9 +578,9 @@ MainComponent::MainComponent()
     h.addColumn ("Median", colMedian, 62, 48);
     h.addColumn ("Doc issues", colIssues, 110, 40);
     h.setStretchToFitActive (true);
-    table.setRowHeight (24);
-    table.setColour (juce::ListBox::outlineColourId, juce::Colours::grey);
-    table.setOutlineThickness (1);
+    table.setRowHeight (30);
+    table.setHeaderHeight (32);
+    table.setOutlineThickness (0); // the rounded border is painted by paintOverChildren()
     addAndMakeVisible (table);
     addAndMakeVisible (allButton);
     addAndMakeVisible (noneButton);
@@ -593,12 +595,21 @@ MainComponent::MainComponent()
     noneButton.onClick = [this] { setAllRuns (false); };
 
     // --- run controls
+    startButton.getProperties().set (ui::primary, true);
+    progressBar.setPercentageDisplay (false); // the ETA label shows the percentage
+    etaLabel.setJustificationType (juce::Justification::centredRight);
+    for (auto* l : { &etaLabel, &presetLabel, &pluginStatus })
+        l->setFont (ui::font (12.5f));
+    addInstrumentButton.setConnectedEdges (juce::Button::ConnectedOnRight);
+    removeInstrumentButton.setConnectedEdges (juce::Button::ConnectedOnLeft);
+    addArtButton.setConnectedEdges (juce::Button::ConnectedOnRight);
+    removeArtButton.setConnectedEdges (juce::Button::ConnectedOnLeft);
     addAndMakeVisible (startButton);
     addAndMakeVisible (stopButton);
     addAndMakeVisible (exportButton);
     addAndMakeVisible (progressBar);
     addAndMakeVisible (etaLabel);
-    nextStepLabel.setFont (juce::FontOptions (14.0f, juce::Font::bold));
+    nextStepLabel.setFont (ui::font (13.0f));
     addAndMakeVisible (nextStepLabel);
     startButton.onClick = [this] { startRun(); };
     stopButton.onClick = [this] { stopRun(); };
@@ -607,12 +618,28 @@ MainComponent::MainComponent()
     logView.setMultiLine (true);
     logView.setReadOnly (true);
     logView.setScrollbarsShown (true);
-    logView.setFont (juce::FontOptions (juce::Font::getDefaultMonospacedFontName(), 12.0f, juce::Font::plain));
+    logView.setFont (ui::monoFont (12.0f));
+    logView.setIndents (12, 10);
     addAndMakeVisible (logView);
 
     scanPlugins();
     updateEnablement();
-    setSize (980, 860);
+    for (int i = 0; i < 3; ++i)
+    {
+        auto& b = appearanceButtons[i];
+        b.getProperties().set (ui::segment, true);
+        b.setClickingTogglesState (false);
+        b.setTooltip (i == 0 ? "Follow the system's light / dark setting" : i == 1 ? "Always light" : "Always dark");
+        b.onClick = [this, i] {
+            if (auto* theme = dynamic_cast<ui::Theme*> (&getLookAndFeel()))
+                theme->setMode ((ui::Theme::Mode) i); // redraws every window, then lookAndFeelChanged() updates the buttons
+            updateAppearanceButtons();
+        };
+        addChildComponent (b);
+    }
+
+    lookAndFeelChanged();
+    setSize (1240, 880);
     startTimerHz (10);
 
     log ("Load the plugin and your instrument (one mic position). Open a preset, choose the same instrument, then click Start.");
@@ -637,58 +664,116 @@ void MainComponent::releaseMaster()
 
 // ============================================================================ layout
 
+namespace
+{
+// layout metrics: cards are hairline-bordered boxes with their title in the top-left corner
+constexpr int margin = 20, cardGap = 12, rowH = 28, gap = 8, cardTop = 40, cardPad = 16, cardBottom = 16;
+} // namespace
+
 void MainComponent::paint (juce::Graphics& g)
 {
-    g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
+    g.fillAll (ui::colours().background);
+}
+
+// the table's rounded border, drawn over it so its square corners (a selected row) don't show past the curve
+void MainComponent::paintOverChildren (juce::Graphics& g)
+{
+    const auto& p = ui::colours();
+    const auto r = table.getBounds().toFloat().expanded (1.0f);
+    constexpr float radius = 10.0f;
+    juce::Path corners;
+    corners.addRectangle (r);
+    corners.addRoundedRectangle (r, radius);
+    corners.setUsingNonZeroWinding (false);
+    g.setColour (p.background);
+    g.fillPath (corners);
+    g.setColour (p.border);
+    g.drawRoundedRectangle (r.reduced (0.5f), radius, 1.0f);
+}
+
+void MainComponent::lookAndFeelChanged()
+{
+    const auto& p = ui::colours();
+    for (auto* l : { &srLabel, &workersLabel, &ksLabel, &stepLabel, &speedLabel, &primaryLabel, &confirmLabel, &rrResetLabel,
+                     &rrResetKeyLabel, &maxHitsLabel, &smoothLabel, &legatoIntervalsLabel, &legatoGapsLabel, &legatoPrimaryLabel,
+                     &presetLabel, &etaLabel, &pluginStatus })
+        l->setColour (juce::Label::textColourId, p.textSecondary);
+    for (auto& l : primaryCatLabels)
+        l.setColour (juce::Label::textColourId, p.textTertiary);
+    rrResetKeyEdit.setTextToShowWhenEmpty ("none", p.textTertiary);
+    ksBaseEdit.setJustification (juce::Justification::centred);
+    rrResetKeyEdit.setJustification (juce::Justification::centred);
+    logView.setColour (juce::TextEditor::textColourId, p.textSecondary);
+    logView.applyColourToAllText (p.textSecondary);
+    refreshNextStep();
+    updateAppearanceButtons();
+    table.updateContent();
+    repaint();
+}
+
+void MainComponent::updateAppearanceButtons()
+{
+    auto* theme = dynamic_cast<ui::Theme*> (&getLookAndFeel());
+    for (int i = 0; i < 3; ++i)
+    {
+        appearanceButtons[i].setVisible (theme != nullptr);
+        appearanceButtons[i].setToggleState (theme != nullptr && (int) theme->getMode() == i, juce::dontSendNotification);
+    }
 }
 
 void MainComponent::resized()
 {
-    auto area = getLocalBounds().reduced (10);
-    constexpr int rowH = 26, gap = 6, groupTop = 20, groupPad = 10;
+    auto area = getLocalBounds().reduced (margin);
+    // the controls' line inside a card
+    auto cardLine = [] (juce::Rectangle<int> card) { return card.withTrimmedTop (cardTop).reduced (cardPad, 0).withHeight (rowH); };
+    constexpr int lineCardH = cardTop + rowH + cardBottom;
 
     // 1 + 2: plugin and preset, one line each (side by side when the window is wide)
     {
-        const bool sideBySide = area.getWidth() >= 1200;
-        auto rowArea = area.removeFromTop (groupTop + rowH + groupPad);
-        auto pa = sideBySide ? rowArea.removeFromLeft (rowArea.getWidth() / 2 - 5) : rowArea;
-        if (! sideBySide)
+        const bool sideBySide = area.getWidth() >= 1180;
+        auto pa = area.removeFromTop (lineCardH);
+        juce::Rectangle<int> ra;
+        if (sideBySide)
         {
-            area.removeFromTop (gap);
-            rowArea = area.removeFromTop (groupTop + rowH + groupPad);
+            ra = pa.removeFromRight ((pa.getWidth() - cardGap) / 2);
+            pa.removeFromRight (cardGap);
         }
         else
-            rowArea.removeFromLeft (10);
+        {
+            area.removeFromTop (cardGap);
+            ra = area.removeFromTop (lineCardH);
+        }
 
         pluginGroup.setBounds (pa);
-        auto line = pa.reduced (groupPad, 0).withTrimmedTop (groupTop).withHeight (rowH);
-        editorButton.setBounds (line.removeFromRight (96));
-        line.removeFromRight (4);
-        loadPluginButton.setBounds (line.removeFromRight (52));
-        line.removeFromRight (4);
-        rescanButton.setBounds (line.removeFromRight (64));
-        line.removeFromRight (4);
+        auto line = cardLine (pa);
+        editorButton.setBounds (line.removeFromRight (104));
+        line.removeFromRight (6);
+        loadPluginButton.setBounds (line.removeFromRight (64));
+        line.removeFromRight (6);
+        rescanButton.setBounds (line.removeFromRight (72));
+        line.removeFromRight (10);
         pluginBox.setBounds (line);
-        pluginStatus.setBounds (pa.getX() + 10, pa.getBottom() - 4, pa.getWidth() - 20, 0); // collapsed; status shown in group text
+        pluginStatus.setBounds (pa.getX() + cardPad, pa.getBottom() - 4, pa.getWidth() - 2 * cardPad, 0); // collapsed; status shown in the card title
 
-        presetGroup.setBounds (rowArea);
-        line = rowArea.reduced (groupPad, 0).withTrimmedTop (groupTop).withHeight (rowH);
-        presetButton.setBounds (line.removeFromLeft (64));
-        line.removeFromLeft (4);
-        newPresetButton.setBounds (line.removeFromLeft (48));
-        line.removeFromLeft (4);
-        savePresetButton.setBounds (line.removeFromLeft (60));
-        line.removeFromLeft (8);
-        instrumentBox.setBounds (line.removeFromLeft (juce::jmin (280, line.getWidth() / 2)));
-        line.removeFromLeft (2);
-        addInstrumentButton.setBounds (line.removeFromLeft (26));
-        removeInstrumentButton.setBounds (line.removeFromLeft (26));
-        line.removeFromLeft (8);
+        presetGroup.setBounds (ra);
+        line = cardLine (ra);
+        presetButton.setBounds (line.removeFromLeft (72));
+        line.removeFromLeft (6);
+        newPresetButton.setBounds (line.removeFromLeft (58));
+        line.removeFromLeft (6);
+        savePresetButton.setBounds (line.removeFromLeft (68));
+        line.removeFromLeft (14);
+        instrumentBox.setBounds (line.removeFromLeft (juce::jmin (300, line.getWidth() / 2)));
+        line.removeFromLeft (6);
+        addInstrumentButton.setBounds (line.removeFromLeft (30));
+        line.removeFromLeft (1);
+        removeInstrumentButton.setBounds (line.removeFromLeft (30));
+        line.removeFromLeft (14);
         presetLabel.setBounds (line);
     }
-    area.removeFromTop (gap);
+    area.removeFromTop (cardGap);
 
-    // 3: settings - label + control pairs flowing left to right, wrapping at the group's width;
+    // 3: settings - label + control pairs flowing left to right, wrapping at the card's width;
     // `newRow` starts a line (keeps related controls together)
     {
         struct Item
@@ -701,29 +786,29 @@ void MainComponent::resized()
         };
         juce::Component* none = nullptr;
         std::vector<Item> items {
-            { &srLabel, 74, &sampleRateBox, 76 },
-            { &workersLabel, 56, &workersSlider, 100 },
-            { &ksLabel, 54, &ksBaseEdit, 48 },
+            { &srLabel, 78, &sampleRateBox, 84 },
+            { &workersLabel, 60, &workersSlider, 104 },
+            { &ksLabel, 58, &ksBaseEdit, 52 },
             { none, 0, &useKsToggle, 140 },
-            { &stepLabel, 42, &stepBox, 128 },
-            { &speedLabel, 44, &speedBox, 116 },
-            { &confirmLabel, 70, &confirmBox, 104 },
-            { &maxHitsLabel, 58, &maxHitsBox, 60 },
-            { &rrResetLabel, 58, &rrResetBox, 100 },
-            { &rrResetKeyLabel, 50, &rrResetKeyEdit, 48 },
-            { &smoothLabel, 68, &smoothBox, 110 },
-            { none, 0, &allSoundOffToggle, 160 },
-            { &primaryLabel, 46, &primaryCatLabels[0], 40, true },
-            { none, 0, &primaryBoxes[0], 100 },
-            { &primaryCatLabels[1], 34, &primaryBoxes[1], 100 },
-            { &primaryCatLabels[2], 54, &primaryBoxes[2], 100 },
-            { &primaryCatLabels[3], 46, &primaryBoxes[3], 100 },
-            { none, 0, &legatoToggle, 76, true },
-            { &legatoIntervalsLabel, 56, &legatoIntervalsBox, 130 },
-            { &legatoGapsLabel, 52, &legatoGapsBox, 170 },
-            { &legatoPrimaryLabel, 38, &legatoPrimaryBox, 96 },
+            { &stepLabel, 46, &stepBox, 136 },
+            { &speedLabel, 48, &speedBox, 124 },
+            { &confirmLabel, 74, &confirmBox, 92 },
+            { &maxHitsLabel, 62, &maxHitsBox, 68 },
+            { &rrResetLabel, 62, &rrResetBox, 108 },
+            { &rrResetKeyLabel, 54, &rrResetKeyEdit, 52 },
+            { &smoothLabel, 72, &smoothBox, 112 },
+            { none, 0, &allSoundOffToggle, 164 },
+            { &primaryLabel, 50, &primaryCatLabels[0], 40, true },
+            { none, 0, &primaryBoxes[0], 104 },
+            { &primaryCatLabels[1], 38, &primaryBoxes[1], 104 },
+            { &primaryCatLabels[2], 58, &primaryBoxes[2], 104 },
+            { &primaryCatLabels[3], 50, &primaryBoxes[3], 104 },
+            { none, 0, &legatoToggle, 80, true },
+            { &legatoIntervalsLabel, 60, &legatoIntervalsBox, 140 },
+            { &legatoGapsLabel, 56, &legatoGapsBox, 176 },
+            { &legatoPrimaryLabel, 42, &legatoPrimaryBox, 100 },
         };
-        const int innerW = area.getWidth() - 2 * groupPad;
+        const int innerW = area.getWidth() - 2 * cardPad;
         auto layout = [&] (int x0, int y0, bool apply) {
             int x = 0, y = 0;
             for (auto& it : items)
@@ -743,42 +828,51 @@ void MainComponent::resized()
                     it.c->setBounds (x0 + x + it.lw, y0 + y, it.cw, rowH);
                 }
                 // the category label + its box stay together; other pairs get a gap
-                x += w + (it.c == &primaryCatLabels[0] ? 0 : 10);
+                x += w + (it.c == &primaryCatLabels[0] ? 0 : 18);
             }
             return y + rowH;
         };
-        const int h = groupTop + layout (0, 0, false) + groupPad;
+        const int h = cardTop + layout (0, 0, false) + cardBottom;
         auto sa = area.removeFromTop (h);
         settingsGroup.setBounds (sa);
-        layout (sa.getX() + groupPad, sa.getY() + groupTop, true);
+        layout (sa.getX() + cardPad, sa.getY() + cardTop, true);
+
+        // appearance switch in the card's title line, right-aligned
+        auto seg = juce::Rectangle<int> (sa.getRight() - cardPad - 3 * 60, sa.getY() + 8, 3 * 60, 24);
+        for (auto& b : appearanceButtons)
+            b.setBounds (seg.removeFromLeft (60));
     }
+    area.removeFromTop (cardGap + 6);
 
-    area.removeFromTop (8);
-    auto bottom = area.removeFromBottom (170);
-    logView.setBounds (bottom.removeFromBottom (130));
-    bottom.removeFromBottom (8);
-    auto controls = bottom;
-    startButton.setBounds (controls.removeFromLeft (80));
-    controls.removeFromLeft (6);
-    stopButton.setBounds (controls.removeFromLeft (70));
-    controls.removeFromLeft (6);
-    exportButton.setBounds (controls.removeFromRight (110));
-    controls.removeFromRight (6);
-    etaLabel.setBounds (controls.removeFromRight (juce::jmin (300, controls.getWidth() / 2)));
-    controls.removeFromRight (6);
+    // run controls and the log at the bottom
+    constexpr int logH = 120, controlsH = 32;
+    logView.setBounds (area.removeFromBottom (logH));
+    area.removeFromBottom (12);
+    auto controls = area.removeFromBottom (controlsH);
+    startButton.setBounds (controls.removeFromLeft (96));
+    controls.removeFromLeft (8);
+    stopButton.setBounds (controls.removeFromLeft (76));
+    controls.removeFromLeft (20);
+    exportButton.setBounds (controls.removeFromRight (100));
+    controls.removeFromRight (20);
+    etaLabel.setBounds (controls.removeFromRight (juce::jmin (320, controls.getWidth() / 2)));
+    controls.removeFromRight (12);
     progressBar.setBounds (controls);
+    area.removeFromBottom (16);
 
-    auto tableHeader = area.removeFromTop (26);
-    allButton.setBounds (tableHeader.removeFromLeft (50));
-    tableHeader.removeFromLeft (4);
-    noneButton.setBounds (tableHeader.removeFromLeft (50));
-    tableHeader.removeFromLeft (8);
-    addArtButton.setBounds (tableHeader.removeFromLeft (28));
-    removeArtButton.setBounds (tableHeader.removeFromLeft (28));
-    tableHeader.removeFromLeft (12);
-    nextStepLabel.setBounds (tableHeader);
-    area.removeFromTop (4);
-    table.setBounds (area);
+    // articulations: a toolbar line, then the table
+    auto toolbar = area.removeFromTop (rowH);
+    allButton.setBounds (toolbar.removeFromLeft (52));
+    toolbar.removeFromLeft (6);
+    noneButton.setBounds (toolbar.removeFromLeft (60));
+    toolbar.removeFromLeft (14);
+    addArtButton.setBounds (toolbar.removeFromLeft (30));
+    toolbar.removeFromLeft (1);
+    removeArtButton.setBounds (toolbar.removeFromLeft (30));
+    toolbar.removeFromLeft (16);
+    nextStepLabel.setBounds (toolbar);
+    area.removeFromTop (10);
+    table.setBounds (area.reduced (1)); // inside the border paintOverChildren() draws
 }
 
 // ============================================================================ plugin handling
@@ -1345,14 +1439,12 @@ void MainComponent::removeArticulations()
 
 int MainComponent::getNumRows() { return (int) rows.size(); }
 
-void MainComponent::paintRowBackground (juce::Graphics& g, int row, int, int, bool selected)
+void MainComponent::paintRowBackground (juce::Graphics& g, int, int w, int h, bool selected)
 {
-    auto c = getLookAndFeel().findColour (juce::ListBox::backgroundColourId);
-    if (row % 2)
-        c = c.brighter (0.04f);
-    if (selected)
-        c = c.interpolatedWith (juce::Colours::steelblue, 0.4f);
-    g.fillAll (c);
+    const auto& p = ui::colours();
+    g.fillAll (selected ? p.selection : p.background);
+    g.setColour (p.divider);
+    g.fillRect (12, h - 1, w - 24, 1);
 }
 
 void MainComponent::paintCell (juce::Graphics& g, int row, int col, int w, int h, bool)
@@ -1363,20 +1455,21 @@ void MainComponent::paintCell (juce::Graphics& g, int row, int col, int w, int h
     const auto& a = *art;
     const auto& r = rows[(size_t) row];
     juce::String text;
-    auto colour = juce::Colours::white;
+    const auto& p = ui::colours();
+    auto colour = p.text;
 
     switch (col)
     {
-        case colIndex: text = juce::String (a.index); break;
+        case colIndex: text = juce::String (a.index); colour = p.textTertiary; break;
         case colRR:
             if (r.planIdx >= 0 && ctx != nullptr && r.planIdx < (int) ctx->plans.size() && ctx->plans[(size_t) r.planIdx].hasSine
                 && ctx->plans[(size_t) r.planIdx].sine.roundRobins != a.roundRobins)
             {
                 // the cell editor shows the preset's count; the player's own count is drawn on the right
                 text = "SINE " + juce::String (ctx->plans[(size_t) r.planIdx].sine.roundRobins);
-                colour = juce::Colours::orange;
+                colour = p.warn;
                 g.setColour (colour);
-                g.setFont (juce::FontOptions (11.0f));
+                g.setFont (ui::font (11.0f));
                 g.drawText (text, 0, 0, w - 4, h, juce::Justification::centredRight, true);
             }
             text = {};
@@ -1389,21 +1482,26 @@ void MainComponent::paintCell (juce::Graphics& g, int row, int col, int w, int h
                 if (ctx != nullptr && r.planIdx < (int) ctx->plans.size() && ctx->plans[(size_t) r.planIdx].hasSine)
                     expected = ctx->plans[(size_t) r.planIdx].sine.roundRobins;
                 if (text.isNotEmpty() && text != juce::String (expected))
-                    colour = juce::Colours::orange; // differs from the player's own count (or never repeated)
+                    colour = p.warn; // differs from the player's own count (or never repeated)
             }
             break;
         case colIssues:
             text = a.issues.joinIntoString ("; ");
-            colour = juce::Colours::orange;
+            colour = p.warn;
             break;
         case colProgress:
             if (r.planIdx >= 0)
             {
                 const auto done = store.doneJobsFor (r.planIdx), total = store.totalJobsFor (r.planIdx);
                 const float frac = total > 0 ? (float) done / (float) total : 0.0f;
-                g.setColour (juce::Colours::seagreen.withAlpha (0.6f));
-                g.fillRect (2.0f, 4.0f, (float) (w - 4) * frac, (float) h - 8.0f);
+                // a thin line under the count
+                const juce::Rectangle<float> track (6.0f, (float) h - 7.0f, (float) (w - 12), 2.0f);
+                g.setColour (p.control);
+                g.fillRoundedRectangle (track, 1.0f);
+                g.setColour (done >= total ? p.ok : p.ink);
+                g.fillRoundedRectangle (track.withWidth (track.getWidth() * frac), 1.0f);
                 text = juce::String (done) + " / " + juce::String (total);
+                colour = p.textSecondary;
             }
             break;
         case colMedian:
@@ -1420,8 +1518,8 @@ void MainComponent::paintCell (juce::Graphics& g, int row, int col, int w, int h
         default: break;
     }
     g.setColour (colour);
-    g.setFont (juce::FontOptions (13.0f));
-    g.drawText (text, 4, 0, w - 8, h, juce::Justification::centredLeft, true);
+    g.setFont (ui::font (col == colIndex ? 12.0f : 13.0f));
+    g.drawText (text, 6, 0, w - 10, h, juce::Justification::centredLeft, true);
 }
 
 juce::Component* MainComponent::refreshComponentForCell (int row, int col, bool, juce::Component* existing)
@@ -2051,7 +2149,7 @@ void MainComponent::refreshNextStep()
                                 : missing.isNotEmpty() ? "Next: " + missing
                                                        : "Ready. Check the keyswitch base, then click Start.",
                            juce::dontSendNotification);
-    nextStepLabel.setColour (juce::Label::textColourId, missing.isNotEmpty() && ! busy ? juce::Colours::orange : juce::Colours::lightgreen);
+    nextStepLabel.setColour (juce::Label::textColourId, busy ? ui::colours().textSecondary : missing.isNotEmpty() ? ui::colours().warn : ui::colours().ok);
 }
 
 juce::String MainComponent::missingStep() const

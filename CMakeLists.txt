@@ -16,6 +16,7 @@ juce_add_gui_app(Secant
 target_sources(Secant PRIVATE
     Source/Main.cpp
     Source/MainComponent.cpp
+    Source/Theme.cpp
     Source/PresetModel.cpp
     Source/OnsetAnalyzer.cpp
     Source/LegatoAnalyzer.cpp
@@ -24,6 +25,9 @@ target_sources(Secant PRIVATE
     Source/RenderWorker.cpp
     Source/ResultStore.cpp
     Source/DelayExport.cpp)
+if(APPLE)
+    target_sources(Secant PRIVATE Source/ThemeMac.mm)
+endif()
 
 target_compile_definitions(Secant PRIVATE
     JUCE_PLUGINHOST_VST3=1
@@ -55,13 +59,16 @@ target_link_libraries(OnsetAnalyzerTest PRIVATE juce::juce_core juce::juce_audio
 # selected instrument. libc++ bounds checks turn an out-of-range row into an abort instead of a silent pass.
 juce_add_console_app(UiStateTest PRODUCT_NAME "UiStateTest")
 target_sources(UiStateTest PRIVATE Tests/UiStateTest.cpp
-    Source/MainComponent.cpp Source/PresetModel.cpp Source/OnsetAnalyzer.cpp Source/LegatoAnalyzer.cpp Source/SineState.cpp
+    Source/MainComponent.cpp Source/Theme.cpp Source/PresetModel.cpp Source/OnsetAnalyzer.cpp Source/LegatoAnalyzer.cpp Source/SineState.cpp
     Source/Planning.cpp Source/RenderWorker.cpp Source/ResultStore.cpp Source/DelayExport.cpp)
 target_compile_definitions(UiStateTest PRIVATE
     JUCE_PLUGINHOST_VST3=1 JUCE_PLUGINHOST_AU=0 JUCE_WEB_BROWSER=0 JUCE_USE_CURL=0
     JUCE_APPLICATION_NAME_STRING="UiStateTest" JUCE_APPLICATION_VERSION_STRING="0.2.0"
     SECANT_SOURCE_DIR="${CMAKE_CURRENT_SOURCE_DIR}"
     $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_DEBUG>)
+if(APPLE)
+    target_sources(UiStateTest PRIVATE Source/ThemeMac.mm)
+endif()
 target_link_libraries(UiStateTest PRIVATE juce::juce_audio_utils juce::juce_audio_processors juce::juce_dsp
     PUBLIC juce::juce_recommended_config_flags juce::juce_recommended_warning_flags)
 
